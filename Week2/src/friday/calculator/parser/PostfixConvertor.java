@@ -17,14 +17,16 @@ public class PostfixConvertor {
 		expr = expr.replaceAll(" ", "");
 		Stack<Character> operators = new Stack<>();
 		StringBuilder postfix = new StringBuilder();
+		String number = "";
+
 		for (int i = 0; i < expr.length(); i++) {
 			char currentToken = expr.charAt(i);
 			if (Token.isOperator(currentToken)) {
 				// check whether minus is sign or operator
 				if (Token.detectMinusSign(expr, i)) {
-					String n = PostfixHelperMethods.appender(expr, i);
-					postfix.append(" " + n);
-					i += n.length() - 1;
+					number = PostfixHelperMethods.appendMinus(expr, i);
+					postfix.append(" " + number);
+					i += number.length() - 1;
 					continue;
 				}
 				if (operators.isEmpty()) {
@@ -32,21 +34,22 @@ public class PostfixConvertor {
 					continue;
 				}
 				if (Token.isClosingBracket(currentToken)) {
-					while (!operators.isEmpty() && !Token.isOpenBracket(currentToken)) {
+					while (!operators.isEmpty()
+							&& !Token.isOpenBracket(currentToken)) {
 						currentToken = operators.pop();
 						postfix.append(" " + currentToken);
 					}
 					continue;
 				}
-				postfix = PostfixHelperMethods.appendOperator(operators, currentToken, postfix);
+				postfix = PostfixHelperMethods.appendOperator(operators,
+						currentToken, postfix);
 				operators.push(currentToken);
 			} else {
-				String n = PostfixHelperMethods.appendNumbers(expr, i);
-				postfix.append(" " + n);
-				i += n.length() - 1;
+				number = PostfixHelperMethods.appendNumbers(expr, i);
+				postfix.append(" " + number);
+				i += number.length() - 1;
 			}
 		}
-
 		while (!operators.isEmpty()) {
 			postfix.append(" " + operators.pop());
 		}

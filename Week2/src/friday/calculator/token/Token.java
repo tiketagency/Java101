@@ -5,6 +5,9 @@ import friday.calculator.operators.Operator;
 import friday.calculator.operators.OperatorFactory;
 
 public class Token {
+	public static boolean isNumber(char ch) {
+		return Token.isDigit(ch) || ch == '.';
+	}
 
 	public static boolean isFactorial(Operator op) {
 		return op instanceof Factorial;
