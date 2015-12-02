@@ -1,0 +1,27 @@
+package monday.vector;
+
+import java.util.List;
+
+public class SubList<T> {
+	 private final List<T> original;
+	    private final int from;
+	    private final int to;
+	    public SubList(List<T> original, int from, int to) {
+	        this.original = original;
+	        this.from = from;
+	        this.to = to;
+	    }
+
+	    public Object get(int i) {
+	        if (i < 0 || i > to - from) {
+	            throw new IllegalArguementException();
+	        }
+
+	        return original.get(from + i);
+	    }
+	}
+
+	public  SubList<T> subList(List<T> original, int from, int to) {
+	    return this;
+	}
+}

@@ -1,0 +1,24 @@
+package monday.vector;
+
+import java.util.Arrays;
+
+public class GenericVectorTest {
+
+	public static void main(String[] args) {
+		GenericVector<Integer> gv = new GenericVector<>(10);
+		gv.add(1);
+		gv.add(2);
+		gv.add(5);
+		gv.add(2);
+		gv.add(2);
+		gv.add(2, 100);
+		System.out.println(gv.indexOf(5));
+		gv.remove(2);
+		System.out.println(gv.isEmpty());
+		System.out.println(gv.lastIndexOf(3));
+		//gv.clear();
+		System.out.println(gv);
+//		Object[] arr =  gv.toArray();
+//		System.out.println(Arrays.toString(arr));
+	}
+}

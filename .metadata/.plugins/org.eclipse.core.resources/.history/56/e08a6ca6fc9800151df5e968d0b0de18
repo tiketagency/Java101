@@ -1,0 +1,13 @@
+package monday.vector;
+
+import java.util.Iterator;
+
+public class ListIter<T> implements Iterable<T> {
+
+	@Override
+	public Iterator<T> iterator() {
+		return new 
+	}
+
+	
+}
