@@ -1,0 +1,16 @@
+package wednesday;
+
+import java.util.Collection;
+
+public class OnOfCollection {
+
+	public static <T> void oNof(Collection<T> coll) {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package wednesday.statistic;
+
+public interface StatisticInterface {
+
+}

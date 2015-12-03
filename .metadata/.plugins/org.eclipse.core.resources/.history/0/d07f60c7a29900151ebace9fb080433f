@@ -1,0 +1,36 @@
+package wednesday.firstuniqueelement;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+public class UniqueElementFinder {
+
+	public static <T> int findeUnique(Collection<T> collection) {
+		Map<T, Integer> unique = new HashMap<>();
+		for (T t : collection) {
+			if (!unique.containsKey(t)) {
+				unique.put(t, 1);
+			} else {
+				unique.put(t, unique.get(t) + 1);
+			}
+		}
+
+		for (Integer t : unique.values()) {
+			if (t == 1) {
+				return t;
+			}
+		}
+		return  0;
+	}
+
+	public static <T> void main(String[] args) {
+		@SuppressWarnings("unchecked")
+		Collection<T> ints = (Collection<T>) Arrays.asList(1, 2, 3, 4, 5, 5, 4,
+				3, 1);
+		System.out.println(findeUnique(ints));
+
+	}
+
+}

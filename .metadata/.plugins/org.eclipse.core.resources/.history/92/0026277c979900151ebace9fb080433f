@@ -1,0 +1,26 @@
+package wednesday.onofcollection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OnOfCollection<T> implements Comparable<T> {
+
+	List<T> collection;
+	T el;
+
+	public OnOfCollection() {
+		collection = new ArrayList<T>();
+	}
+
+	public void add(T element) {
+
+	}
+
+	@Override
+	public int compareTo(T o) {
+		int elHash = el.hashCode();
+		int oHash = o.hashCode();
+		return elHash - oHash;
+	}
+
+}

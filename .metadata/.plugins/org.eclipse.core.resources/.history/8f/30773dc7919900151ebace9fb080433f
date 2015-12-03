@@ -1,0 +1,11 @@
+package wednesday.reversecollection;
+
+import java.util.Collection;
+
+public class Wrapper<T> {
+	private Collection<T> collection;
+
+	public Wrapper(Collection<T> collection) {
+		this.collection = collection;
+	}
+}

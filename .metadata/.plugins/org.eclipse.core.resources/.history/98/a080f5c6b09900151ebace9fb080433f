@@ -1,0 +1,13 @@
+package wednesday.statistic;
+
+import java.util.Iterator;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Statistic s = new Statistic();
+		System.out
+				.println("Add numbers and find there \"MEAN\", \"MEDIAN\", \"MODE\" and \"RANGE\"");
+	}
+
+}

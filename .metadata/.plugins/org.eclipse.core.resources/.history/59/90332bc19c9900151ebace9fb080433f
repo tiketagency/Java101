@@ -1,0 +1,15 @@
+package wednesday.rotatecollection;
+
+import java.util.Collection;
+
+public class Rotator {
+	public static <T> void rotate(Collection<T> collection, int rotateStep) {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

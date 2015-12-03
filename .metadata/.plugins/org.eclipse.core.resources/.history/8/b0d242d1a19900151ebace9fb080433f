@@ -1,0 +1,16 @@
+package wednesday.firstuniqueelement;
+
+import java.util.Collection;
+
+public class UniqueElementFinder {
+
+	public static <T> T findeUnique(Collection<T> collection) {
+		return null;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

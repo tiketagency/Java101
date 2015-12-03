@@ -1,0 +1,38 @@
+package wednesday.findduplicates;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class FindDuplicates {
+
+	@SuppressWarnings("unchecked")
+	@SafeVarargs
+	public static <T> T findDuplicate(Collection<T>... collection) {
+		Set<T> uniqueSet = new HashSet<>();
+		List<T> list = new ArrayList<T>();
+		for (Collection<T> collection2 : collection) {
+			for (T t : collection2) {
+				list.add(t);
+				uniqueSet.add(t);
+			}
+		}
+		for (T temp : uniqueSet) {
+			System.out.println(temp + ": " + Collections.frequency(list, temp));
+		}
+		return (T) uniqueSet;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T> void main(String[] args) {
+		Collection<T> a = (Collection<T>) Arrays.asList(1, 2, 3, 4, 5);
+		Collection<T> b = (Collection<T>) Arrays.asList(4, 5, 6);
+		Collection<T> c = (Collection<T>) Arrays.asList(5, 6, 7, 8);
+		System.out.println(findDuplicate(a, b, c));
+	}
+
+}

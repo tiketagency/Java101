@@ -1,0 +1,41 @@
+package wednesday.onofcollection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OnOfCollection<T> {
+
+	List<T> collection;
+	T el;
+
+	public OnOfCollection() {
+		collection = new ArrayList<T>();
+	}
+
+	public static <T extends Comparable<T>> boolean equal(T t, T element) {
+		return t.equals(element);
+	}
+
+	public void add(T element) {
+		boolean flag = false;
+		for (T t : collection) {
+			if (equal(t, element)) {
+				T e = collection.get(collection.indexOf(t));
+				e = null;
+				flag = true;
+			}
+		}
+		if (!flag) {
+			collection.add(element);
+		}
+	}
+
+	@Override
+	public String toString() {
+		String str = "";
+		for (T t : collection) {
+			str += t + " ";
+		}
+		return str;
+	}
+}

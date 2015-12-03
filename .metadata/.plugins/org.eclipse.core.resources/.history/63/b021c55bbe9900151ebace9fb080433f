@@ -1,0 +1,13 @@
+package wednesday.cryptoanalysis.util;
+
+import java.util.Map;
+
+public class Histogram {
+
+	public static Map<Integer,Character> createHistogram(String cryptedText){
+		int textLength = cryptedText.length();
+		for (int i = 0; i < textLength; i++) {
+			
+		}
+	}
+}

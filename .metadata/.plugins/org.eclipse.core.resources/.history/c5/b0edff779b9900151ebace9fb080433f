@@ -1,0 +1,30 @@
+package wednesday.onofcollection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OnOfCollection<T> {
+
+	List<T> collection;
+	T el;
+
+	public OnOfCollection() {
+		collection = new ArrayList<T>();
+	}
+
+	public void add(T element) {
+		if (collection.contains(element)) {
+			T e = collection.get(collection.indexOf(element));
+			collection.remove(e);
+		}
+	}
+
+	@Override
+	public String toString() {
+		String str = "";
+		for (T t : collection) {
+			str += t + " ";
+		}
+		return str;
+	}
+}

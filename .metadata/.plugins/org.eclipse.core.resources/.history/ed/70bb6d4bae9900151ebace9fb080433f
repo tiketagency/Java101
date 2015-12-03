@@ -1,0 +1,27 @@
+package wednesday.readblehashmap;
+
+import java.util.HashMap;
+
+public class HumanReadableHashMap {
+
+	public static String printHashMap(
+			HashMap<? extends Object, ? extends Object> map) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("{\n\n");
+		for (Object key : map.keySet()) {
+			Object value = map.get(key);
+			sb.append(key + ":" + value + "\n\n================");
+		}
+		sb.append("\n}");
+		return sb.toString();
+
+	}
+
+	public static void main(String[] args) {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("key1", "value1");
+		map.put("key2", "value2");
+		map.put("key3", "value3");
+		System.out.println(printHashMap(map));
+	}
+}

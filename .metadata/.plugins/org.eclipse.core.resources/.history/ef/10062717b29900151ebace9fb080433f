@@ -1,0 +1,30 @@
+package wednesday.statistic;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Statistic storage = new Statistic();
+		System.out
+				.println("Add numbers and find there \"MEAN\", \"MEDIAN\", \"MODE\" and \"RANGE\"\n");
+		System.out.println("For exit press Q");
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			try {
+				storage.add(Integer.parseInt(sc.nextLine()));
+			} catch (Exception e) {
+				break;
+			}
+		}
+		System.out.print("Entered numbers are: ");
+		for (int i : storage) {
+			System.out.print(i + " ");
+		}
+		System.out.println("There \"MEAN\" is: " + storage.getMean());// average
+		System.out.println("There \"MEDIAN\" is: " + storage.getMedian());//middle val
+		System.out.println("There \"MODE\" is: " + storage.getMode());//
+		System.out.println("There \"RANGE\" is: " + storage.getRange());//
+	}
+
+}

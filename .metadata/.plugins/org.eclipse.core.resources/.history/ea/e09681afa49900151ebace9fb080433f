@@ -1,0 +1,19 @@
+package wednesday.findduplicates;
+
+import java.util.Collection;
+
+public class FindDuplicates {
+
+	public static <T> T findDuplicate(Collection<T>... collection) {
+
+		return null;
+	}
+
+	public static void main(String[] args) {
+		int[] a = { 1, 2, 3, 4, 5 };
+		int[] b = { 4, 5, 6 };
+		int[] c = { 5, 6, 7, 8 };
+
+	}
+
+}

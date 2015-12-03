@@ -1,0 +1,35 @@
+package wednesday.reversecollection;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+public class ReverseGenericCollection {
+
+	static <T> void reverse(Collection<T> list) {
+		Iterator<T> it = list.iterator();
+		List<T> l = new ArrayList<T>();
+		while (it.hasNext()) {
+			T t = it.next();
+			l.add(0, t);
+		}
+		for (T t : l) {
+			list.remove(t);
+			list.add(t);
+		}
+	}
+
+	public static void main(String[] args) {
+		Map<Integer,Integer> map = new HashMap<>();
+		List<Integer> l = new ArrayList<>();
+		for (int i = 0; i < 10; i++) {
+			l.add(i);
+			map.put(i, i);
+		}
+		reverse(map);
+		System.out.println(l);
+	}
+}

@@ -123,6 +123,7 @@ public class GenericVector<T> extends AbstractList<T> implements List<T>,
 	@Override
 	public boolean addAll(int index, Collection<? extends T> c) {
 		int len = c.size();
+		
 		return false;
 	}
 

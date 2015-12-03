@@ -1,0 +1,66 @@
+package wednesday.cryptoanalysis.util;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
+public class Histogram {
+
+	public static Map<Character, Integer> createHistogram(String cryptedText) {
+		Map<Character, Integer> histogram = new HashMap<>();
+		int textLength = cryptedText.length();
+		for (int i = 0; i < textLength; i++) {
+			char letter = cryptedText.charAt(i);
+			if (!histogram.containsKey(letter)) {
+				histogram.put(letter, 1);
+			} else {
+				histogram.put(letter, histogram.get(letter) + 1);
+			}
+		}
+		return sortByValue(histogram);
+		// return histogram;
+	}
+
+	public static <K, V extends Comparable<V>> Map<K, V> sortByValues(
+			final Map<K, V> map) {
+		Comparator<K> valueComparator = new Comparator<K>() {
+			public int compare(K k1, K k2) {
+				int compare = map.get(k2).compareTo(map.get(k1));
+				if (compare == 0)
+					return 1;
+				else
+					return compare;
+			}
+		};
+		Map<K, V> sortedByValues = new TreeMap<K, V>(valueComparator);
+		sortedByValues.putAll(map);
+		return sortedByValues;
+	}
+
+	private static <Character, Integer extends Comparable<Integer>> Map<Character, Integer> sortByValue(
+			Map<Character, Integer> map) {
+		List<Map.Entry<Character, Integer>> list = new LinkedList<>(
+				map.entrySet());
+		Collections.sort(list, new Comparator<Map.Entry<Character, Integer>>() {
+
+			@Override
+			public int compare(Entry<Character, Integer> o1,
+					Entry<Character, Integer> o2) {
+				int compare = o1.getValue().compareTo(o1.getValue());
+				return compare == 0 ? 1 : compare;
+			}
+
+		});
+
+		Map<Character, Integer> result = new HashMap<>();
+		for (Entry<Character, Integer> entry : list) {
+			result.put(entry.getKey(), entry.getValue());
+		}
+		return result;
+	}
+}

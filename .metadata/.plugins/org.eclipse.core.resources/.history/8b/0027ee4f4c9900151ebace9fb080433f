@@ -1,0 +1,10 @@
+package wednesday.reversecollection;
+
+import java.util.Collection;
+
+public class Wrapper<T> {
+	private Collection<T> collection;
+	public Wrapper() {
+		// TODO Auto-generated constructor stub
+	}
+}

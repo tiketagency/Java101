@@ -1,0 +1,10 @@
+package wednesday.wordscounter;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TextUtil {
+	public static Map<String, Integer> createWordHistogram(String text) {
+		Map<String, Integer> histogram = new HashMap<>();
+	}
+}

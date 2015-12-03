@@ -1,0 +1,35 @@
+package wednesday.brackets;
+
+import static org.junit.Assert.*;
+
+import java.util.Stack;
+
+import org.junit.Test;
+
+public class ValidateBrackets {
+
+	public static boolean validateBrackets(String brackets) {
+		Stack<Character> stack1 = new Stack<>();
+		Stack<Character> stack2 = new Stack<>();
+		for (int i = 0; i < brackets.length(); i++) {
+			char current = brackets.charAt(i);
+			if (current == '(') {
+				stack1.push(current);
+			}
+
+		}
+		return false;
+
+	}
+
+	@Test
+	public void testBrackets() {
+		assertFalse(validateBrackets("()()())))((())("));
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
