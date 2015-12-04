@@ -14,15 +14,14 @@ public class Histogram {
 		for (int i = 0; i < textLength; i++) {
 			char letter = cryptedText.charAt(i);
 			if (Character.isLowerCase(letter)) {
-				
-			if (!histogram.containsKey(letter)) {
-				histogram.put(letter, 1);
-			} else {
-				histogram.put(letter, histogram.get(letter) + 1);
-			}
+
+				if (!histogram.containsKey(letter)) {
+					histogram.put(letter, 1);
+				} else {
+					histogram.put(letter, histogram.get(letter) + 1);
+				}
 			}
 		}
-		System.out.println(histogram);
 		return sortByValues(histogram);
 	}
 

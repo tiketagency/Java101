@@ -1,0 +1,16 @@
+package sortbygrade;
+
+import java.util.List;
+
+public class Student {
+	private String firstName;
+	private String secondName;
+	private List<Double> grades;
+
+	public Student(String firstName, String secondName, double grade) {
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.grade = grade;
+	}
+
+}

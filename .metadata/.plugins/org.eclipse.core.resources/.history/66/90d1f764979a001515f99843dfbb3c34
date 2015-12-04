@@ -1,0 +1,300 @@
+package wednesday.cryptoanalysis.util;
+
+package cs.duke.edu.cryptodemo;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.StringTokenizer;
+import java.io.File;
+import java.io.IOException;
+/*
+ * Our attempt at frequency analysis. It's close to working, but we couldn't debug
+ * the findNextBestGuesses recursive function. With more time, it probably could have worked.
+ * I think our algorithm will work:
+ * 
+ *  Algo:
+ * 		count frequencies of chars in encrypted text
+ * 		make best guesses based on defined values
+ * 		iterate through the file:	
+ * 			for each word,
+ * 				check if the best guesses are right.
+ * 				if not, check the 5 next best guesses for each of the characters (all combinations)
+ * 				for a 5 letter word, this is 5^5 = 3215 combinations.
+ * 				if the decrypted word appears in the dictionary, set the best guesses accordingly
+ * 		
+ * 	It shouldn't run that slow because we start with the smallest words and the cipher vocabulary builds on itself.
+ * 
+ * @author Sam
+ *
+ * To change the template for this generated type comment go to
+ * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
+ */
+
+public class Frequency {
+	
+	
+	//hard-coded approximated frequencies taken from the code book
+	private final double[] avgFreqs = {
+		8.2, 1.5, 2.8, 4.3, 12.7, 2.2, 2.0, 6.1, 7.0, 0.2, 0.8, 4.0, 2.4,
+		6.7, 7.5, 1.9, 0.1, 6.0, 6.3, 9.1, 2.8, 1.0,  2.4, 0.2, 2.0, 0.1
+	};
+	
+	/* Frequencies taken by running program on Melville:
+	 *  A : 6.356680400235433
+		B : 0.07847753580537571
+		C : 11.7912497547577
+		D : 7.700608200902492
+		E : 0.9319207376888365
+		F : 4.7086521483225425
+		G : 4.110260937806553
+		H : 0.26486168334314303
+		I : 1.4616441043751225
+		J : 3.0410045124583087
+		K : 2.5014714537963507
+		L : 2.0404159309397687
+		M : 0.7357268981753973
+		N : 8.603099862664312
+		O : 0.039238767902687856
+		P : 5.817147341573475
+		Q : 7.602511281145772
+		R : 5.758289189719442
+		S : 6.572493623700215
+		T : 2.2954679223072394
+		U : 0.14714537963507945
+		V : 1.1379242691779479
+		W : 2.2758485383558957
+		X : 2.4229939179909747
+		Y : 8.760054934275063
+		Z : 2.8448106729448694
+	 */
+	
+	//we need a dictionary to check look up
+	private DictionaryChecker myChecker;
+	
+	//the best guess so far 
+	private char[] myGuessCipher = new char[26];
+	
+	//frequencies in this 
+	private double[] myFrequencies = new double[26];
+	
+	public Frequency(DictionaryChecker d )
+    //post:	set freqs to 0;
+	{
+		myChecker = d;
+		Arrays.fill(myFrequencies, 0);
+		
+	}
+	
+	//comparator to make strings sorted by size, it's easier to check the smaller words first
+	//makes checker run faster
+	public class StringComp implements Comparator {
+		public int compare(Object arg0, Object arg1) {
+			String s1 = (String) arg0;
+			String s2 = (String) arg1;
+			if (s1.length() == 1) { //1 letter words can confuse the checker
+				return 1;
+			}
+			if (s1.length() <  s2.length())
+				return -1;
+			else if (s1.length() >  s2.length())
+				return 1;
+			return 0;
+		}
+	}
+	
+	
+	// Finds the best guess for a letter that hasn't been used for another letter
+	// and is worse than our last best guess (this essentially finds the next best guess)
+	char findBestGuess(int i, boolean[] u, int last) {
+		int mindex = -1;
+		double minDif = 10000;
+		double lastDif = 0;
+		
+		if (last > 0) {
+			lastDif = Math.abs(avgFreqs[i] - myFrequencies[last]);
+		}
+		
+		for (int k = 0; k < u.length;k++) {
+			double dif = Math.abs(myFrequencies[k] - avgFreqs[i]);
+			if (dif < minDif && dif > lastDif && u[k] == false) {
+				mindex = k;
+				minDif = dif;
+			}
+		}
+		char c = (char) (mindex + 'A');
+		return c;
+	}
+	
+	//Decrypts a word with a given cipher alphabet
+	private String tryDecrypt(String word, char[] cipher) {
+		char[] decrypted = word.toCharArray();
+		for (int j = 0; j < word.length(); j++) {
+			char c = word.charAt(j);
+			char r = cipher[c - 'A'];
+			decrypted[j] = r;
+		}
+		return new String(decrypted);
+	}
+	
+	/*
+	 * This function isn't working at all.
+	 * It's supposed to find check the 5 best guesses for every character in the word
+	 * and every combination of those guesses. Thereby, hopefully finding the proper
+	 * alphabet. But right now, it doesn't recurse properly and the last guess never 
+	 * changes. 
+	 */
+	 
+	private String tryNextBests(int toReplace, String word, char[] cipher, boolean[] used) {	
+		String s = new String(word);
+		String d = null;
+		
+		if (toReplace >= word.length()) //if there's nothing left to replace
+			return word;
+			
+		System.out.println(toReplace + " " + tryDecrypt(word,cipher));
+		
+		//d = tryNextBests(toReplace + 1, word, cipher, used);
+		//if (myChecker.isValid(d))
+		//		return d;
+		
+
+		char[] ciph2 = new char[26];
+		boolean[] u2 = new boolean[26];
+		System.arraycopy(used,0, u2, 0, 25);
+		System.arraycopy(cipher, 0, ciph2, 0, 25);
+		
+		for (int k = 0; k < 5; k++){ //make 5 next best guesses
+			String ciph = new String(cipher);
+			char c = word.charAt(toReplace);
+			
+			int lastGuess = ciph2[c - 'A'] - 'A';
+			char c2 = findBestGuess(c - 'A', u2, lastGuess);
+			int i = ciph.indexOf(c);
+			int i2 = ciph.indexOf(c2);
+			
+			u2 = new boolean[26];
+			ciph2 = new char[26];
+			System.arraycopy(used,0, u2, 0, 25);
+			System.arraycopy(cipher, 0, ciph2, 0, 25);
+			
+			boolean t = u2[i];
+			u2[i] = u2[i2];
+			u2[i2] = t;
+			
+			c = ciph2[i];
+			ciph2[i] = ciph2[i2];
+			ciph2[i2] = c;
+	
+			d = tryDecrypt(s, ciph2);
+			if (myChecker.isValid(d))
+				return d;
+				
+			d = tryNextBests(toReplace + 1, word, ciph2, u2);
+			if (myChecker.isValid(d))
+				return d;
+		}		
+		return d;
+	}
+	
+	//guess the word by trying the current best guess cipher, 
+	// the 5 next best options for each character, and all permutations
+	// This will run in O(5^N), but smaller words are checked first which should keep speed up. 
+	private String guess(String word) 
+	{
+		char[] cipher = new char[26];
+		
+		System.arraycopy(myGuessCipher, 0, cipher, 0, 25); //make copy;
+
+		String s = new String(word);		
+		String d = tryDecrypt(s, myGuessCipher);
+		if (myChecker.isValid(d))
+			return d;
+
+		boolean[] used = new boolean[26];
+		Arrays.fill(used, false);
+		
+		for (int j = 0; j < s.length(); j++) {
+			char c = s.charAt(j);
+			int i = c - 'A';
+			used[i] = true;
+		}
+		return tryNextBests(0, s, cipher, used);
+	}
+
+
+	//decrypt the input stream by running frequency analysis
+	public void doDecrypt(InputStream in, PrintStream out) {
+		BufferedReader r = new BufferedReader(new InputStreamReader(in));
+		String line = Util.readLine(r);
+		int count = 0;
+		ArrayList EncryptedText = new ArrayList();
+		while (line != null) {
+			StringTokenizer s = new StringTokenizer(line);
+			while (s.hasMoreTokens()) {
+				String word = Util.stripPunc(s.nextToken().toUpperCase());
+				for (int k = 0; k < word.length(); k++) {
+					int key = Character.toUpperCase(word.charAt(k)) - 'A';
+					myFrequencies[key]++;
+					count++;
+				}
+				EncryptedText.add(word);
+			}
+			line = Util.readLine(r);
+		}
+		
+		for (int k = 0; k < myFrequencies.length; k++){
+			myFrequencies[k] = (myFrequencies[k] / count) * 100;
+		} //put the frequencies in terms of percentages
+		
+		
+		//display them for debugging purposes
+		for (int k = 0; k < myFrequencies.length; k++){
+			System.out.println(((char) (k + 'A')) + " : " + myFrequencies[k]);
+		}
+		
+		// this initializes myGuessCipher vector to the initial best guesses.
+		// this definitely works.
+		boolean used[] = new boolean[26];
+		Arrays.fill(used, false);
+		for (int k = 0; k < 26; k++) {  //make all the best guesses to initial myGuessCipher
+			myGuessCipher[k] = findBestGuess(k, used, 0);
+			used[myGuessCipher[k] - 'A'] = true;
+		}
+	
+		//sort words by size, we want smaller ones first
+		HashSet s = new HashSet(EncryptedText);
+		Object[] a = s.toArray();
+		Arrays.sort(a, new StringComp());
+		
+		//this would loop until the complete cipher alphabet is found, but we never got "guess" to work
+		for (int k = 0; k < 1; k++) {
+			String word = (String) a[k];
+			String guessedWord = guess(word);	
+			if (myChecker.isValid(guessedWord)) {
+				for (int j = 0; j < word.length(); j++) {
+					int i = word.charAt(j) - 'A';
+					myGuessCipher[i] = guessedWord.charAt(j); 
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) throws IOException{
+		Frequency f = new Frequency(new DictionaryChecker("dictionary.txt"));
+		FileInputStream f1 = new FileInputStream(new File(args[0]));
+		File file = new File(args[1]);
+		file.createNewFile();
+		FileOutputStream f2 = new FileOutputStream(file);
+		f.doDecrypt(f1, new PrintStream(f2));
+	}
+
+	
+}

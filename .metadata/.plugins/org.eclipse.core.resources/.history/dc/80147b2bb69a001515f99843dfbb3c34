@@ -1,0 +1,33 @@
+package sortbygrade;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Diary {
+	private List<Student> students;
+
+	public Diary() {
+		this.students = new ArrayList<>();
+	}
+
+	public void addStudent(Student student) {
+		students.add(student);
+	}
+
+	public Student getStudent(int id) {
+		return students.get(id);
+	}
+
+	public void sortByGrade() {
+		Collections.sort(students, new Comparator<Student>() {
+			@Override
+			public int compare(Student o1, Student o2) {
+				int compare = (int) (o1.getSum() > o2.getSum() ? -1 : o1
+						.getSum() < o2.getSum() ? 1 : 0);
+				return compare;
+			}
+		});
+	}
+}

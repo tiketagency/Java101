@@ -1,0 +1,14 @@
+package sortbygrade;
+
+public class Student {
+	private String firstName;
+	private String secondName;
+	private double grade;
+
+	public Students(String firstName, String secondName, double grade) {
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.grade = grade;
+	}
+
+}

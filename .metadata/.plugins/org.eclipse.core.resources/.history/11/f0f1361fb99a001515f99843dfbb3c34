@@ -1,0 +1,25 @@
+package sortbygrade;
+
+public class SortStudentsByGrade {
+	public static void main(String[] args) {
+		Student st1 = new Student("Gosho", 1);
+		st1.setGrades(2, 3, 4, 5, 6);
+		Student st2 = new Student("Pesho", 2);
+		st2.setGrades(2, 4, 5, 6, 5);
+		Student st3 = new Student("Penka", 3);
+		st1.setGrades(2, 3, 4, 5, 6, 5, 5, 5);
+		Student st4 = new Student("Anka", 4);
+		st1.setGrades(2, 3, 4, 5, 6, 5, 5, 5);
+		Diary d = new Diary();
+		d.addStudent(st1);
+		d.addStudent(st2);
+		d.addStudent(st3);
+		d.addStudent(st4);
+		d.sortByGrade();
+		
+		for (Student string : d.getStudent()) {
+			System.out.println(string);
+		}
+	}
+}
+
