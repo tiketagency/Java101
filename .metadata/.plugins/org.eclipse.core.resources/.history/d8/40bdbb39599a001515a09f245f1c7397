@@ -1,0 +1,96 @@
+package wednesday.cryptoanalysis.util;
+
+public class InglishLettersStatistic {
+	public static final char[] LETTERS = { 'e', 't', 'a', 'o', 'i', 'n', 's',
+			'h', 'r', 'd', 'l', 'c', 'm', 'w', 'f', 'g', 'p', 'b', 'v', 'k',
+			'j', 'x', 'q', 'z' };
+
+	public static String map(char letter) {
+		String tex = "";
+		if (Character.isLowerCase(letter)) {
+			switch (letter) {
+			case 'a':
+				tex += 'c';
+				break;
+			case 'b':
+				tex += 'd';
+				break;
+			case 'c':
+				tex += 'g';
+				break;
+			case 'd':
+				tex += 'b';
+				break;
+			case 'e':
+				tex += 'a';
+				break;
+			case 'f':
+				tex += 'e';
+				break;
+			case 'g':
+				tex += 'f';
+				break;
+			case 'h':
+				tex += 'm';
+				break;
+			case 'i':
+				tex += 'p';
+				break;
+			case 'j':
+				tex += 'n';
+				break;
+			case 'k':
+				tex += 'o';
+				break;
+			case 'l':
+				tex += 'm';
+				break;
+			case 'm':
+				tex += 'k';
+				break;
+			case 'n':
+				tex += 'h';
+				break;
+			case 'o':
+				tex += 'i';
+				break;
+			case 'p':
+				tex += 'q';
+				break;
+			case 'q':
+				tex += 's';
+				break;
+			case 'r':
+				tex += 'w';
+				break;
+			case 's':
+				tex += 'r';
+				break;
+			case 't':
+				tex += 'j';
+				break;
+			case 'u':
+				tex += 'u';
+				break;
+			case 'v':
+				tex += 't';
+				break;
+			case 'w':
+				tex += 'l';
+				break;
+			case 'x':
+				tex += 'v';
+				break;
+			case 'y':
+				tex += 'z';
+				break;
+			case 'z':
+				tex += 'y';
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+}
