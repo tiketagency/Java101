@@ -1,10 +1,11 @@
 package monday.power;
 
 public class Power {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	static <T extends Number> Number power(T base, int exponent) {
+		return Math.pow((int) base, exponent);
 	}
 
+	public static void main(String[] args) {
+		System.out.println(power(10, 2));
+	}
 }

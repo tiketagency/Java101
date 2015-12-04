@@ -1,5 +1,7 @@
 package monday.makeitmoregeneric;
 
+import wednesday.cryptoanalysis.util.Histogram;
+
 public class Palindrome {
 
 	public static boolean isPalindrome(String str) {
@@ -11,12 +13,12 @@ public class Palindrome {
 		return true;
 	}
 
-	public static <T extends Comparable<T>> boolean palindrome(T obj) {
-		return isPalindrome(obj.hashCode() + "");
+	public static <T> boolean palindrome(T t) {
+		return isPalindrome(t.toString() + "");
 
 	}
 
-	public static void main(String[] args) {
-		System.out.println(palindrome("Pesho"));
+	public static <T> void main(String[] args) {
+		System.out.println(palindrome(new Histogram()));
 	}
 }
