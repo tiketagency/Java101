@@ -1,0 +1,24 @@
+package friday.todolist.task;
+
+public abstract class Task {
+	private float timeNeeded = 2;
+	private int priority;
+	private boolean finished = false;
+	private boolean canceled = false;
+
+	public void cancel() {
+		this.canceled = true;
+	}
+
+	public void finish() {
+		this.finished = true;
+	}
+
+	public float getTimeNeeded() {
+		return timeNeeded;
+	}
+
+	public void setTimeNeeded(float timeNeeded) {
+		this.timeNeeded = timeNeeded;
+	}
+}

@@ -1,0 +1,16 @@
+package friday.todolist.task;
+
+public class StudyForAlgebraTask extends Task {
+	public StudyForAlgebraTask() {
+
+	}
+
+	public StudyForAlgebraTask(float time) {
+		super.timeNeeded = time;
+	}
+
+	@Override
+	public String toString() {
+		return "StudyForAlgebraTask";
+	}
+}

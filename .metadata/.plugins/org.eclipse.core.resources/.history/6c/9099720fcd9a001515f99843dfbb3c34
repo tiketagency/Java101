@@ -1,0 +1,40 @@
+package friday.todolist;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class ToDoList {
+	private PriorityQueue<Task> tasks;
+
+	public ToDoList(int i) {
+		tasks = new PriorityQueue<>(new Comparator<Task>() {
+			@Override
+			public int compare(Task task1, Task task2) {
+				int compare = task1.timeNeeded > task2.timeNeeded ? 1 : task1.timeNeeded < task2.timeNeeded ? 0 : -1;
+				return compare;
+			}
+		});
+	}
+
+	public void addTask(Task task) {
+		tasks.add(task);
+	}
+
+	public boolean canFinish() {
+
+		return false;
+	}
+
+	public Task top() {
+		return tasks.peek();
+	}
+
+	public float getTimeNeeded() {
+		float sum = 0;
+		for (Task task : tasks) {
+			sum += task.timeNeeded;
+		}
+		return sum;
+	}
+
+}

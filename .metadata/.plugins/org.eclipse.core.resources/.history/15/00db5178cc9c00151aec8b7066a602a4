@@ -1,0 +1,20 @@
+package friday.todolist.task;
+
+public class LearnGeometryTask extends Task {
+	public LearnGeometryTask() {
+		super.priority = 0;
+		super.timeNeeded = 0;
+	}
+
+	public LearnGeometryTask(int priority, float time) {
+		super.timeNeeded = time;
+		super.priority = priority;
+	}
+
+	@Override
+	public String toString() {
+		return "LearnGeometryTask [ time needed: "
+				+ String.valueOf(this.getTimeNeeded()) + " priority: "
+				+ this.getPriority() + " ]";
+	}
+}

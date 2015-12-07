@@ -1,0 +1,24 @@
+package friday.todolist.implementation;
+
+public class LearnGeometryTask extends Task {
+	public LearnGeometryTask() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "LearnGeometryTask [timeNeeded=" + timeNeeded + "]";
+	}
+
+	@Override
+	public void cancel() {
+		this.canceled = true;
+
+	}
+
+	@Override
+	public void finish() {
+		this.finished = true;
+
+	}
+}

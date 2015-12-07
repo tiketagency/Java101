@@ -1,0 +1,51 @@
+package friday.todolist.task;
+
+public abstract class Task {
+	protected float timeNeeded;
+	protected int priority;
+	private boolean finished = false;
+	private boolean canceled = false;
+
+	public void cancel() {
+		timeNeeded = 0;
+		this.canceled = true;
+	}
+
+	public float getTimeNeeded() {
+		return timeNeeded;
+	}
+
+	public void setTimeNeeded(float timeNeeded) {
+		this.timeNeeded = timeNeeded;
+	}
+
+	public boolean givePriority(int priority) {
+		if (priority < 1 || priority > 10) {
+			System.out
+					.println("Invalid priority value!Priority should be in the range 1-10");
+			return false;
+		}
+		this.priority = priority;
+		return true;
+
+	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setFinished(boolean finished) {
+		this.finished = finished;
+	}
+
+	public boolean isFinished() {
+		return finished;
+	}
+	public void setCanceled(boolean canceled) {
+		this.canceled = canceled;
+	}
+
+	public boolean isCanceled() {
+		return canceled;
+	}
+}

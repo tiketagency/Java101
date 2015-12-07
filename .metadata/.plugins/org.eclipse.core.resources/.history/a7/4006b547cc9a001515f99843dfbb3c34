@@ -1,0 +1,33 @@
+package friday.todolist;
+
+import java.util.PriorityQueue;
+
+public class ToDoList {
+	private PriorityQueue<Task> tasks;
+
+	public ToDoList(int i) {
+		tasks = new PriorityQueue<>(i);
+	}
+
+	public void addTask(Task task) {
+		tasks.add(task);
+	}
+
+	public boolean canFinish() {
+
+		return false;
+	}
+
+	public Task top() {
+		return tasks.peek();
+	}
+
+	public float getTimeNeeded() {
+		float sum = 0;
+		for (Task task : tasks) {
+			sum += task.timeNeeded;
+		}
+		return sum;
+	}
+
+}

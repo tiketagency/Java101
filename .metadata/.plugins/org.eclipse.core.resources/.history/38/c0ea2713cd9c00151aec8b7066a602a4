@@ -1,0 +1,17 @@
+package friday.todolist.task;
+
+public class StudyForAlgebraTask extends Task {
+	
+
+	public StudyForAlgebraTask(int priority, float timeNeeded) {
+		super(priority, timeNeeded);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "StudyForAlgebraTask [ time needed: "
+				+ String.valueOf(super.getTimeNeeded()) + " priority: "
+				+ super.getPriority() + " ]";
+	}
+}

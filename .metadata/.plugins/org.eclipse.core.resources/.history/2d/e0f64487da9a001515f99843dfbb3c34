@@ -1,0 +1,15 @@
+package friday.todolist.implementation;
+
+public abstract class Task {
+	protected float timeNeeded = 2;
+	private boolean finished = false;
+	private boolean canceled = false;
+
+	public void cancel() {
+		this.canceled = true;
+	}
+
+	public void finish() {
+		this.finished = true;
+	}
+}

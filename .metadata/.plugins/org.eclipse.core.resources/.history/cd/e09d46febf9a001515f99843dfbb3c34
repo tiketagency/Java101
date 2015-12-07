@@ -1,0 +1,9 @@
+package friday.todolist;
+
+public class GoOutTask extends Task {
+
+	public GoOutTask(float f) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

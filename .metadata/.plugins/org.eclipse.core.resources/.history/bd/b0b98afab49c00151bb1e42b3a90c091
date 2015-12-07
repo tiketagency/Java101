@@ -1,0 +1,77 @@
+package friday.todolist.implementation;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
+
+import friday.todolist.task.Task;
+
+public class ToDoList {
+	private PriorityQueue<Task> tasks;
+	private int remainingTime;
+
+	public ToDoList(int remainingTime) {
+		this.remainingTime = remainingTime;
+		tasks = new PriorityQueue<>(new Comparator<Task>() {
+			@Override
+			public int compare(Task task1, Task task2) {
+				return task1.getPriority() > task2.getPriority() ? -1
+						: task1.getPriority() < task2.getPriority() ? 1 : 0;
+			}
+		});
+	}
+
+	public void addTask(Task task) {
+		tasks.add(task);
+	}
+
+	private void reorderElements() {
+		List<Task> backUp = new ArrayList<>();
+		for (Task task : tasks) {
+			backUp.add(task);
+		}
+		for (Task task : backUp) {
+			tasks.add(task);
+		}
+	}
+
+	public void markFinished(Task t) {
+		t.finish();
+		reorderElements();
+
+	}
+
+	public void markCancelled(Task t) {
+		t.cancel();
+		reorderElements();
+	}
+
+	public boolean canFinish() {
+		return remainingTime > getTimeNeeded();
+	}
+
+	public Task top() {
+		return tasks.peek();
+	}
+
+	public float getTimeNeeded() {
+		float sum = 0;
+		for (Task task : tasks) {
+			sum += task.getTimeNeeded();
+		}
+		return sum;
+	}
+
+	@Override
+	public String toString() {
+		System.out.println("Yor taks in the list");
+		String str = "";
+		for (Task task : tasks) {
+			str += task + " [ time needed: "
+					+ String.valueOf(task.getTimeNeeded()) + " priority: "
+					+ task.getPriority() + " ]\n";
+		}
+		return str;
+	}
+}

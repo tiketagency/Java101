@@ -1,0 +1,17 @@
+package friday.todolist.task;
+
+public class SleepTask extends Task {
+
+	public SleepTask() {
+		super.priority = 8;
+		super.timeNeeded = 8;
+	}
+	public SleepTask(float time) {
+		super.priority = 8;
+		super.timeNeeded = time;
+	}
+	@Override
+	public String toString() {
+		return "SleepTask";
+	}
+}

@@ -1,0 +1,12 @@
+package friday.todolist;
+
+public class GoOutTask extends Task {
+
+	public GoOutTask(float f) {
+		super.timeNeeded = f;
+	}
+	@Override
+	public String toString() {
+		return "SleepTask [timeNeeded=" + timeNeeded + "]";
+	}
+}

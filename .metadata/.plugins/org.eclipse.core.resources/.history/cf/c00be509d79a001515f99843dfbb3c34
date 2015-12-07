@@ -1,0 +1,7 @@
+package friday.todolist.implementation;
+
+public abstract class Task {
+	protected float timeNeeded = 2;
+	protected boolean finished = false;
+	protected boolean canceled = false;
+}

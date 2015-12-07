@@ -1,0 +1,14 @@
+package friday.todolist.implementation;
+
+public class SleepTask extends Task {
+	
+	public SleepTask() {
+	super.timeNeeded = 8;
+	}
+
+	@Override
+	public String toString() {
+		return "SleepTask [timeNeeded=" + timeNeeded + "]";
+	}
+
+}

@@ -1,0 +1,5 @@
+package friday.todolist.implementation;
+
+public class TaskComparator {
+
+}

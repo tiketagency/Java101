@@ -1,0 +1,19 @@
+package friday.todolist.task;
+
+public class GoOutTask extends Task {
+
+	public GoOutTask() {
+	}
+
+	public GoOutTask(float time) {
+		super.timeNeeded = time;
+		super.priority = 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Go out Task [ time needed: "
+				+ String.valueOf(this.getTimeNeeded()) + " priority: "
+				+ this.getPriority() + " ]";
+	}
+}

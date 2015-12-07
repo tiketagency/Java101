@@ -1,0 +1,24 @@
+package friday.todolist;
+
+public class ToDoList {
+
+	public ToDoList(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void addTask(Task studyForAlgebraTask) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean canFinish() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public char[] top() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
