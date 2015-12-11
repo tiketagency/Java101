@@ -1,0 +1,14 @@
+package friday.hashmap;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class HashMapTestTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

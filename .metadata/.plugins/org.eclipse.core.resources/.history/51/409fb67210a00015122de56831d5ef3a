@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class HashMapTest {
 	public static void main(String[] args) {
@@ -59,7 +60,7 @@ public class HashMapTest {
 		// myHashMap.remove(l.get(c));
 		// c++;
 		// }
-		 
+		assert myHashMap.containsKey("Pleven") == true; 
 		System.out.println(myHashMap);
 		// System.out.println(myHashMap.entrySet());
 		for (String string : myHashMap.keySet()) {

@@ -11,8 +11,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class MyHashMap<K, V> implements Map<K, V>, Iterable<K> {
-	@SuppressWarnings("hiding")
-	private class MapEntry<K, V> implements Entry<K, V> {
+	private  class MapEntry<K, V> implements Entry<K, V> {
 		private K key;
 		private V value;
 
