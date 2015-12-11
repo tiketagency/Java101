@@ -1,0 +1,9 @@
+package com.boyko.polinom;
+
+public class PolinomTerm {
+	private int coefficient;
+	private int pow;
+	public PolinomTerm() {
+		// TODO Auto-generated constructor stub
+	}
+}

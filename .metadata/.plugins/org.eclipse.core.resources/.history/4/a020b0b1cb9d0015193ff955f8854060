@@ -1,0 +1,9 @@
+package com.boyko.polinom;
+
+public class PolinomParser {
+	private String[] parts;
+
+	public PolinomParser(String expression) {
+		parts = expression.split("\\+");
+	}
+}

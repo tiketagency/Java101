@@ -10,7 +10,6 @@ import friday.todolist.tasks.Task;
 public class TodoTest {
 	public static void main(String[] args) {
 		ToDoList todo = new ToDoList(11);
-		
 		Task algebra = new StudyForAlgebraTask(2, 5f);
 		Task geometry = new LearnGeometryTask(10, 6f);
 		Task sleep = new SleepTask(9, 5f);

@@ -1,0 +1,5 @@
+
+public interface Pandable {
+	void restAndSleep();
+	void gainWeight(double weight);
+}

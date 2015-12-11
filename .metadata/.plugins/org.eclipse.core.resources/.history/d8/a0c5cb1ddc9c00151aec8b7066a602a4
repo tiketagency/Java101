@@ -1,0 +1,10 @@
+package friday.hashmap;
+
+public class HashMapTest {
+
+	public static void main(String[] args) {
+		MyHashMap<String, String> myHashMap = new MyHashMap<String, String>();
+		System.out.println(myHashMap);
+	}
+
+}

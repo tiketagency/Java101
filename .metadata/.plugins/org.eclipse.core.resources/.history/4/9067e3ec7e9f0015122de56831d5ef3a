@@ -1,0 +1,45 @@
+package friday.hashmap;
+
+import java.util.Map;
+
+public class HashMapTest {
+	public static void main(String[] args) {
+		MyHashMap<Integer, String> myHashMap = new MyHashMap<>(1000000);
+		for (int i = 0; i < 10000; i++) {
+			myHashMap.put(i, "aa");
+		}
+//		myHashMap.put("London", "lnd");
+//		myHashMap.put("London", "LOOOOON");
+//		myHashMap.put("London", "lnd");
+//		myHashMap.put("Sofia", "Pesho");
+//		myHashMap.put("Bansko", "Gosho");
+//		myHashMap.put("Varna", "Pesho");
+//		myHashMap.put("Pleven", "Minko");
+//		myHashMap.put("Burgas", "Boyan");
+//		myHashMap.put("Vraca", "Ginka");
+//		myHashMap.put("NUll", null);
+//		myHashMap.put("Pirdop", "pir");
+//		myHashMap.put("Zlatica", "zla");
+//		myHashMap.put("Samokov", "sam");
+//		myHashMap.put("Razgrad", "raz");
+//		//System.out.println(myHashMap);
+//		myHashMap.put("Plovdiv", "plv");
+//		//System.out.println(myHashMap);
+//		myHashMap.put("Lukovit", "luk");
+//		//System.out.println(myHashMap);
+//		myHashMap.put("Ruse", "rus");
+//		//System.out.println(myHashMap);
+//		myHashMap.put("Vidin", "vid");
+//		myHashMap.put("Berlin", "ber");
+//		myHashMap.put("Madrid", "mad");
+//		myHashMap.put("Paris", "par");
+//		System.out.println(myHashMap.remove("Sofia"));
+		System.out.println(myHashMap);
+//		System.out.println(myHashMap.containsKey("Sofia"));
+//		System.out.println(myHashMap.values());
+//		System.out.println(myHashMap.entrySet());
+		for (String string : myHashMap.values()) {
+			System.out.println(string);
+		}
+	}
+}

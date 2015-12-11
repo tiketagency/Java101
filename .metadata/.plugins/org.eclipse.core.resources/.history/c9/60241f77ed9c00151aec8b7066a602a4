@@ -1,0 +1,19 @@
+package friday.hashmap;
+
+public class HashMapTest {
+
+	public static void main(String[] args) {
+		MyHashMap<String, String> myHashMap = new MyHashMap<String, String>(1000);
+		myHashMap.put("Sofia", "Pesho");
+		myHashMap.put("Bansko", "Gosho");
+		myHashMap.put("Varna", "Pesho");
+		myHashMap.put("Pleven", "Minko");
+		myHashMap.put("Burgas", "Boyan");
+		myHashMap.put("Vraca", "Ginka");
+		myHashMap.put("NUll", null);
+		System.out.println(myHashMap.remove("Pleven"));
+		System.out.println(myHashMap);
+		//System.out.println(myHashMap.get("Bansko"));
+	}
+
+}

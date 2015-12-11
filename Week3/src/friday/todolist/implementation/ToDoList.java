@@ -19,7 +19,7 @@ public class ToDoList {
 	}
 
 	public void addTask(Task task) {
-		tasks.add(task);
+		tasks.offer(task);
 	}
 
 	private void reorderElements() {
