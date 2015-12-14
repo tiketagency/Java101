@@ -1,0 +1,10 @@
+package friday.vattaxcalculator;
+
+public class NotSupportedCountryException extends UnsupportedOperationException {
+	private static final long serialVersionUID = 1L;
+
+	public NotSupportedCountryException() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

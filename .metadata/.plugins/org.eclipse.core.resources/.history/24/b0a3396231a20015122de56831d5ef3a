@@ -1,0 +1,13 @@
+package friday.vattaxcalculator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataBaseCountry {
+	List<CountryVatTax> countryVat;
+
+	public DataBaseCountry() {
+		countryVat = new ArrayList<>();
+		
+	}
+}

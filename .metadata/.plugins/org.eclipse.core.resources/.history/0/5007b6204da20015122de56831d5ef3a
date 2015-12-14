@@ -1,0 +1,24 @@
+package friday.shopinventory.database;
+
+import java.util.List;
+
+import friday.shopinventory.model.Product;
+
+public class Inventory {
+	private ProductDataBase db = ProductDataBase.getInstance();
+	private List<Product> availableProducts;
+	private List<Product> allProducts;
+
+	public Inventory(ProductDataBase database) {
+		this.availableProducts = db.getAvailableProducts();
+		allProducts = database.getProducts();
+	}
+
+	public double audit() {
+		double sum = 0;
+		for (Product product : availableProducts) {
+			sum += product.getTotalPrice();
+		}
+		return sum;
+	}
+}

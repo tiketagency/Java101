@@ -1,0 +1,11 @@
+package friday.geometryfigure;
+
+import friday.geometryfigure.point.Point;
+
+public abstract class GeometryFigure {
+	public abstract float getPerimeter();
+
+	public abstract float getArea();
+
+	public abstract Point getCenter();
+}

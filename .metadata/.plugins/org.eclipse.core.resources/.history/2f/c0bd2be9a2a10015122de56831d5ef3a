@@ -1,0 +1,18 @@
+package friday.geometryfigure;
+
+import friday.geometryfigure.point.Point;
+
+public interface GeometryFigure {
+	public float getPerimeter();
+
+	public float getArea();
+
+	public Point getCenter();
+
+	public default int hash() {
+		int hash = 17;
+		hash = hash * 23 + getBaseRight().hashCode();
+		hash = hash * 23 + getBaseLeftTop().hashCode();
+		return hash;
+	}
+}

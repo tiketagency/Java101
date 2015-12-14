@@ -1,0 +1,12 @@
+package friday.shopinventory.model;
+
+import friday.vattaxcalculator.database.DataBaseCountry.Country;
+
+public class Product {
+	private String productName;
+	private int productId;
+	private double netPrice;
+	private double totalPrice;
+	private int quantity;
+	private Country supportedIn;
+}

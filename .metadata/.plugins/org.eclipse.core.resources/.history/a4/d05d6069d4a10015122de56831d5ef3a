@@ -1,0 +1,5 @@
+package friday.geometryfigure.arealessshape;
+
+public interface AreaLessable {
+	public void displayCenter();
+}

@@ -1,0 +1,28 @@
+package friday.vattaxcalculator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class VatTaxCalculator {
+	private List<CountryVatTax> vats = new ArrayList<>();
+
+	public VatTaxCalculator() {
+		for (CountryVatTax vat : CountryVatTax.values()) {
+			vats.add(vat);
+			System.out.println(vat.isDefault());
+		}
+	}
+
+	public double calculateTax(double price, int countryId) {
+		return 0;
+	}
+
+	public double calculateTax(double price) {
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		VatTaxCalculator calc = new VatTaxCalculator();
+		System.out.println(calc.vats);
+	}
+}

@@ -1,0 +1,18 @@
+package friday.vattaxcalculator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class VatTaxCalculator {
+	private List<VATtax> vats = new ArrayList<>();
+
+	public VatTaxCalculator() {
+		for (VATtax vaTtax : vats) {
+			vats.add(vaTtax);
+		}
+	}
+	public static void main(String[] args) {
+		VatTaxCalculator calc = new VatTaxCalculator();
+		System.out.println(calc.vats);
+	}
+}

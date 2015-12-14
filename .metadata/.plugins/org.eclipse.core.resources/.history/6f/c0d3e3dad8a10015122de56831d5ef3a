@@ -1,0 +1,9 @@
+package friday.vattaxcalculator;
+
+public class VatTaxCalculator {
+	private VATtax vat;
+
+	public VatTaxCalculator(VATtax vat) {
+		// TODO Auto-generated constructor stub
+	}
+}

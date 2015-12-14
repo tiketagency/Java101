@@ -1,0 +1,17 @@
+package friday.geometryfigure;
+
+public abstract class RoundShape implements GeometryFigure {
+	public abstract Point getLeftVertex();
+
+	public abstract Point getRightVertex();
+
+	public abstract Point getUpperVertex();
+
+	public abstract Point getLowerVertex();
+
+	@Override
+	public String toString() {
+		return String.format("Ellipse[(height: %.1f, width: %.1f)]", majorAxis,
+				minorAxis / 2);
+	}
+}

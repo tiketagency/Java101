@@ -1,0 +1,35 @@
+package friday.geometryfigure.point;
+
+public final class Rectangle {
+	private Point upperLeft;
+	private Point lowerRight;
+
+	public Rectangle(Point p1, Point p2) {
+		if (p1.equals(p2)) {
+			System.out.println("Points are on the same axis.");
+		} else {
+			this.upperLeft = p1;
+			this.lowerRight = p2;
+		}
+	}
+
+	public Rectangle(Rectangle rect) {
+		this(rect.upperLeft, rect.lowerRight);
+	}
+
+	public Point getUpperLeft() {
+		return upperLeft;
+	}
+
+	public Point getUpperRight() {
+
+	}
+
+	public Point getLowerLeft() {
+
+	}
+
+	public Point getLowerRight() {
+		return lowerRight;
+	}
+}

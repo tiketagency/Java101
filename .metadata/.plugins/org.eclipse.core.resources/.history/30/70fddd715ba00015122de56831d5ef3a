@@ -1,0 +1,7 @@
+package friday.geometryfigure;
+
+public interface GeometryFigures {
+	public float getPerimeter();
+
+	public float getArea();
+}

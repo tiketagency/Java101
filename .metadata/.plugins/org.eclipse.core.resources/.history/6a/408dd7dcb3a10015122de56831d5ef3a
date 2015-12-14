@@ -1,0 +1,32 @@
+package friday.geometryfigure;
+
+public class Ellipse implements GeometryFigure{
+	private double majorAxis;
+	private double minorAxis;
+
+	public Ellipse(double majorAxis, double minorAxis) {
+		this.majorAxis = majorAxis;
+		this.minorAxis = minorAxis;
+	}
+
+	public Ellipse(Ellipse ellipse) {
+		this(ellipse.majorAxis, ellipse.minorAxis);
+	}
+
+	@Override
+	public float getPerimeter() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Point getCenter() {
+		return new Point(0,0);
+	}
+}

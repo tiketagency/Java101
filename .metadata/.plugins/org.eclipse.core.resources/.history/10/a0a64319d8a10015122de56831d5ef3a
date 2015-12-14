@@ -1,0 +1,7 @@
+package friday.vattaxcalculator;
+
+public final class CountryVatTax {
+	private int countryId;
+	private VATtax vatTax;
+	private boolean isDefault;
+}

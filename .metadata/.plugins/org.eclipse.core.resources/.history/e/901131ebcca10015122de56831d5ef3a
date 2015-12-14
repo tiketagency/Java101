@@ -1,0 +1,57 @@
+package friday.geometryfigure;
+
+public final class Ellipse extends RoundShape {
+
+	public Ellipse(float majorAxis, float minorAxis) {
+		super(majorAxis, minorAxis);
+	}
+
+	public Ellipse(Ellipse ellipse) {
+		this(ellipse.getMajorAxis(), ellipse.getMinorAxis());
+	}
+
+	@Override
+	public Point getLeftVertex() {
+		return new Point(-getMajorAxis(), 0);
+	}
+
+	@Override
+	public Point getRightVertex() {
+		return new Point(getMajorAxis(), 0);
+	}
+
+	@Override
+	public Point getUpperVertex() {
+		return new Point(0, getMinorAxis());
+	}
+
+	@Override
+	public Point getLowerVertex() {
+		return new Point(0, -getMinorAxis());
+	}
+
+	// PI * SquareRoot of 2 * ((1/2 long axis)squared + (1/2 short
+	// axis)squared).
+	@Override
+	public float getPerimeter() {
+
+		return (float) (Math.PI * (3 * (getMinorAxis() + getMajorAxis()) - Math
+				.sqrt((3 * getMinorAxis() + getMajorAxis())
+						* (3 * getMajorAxis() + getMinorAxis()))));
+	}
+
+	@Override
+	public float getArea() {
+		return (float) (Math.PI * (getMinorAxis() / 2) * (getMajorAxis() / 2));
+	}
+
+	@Override
+	public Point getCenter() {
+		return new Point(0, 0);
+	}
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+}

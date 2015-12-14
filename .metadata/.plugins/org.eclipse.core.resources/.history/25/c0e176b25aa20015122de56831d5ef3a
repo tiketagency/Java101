@@ -1,0 +1,31 @@
+package friday.vattaxcalculator;
+
+import friday.vattaxcalculator.database.DataBaseCountrys.Country;
+
+public class CurrencyConverter {
+	/*
+	 * BULGARIA(0), ENGLAND(1), GERMANY(2), SPAIN(3), ITALY(4), AUSTRIA(5),
+	 * AUSTRALIA( 6);
+	 */
+	public enum CurrencyCourse {
+		BRITISH_POUND(2.7048), EURO(1.95), AUSTRALIAN_DOLLAR(1.28);
+		private double course;
+
+		private CurrencyCourse(double course) {
+			this.course = course;
+		}
+
+		public double getCourse() {
+			return course;
+		}
+	}
+
+	private Country currencyFrom;
+	private Country currencyTo;
+
+	public CurrencyCalculator(Country currencyFrom, Country currencyTo) {
+		this.currencyFrom = currencyFrom;
+		this.currencyTo = currencyTo;
+	}
+
+}

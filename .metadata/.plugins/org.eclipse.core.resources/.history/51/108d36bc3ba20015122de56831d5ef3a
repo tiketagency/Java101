@@ -1,0 +1,48 @@
+package friday.vattaxcalculator;
+
+import java.util.List;
+
+import friday.vattaxcalculator.database.DataBaseCountry;
+import friday.vattaxcalculator.exceptions.NotSupportedCountryException;
+import friday.vattaxcalculator.model.CountryVatTax;
+
+public class VatTaxCalculator {
+	List<CountryVatTax> database;
+
+	public VatTaxCalculator() {
+		database = DataBaseCountry.getDataBase();
+	}
+
+	public String calculateTax(double netPrice, int countryId)
+			throws NotSupportedCountryException {
+		try {
+			CountryVatTax country = database.get(countryId);
+			double countryVatRate = country.getVatRate();
+			String currency = country.getCurrency();
+			return String.format("%s VAT ==> %.1f%% price: %.1f total: %.1f",
+					DataBaseCountry.getCountry(countryId),
+					country.getVatRate(), netPrice,
+					(netPrice * (1 + (countryVatRate / 100))));
+		} catch (Exception e) {
+			throw new NotSupportedCountryException();
+		}
+	}
+
+	public String calculateTax(double price)
+			throws NotSupportedCountryException {
+		try {
+			double countryVatRate = CountryVatTax.defaultCountry().getVatRate();
+			return price * (1 + (countryVatRate / 100))
+					+ CountryVatTax.defaultCountry().getCurrency();
+		} catch (Exception e) {
+			throw new NotSupportedCountryException();
+		}
+	}
+
+	public static void main(String[] args) {
+		VatTaxCalculator calc = new VatTaxCalculator();
+		// this example throws NotSupportedCountryException
+		System.out.println(calc.calculateTax(100, 6));
+		System.out.println(calc.calculateTax(100));
+	}
+}

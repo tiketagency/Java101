@@ -1,0 +1,7 @@
+package friday.geometryfigure.point;
+
+public final class Triangle {
+	private Point lowerLeft;
+	private Point lowerRight;
+	private Point pik;
+}

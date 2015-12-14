@@ -1,0 +1,25 @@
+package friday.vattaxcalculator;
+
+public enum CoiuntryVatTax {
+	BULGARIA(20, true), ENGLAND(15, false), GERMANY(10, false), SPAIN(15, false), ITALY(
+			15, false);
+	private int tax;
+	private boolean isDefault;
+
+	private VATtax(int tax, boolean isDefault) {
+		this.tax = tax;
+		this.setDefault(isDefault);
+	}
+
+	public int getTax() {
+		return tax;
+	}
+
+	public boolean isDefault() {
+		return isDefault;
+	}
+
+	public void setDefault(boolean isDefault) {
+		this.isDefault = isDefault;
+	}
+}

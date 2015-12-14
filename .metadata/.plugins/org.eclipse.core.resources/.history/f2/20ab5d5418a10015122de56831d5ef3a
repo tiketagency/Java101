@@ -1,0 +1,76 @@
+package friday.geometryfigure.polygon;
+
+import friday.geometryfigure.point.Point;
+
+public final class Triangle implements Polygon {
+	private Point lowerLeft;
+	private Point lowerRight;
+	private Point pik;
+	private LineSegment left;
+	private LineSegment right;
+	private LineSegment base;
+
+	public Triangle(Point lowerLeft, Point lowerRight, Point pik) {
+		if (pik.getX() == lowerLeft.getX()) {
+			throw new IllegalArgumentException("Points are on the same axis.");
+		}
+		this.lowerLeft = lowerLeft;
+		this.lowerRight = lowerRight;
+		this.pik = pik;
+		left = new LineSegment(lowerLeft, pik);
+		right = new LineSegment(lowerRight, pik);
+		base = new LineSegment(lowerLeft, lowerRight);
+	}
+
+	public Triangle(Triangle triangle) {
+		this(triangle.lowerLeft, triangle.lowerRight, triangle.pik);
+	}
+
+	@Override
+	public void display() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public float getPerimeter() {
+		return left.getLength() + right.getLength() + base.getLength();
+	}
+
+	@Override
+	public float getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Point getCenter() {
+		float x = (lowerLeft.getX() + lowerRight.getX() + pik.getX()) / 3;
+		float y = (lowerLeft.getY() + lowerRight.getY() + pik.getY()) / 3;
+		return new Point(x, y);
+	}
+
+	private Point baseMiddle() {
+		return new Point(lowerRight.getX() - (base.getLength() / 2),
+				lowerLeft.getY());
+	}
+
+	private float getHeight() {
+		return new LineSegment(baseMiddle(), pik).getLength();
+	}
+
+	public static void main(String[] args) {
+		Triangle tr = new Triangle(new Point(2, 0), new Point(8, 0), new Point(
+				4, 4));
+		System.out.println(tr.getHeight());
+		System.out.println(tr.getCenter());
+		System.out.println(tr);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Triangle[(x: %.1f,y: %.1f),(height: %.1f,base: %.1f)]",
+				lowerLeft.getX(), lowerLeft.getY(), getHeight(),
+				base.getLength());
+	}
+}

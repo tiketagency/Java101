@@ -1,0 +1,34 @@
+package friday.vattaxcalculator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataBaseCountry {
+	// BULGARIA(1, 20, true, " lv."), ENGLAND(2, 20, false, " pounds"),
+	// GERMANY(3,
+	// 19, false, " euro"), SPAIN(4, 21, false, " euro"), ITALY(5, 22,
+	// false, " euro"), AUSTRIA(6, 20, false, " euro");
+	public enum Country {
+		BULGARIA, ENGLAND, GERMANY, SPAIN, ITALY, AUSTRIA;
+	}
+
+	List<CountryVatTax> countryVat;
+
+	public DataBaseCountry() {
+		countryVat = new ArrayList<>();
+		countryVat.add(new CountryVatTax(0, 20, true, "lv."));
+		countryVat.add(new CountryVatTax(1, 20, false, "pounds"));
+		countryVat.add(new CountryVatTax(2, 19, false, "euro"));
+		countryVat.add(new CountryVatTax(3, 21, false, "euro"));
+		countryVat.add(new CountryVatTax(4, 22, false, "euro"));
+		countryVat.add(new CountryVatTax(5, 20, false, "euro"));
+	}
+
+	public Country getCountry(int id) {
+		return Country.values()[id];
+	}
+	public static void main(String[] args) {
+		DataBaseCountry db = new DataBaseCountry();
+		System.out.println(db.getCountry(5));
+	}
+}

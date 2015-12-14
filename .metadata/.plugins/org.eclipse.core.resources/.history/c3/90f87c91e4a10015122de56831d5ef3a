@@ -1,0 +1,35 @@
+package friday.vattaxcalculator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class VatTaxCalculator {
+	private List<CountryVatTax> vats = new ArrayList<>();
+
+	public VatTaxCalculator() {
+		for (CountryVatTax vat : CountryVatTax.values()) {
+			vats.add(vat);
+			System.out.println(vat.isDefault());
+		}
+	}
+
+	public double calculateTax(double netPrice, int countryId)
+			throws NotSupportedCountryException {
+		for (CountryVatTax country : CountryVatTax.values()) {
+			if (country.getCountryId() == countryId) {
+				double vatRate = country.getVatRate() / 100;
+				double totalPrice = netPrice * vatRate;
+			}
+		}
+		return 0;
+	}
+
+	public double calculateTax(double price) {
+		return CountryVatTax.defaultCountry().getVatRate() * price;
+	}
+
+	public static void main(String[] args) {
+		VatTaxCalculator calc = new VatTaxCalculator();
+		System.out.println(calc.vats);
+	}
+}

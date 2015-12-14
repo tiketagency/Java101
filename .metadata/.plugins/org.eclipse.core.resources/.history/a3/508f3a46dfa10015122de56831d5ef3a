@@ -1,0 +1,35 @@
+package friday.vattaxcalculator;
+
+public enum CountryVatTax {
+	BULGARIA(1, 20, true), ENGLAND(2, 15, false), GERMANY(3, 10, false), SPAIN(
+			4, 15, false), ITALY(5, 15, false);
+	private int countryId;
+	private double tax;
+	private boolean isDefault;
+
+	private CountryVatTax(int id, double tax, boolean isDefault) {
+		setCountryId(id);
+		this.tax = tax;
+		this.setDefault(isDefault);
+	}
+
+	public double getTax() {
+		return tax;
+	}
+
+	public boolean isDefault() {
+		return isDefault;
+	}
+
+	public void setDefault(boolean isDefault) {
+		this.isDefault = isDefault;
+	}
+
+	public int getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
+	}
+}

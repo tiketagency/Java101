@@ -1,0 +1,25 @@
+package friday.geometryfigure;
+
+public final class Circle extends Ellipse {
+	private float radius;
+
+	public Circle(float radius) {
+		super(radius, radius);
+		this.radius = Math.abs(radius);
+	}
+
+	public Circle(Circle circle) {
+		this(circle.radius);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Circle[%s,(height: %.1f, width: %.1f)]", center,
+				radius, radius / 2);
+	}
+
+	public static void main(String[] args) {
+		Circle c = new Circle(5);
+		System.out.println(c.getArea());
+	}
+}

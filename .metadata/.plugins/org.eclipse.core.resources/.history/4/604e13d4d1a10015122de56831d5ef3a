@@ -1,0 +1,71 @@
+package friday.geometryfigure.roundshape;
+
+import friday.geometryfigure.GeometryFigure;
+import friday.geometryfigure.Point;
+
+public final class Circle extends RoundShape {
+	private float radius;
+
+	public Circle(float radius) {
+		super(new Ellipse(radius, radius));
+	}
+
+	public Circle(Circle circle) {
+		this(circle.getMajorAxis());
+	}
+
+	public float getPerimeter() {
+		return (float) (2 * Math.PI * ((Ellipse) ellipse).getMajorAxis());
+	}
+
+	@Override
+	public float getArea() {
+		return ellipse.getArea();
+	}
+
+	@Override
+	public Point getCenter() {
+		return ellipse.getCenter();
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Circle[(height: %.1f, width: %.1f)]",
+				((Ellipse) ellipse).getMajorAxis(),
+				((Ellipse) ellipse).getMajorAxis() / 2);
+	}
+
+	public static void main(String[] args) {
+		Circle c = new Circle(5);
+		System.out.println(c.getArea());
+		// make copy of c
+		Circle c2 = new Circle(c);
+		System.out.println(c2.getPerimeter());
+		Ellipse el = new Ellipse(10, 5);
+		System.out.println(el.getPerimeter());
+	}
+
+	@Override
+	public Point getLeftVertex() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Point getRightVertex() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Point getUpperVertex() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Point getLowerVertex() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

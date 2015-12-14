@@ -1,0 +1,42 @@
+package friday.shopinventory.database;
+
+import java.util.List;
+
+import friday.shopinventory.model.Product;
+
+public class Inventory {
+	private List<Product> availableProducts;
+	private List<Product> allProducts;
+
+	public Inventory(List<Product> availableProducts) {
+		this.availableProducts = availableProducts;
+		allProducts = ProductDataBase.getProducts();
+	}
+	public Inventory() {
+		allProducts = ProductDataBase.getProducts();
+	}
+
+	public double audit() {
+		double sum = 0;
+		for (Product product : availableProducts) {
+			sum += product.getTotalPrice();
+		}
+		return sum;
+	}
+
+	public void showAllAvailableProducts() {
+		for (Product product : availableProducts) {
+			System.out.println(product);
+		}
+	}
+
+	public void showAllProducts() {
+		for (Product product : allProducts) {
+			System.out.println(product);
+		}
+	}
+	public static void main(String[] args) {
+		Inventory i = new Inventory();
+		i.showAllProducts();
+	}
+}

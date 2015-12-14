@@ -1,0 +1,81 @@
+package friday.geometryfigure.point;
+
+public final class Rectangle {
+	private Point upperLeft;
+	private Point lowerRight;
+	private Point upperRight;
+	private Point lowerLeft;
+
+	public Rectangle(Point p1, Point p2) {
+		if (p1.equals(p2)) {
+			System.out.println("Points are on the same axis.");
+		} else {
+			this.upperLeft = p1;
+			this.lowerRight = p2;
+			upperRight = new Point(lowerRight.getX(), upperLeft.getY());
+			lowerLeft = new Point(lowerRight.getX(), upperLeft.getY());
+		}
+	}
+
+	public Rectangle(Rectangle rect) {
+		this(rect.upperLeft, rect.lowerRight);
+	}
+
+	public Point getUpperLeft() {
+		return upperLeft;
+	}
+
+	public Point getUpperRight() {
+		return upperRight;
+	}
+
+	public Point getLowerLeft() {
+		return lowerLeft;
+	}
+
+	public Point getLowerRight() {
+		return lowerRight;
+	}
+
+	public LineSegment upperVertex() {
+		return new LineSegment(upperLeft, upperRight);
+	}
+
+	public LineSegment lowerVertex() {
+		return new LineSegment(lowerLeft, lowerRight);
+	}
+
+	public LineSegment leftVertex() {
+		return new LineSegment(lowerLeft, upperLeft);
+	}
+
+	public LineSegment rightVertex() {
+		return new LineSegment(lowerRight, upperRight);
+	}
+
+	public int getPerimeter() {
+		return (2 * upperVertex().getLength()) + (2 * leftVertex().getLength());
+	}
+
+	public int getArea() {
+		return upperVertex().getLength() * rightVertex().getLength();
+	}
+
+	public Point getCenter() {
+		return new Point((this.lowerLeft.getX() + this.upperLeft.getX()) / 2,
+				(this.lowerLeft.getY() + lowerRight.getY()) / 2);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Rectangle[(%d,%d),(%d,%d)]", upperLeft.getX(),
+				upperRight.getY(), upperVertex().getLength(), rightVertex()
+						.getLength());
+	}
+
+	public static void main(String[] args) {
+		Rectangle rect = new Rectangle(new Point(1, 5), new Point(10, 3));
+		System.out.println(rect);
+		System.out.println(rect.getCenter());
+	}
+}

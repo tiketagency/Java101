@@ -1,0 +1,37 @@
+package friday.geometryfigure.point;
+
+import friday.geometryfigure.GeometryFigures;
+
+public final class LineSegment extends GeometryFigures {
+	private Point p1;
+	private Point p2;
+
+	public LineSegment(Point p1, Point p2) {
+		if (p1.equals(p2)) {
+			System.out.println("Cannot create a line segment with zero ");
+		} else {
+			this.p1 = p1;
+			this.p2 = p2;
+		}
+	}
+
+	public LineSegment(LineSegment line) {
+		this(line.p1, line.p2);
+	}
+
+	public int getLength() {
+		return (int) Math.sqrt((p1.getX() - p2.getX())
+				* (p1.getX() - p2.getX()) + (p1.getY() - p2.getY())
+				* (p1.getY() - p2.getY()));
+	}
+
+	@Override
+	public String toString() {
+		return "LineSegment [" + p1 + "," + p2 + "]";
+	}
+
+	public static void main(String[] args) {
+		LineSegment l = new LineSegment(new Point(2, 2), new Point(5, 6));
+		System.out.println(l.getLength());
+	}
+}

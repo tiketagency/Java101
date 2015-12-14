@@ -1,0 +1,26 @@
+package friday.geometryfigure.polygon;
+
+import friday.geometryfigure.GeometryFigure;
+import friday.geometryfigure.point.Point;
+
+public abstract class Polygon implements GeometryFigure {
+
+	private Point baseLeft;
+	private Point baseRight;
+	private Point baseLeftTop;
+	private Point baseRightTop;
+	private LineSegment left;
+	private LineSegment right;
+	private LineSegment base;
+
+	public Polygon(Point baseLeft, Point baseRight, Point baseLeftTop,
+			Point baseRightTop) {
+		this.baseLeft = baseLeft;
+		this.baseRight = baseRight;
+		this.baseLeftTop = baseLeftTop;
+		this.baseRightTop = baseRightTop;
+		left = new LineSegment(baseLeft, baseLeftTop);
+		right = new LineSegment(baseRight, baseRightTop);
+		base = new LineSegment(baseLeft, baseRight);
+	}
+}

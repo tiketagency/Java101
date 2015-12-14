@@ -1,0 +1,15 @@
+package friday.geometryfigure.polygon;
+
+public abstract class Polygon {
+
+	private LineSegment base;
+	private LineSegment leftVertice;
+	private LineSegment rightVertice;
+
+	public Polygon(LineSegment base, LineSegment leftVertice,
+			LineSegment rightVertice) {
+		this.base = base;
+		this.leftVertice = leftVertice;
+		this.rightVertice = rightVertice;
+	}
+}

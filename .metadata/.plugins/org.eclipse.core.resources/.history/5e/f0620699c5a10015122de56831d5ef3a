@@ -1,0 +1,69 @@
+package friday.geometryfigure;
+
+public final class Ellipse implements GeometryFigure {
+	private float majorAxis;
+	private float minorAxis;
+
+	public Ellipse(float majorAxis, float minorAxis) {
+		this.majorAxis = majorAxis;
+		this.minorAxis = minorAxis;
+	}
+
+	public Ellipse(Ellipse ellipse) {
+		this(ellipse.majorAxis, ellipse.minorAxis);
+	}
+
+	public float getMajorAxis() {
+		return majorAxis;
+	}
+
+	public void setMajorAxis(float majorAxis) {
+		this.majorAxis = majorAxis;
+	}
+
+	public float getMinorAxis() {
+		return minorAxis;
+	}
+
+	public void setMinorAxis(float minorAxis) {
+		this.minorAxis = minorAxis;
+	}
+
+	public Point getLeftVertex() {
+		return new Point(-majorAxis, 0);
+	}
+
+	public Point getRightVertex() {
+		return new Point(majorAxis, 0);
+	}
+
+	public Point getUpperVertex() {
+		return new Point(0, minorAxis);
+	}
+
+	public Point getLowerVertex() {
+		return new Point(0, -minorAxis);
+	}
+
+	@Override
+	public float getPerimeter() {
+		return (float) (Math.PI * (3 * (minorAxis + majorAxis) - Math
+				.sqrt((3 * minorAxis + majorAxis) * (3 * majorAxis + minorAxis))));
+	}
+
+	@Override
+	public float getArea() {
+		return (float) (Math.PI * minorAxis * majorAxis);
+	}
+
+	@Override
+	public Point getCenter() {
+		return new Point(0, 0);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Ellipse[(height: %.1f, width: %.1f)]", majorAxis,
+				minorAxis / 2);
+	}
+}

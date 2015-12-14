@@ -1,0 +1,31 @@
+package friday.geometryfigure.point;
+
+import friday.geometryfigure.GeometryFigure;
+
+public final class Circle implements GeometryFigure{
+	private Point center;
+
+	public Circle(Point center) {
+		this.center = center;
+	}
+
+	public Circle(Circle circle) {
+		this(circle.center);
+	}
+
+	public Point getCenter() {
+		return center;
+	}
+
+	@Override
+	public float getPerimeter() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

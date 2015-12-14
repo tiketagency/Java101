@@ -1,0 +1,14 @@
+package friday.shopinventory.database;
+
+import java.util.List;
+
+import friday.shopinventory.model.Product;
+
+public class Inventory {
+	private List<Product> availableProducts;
+
+	public Inventory(ProductDataBase database) {
+		this.availableProducts = database.getAvailableProducts();
+	}
+
+}

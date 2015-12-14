@@ -1,0 +1,10 @@
+package friday.vattaxcalculator;
+
+public enum VATtax {
+	BULGARIA(20), ENGLAND(15), GERMANY(10), SPAIN(15), ITALY(15);
+	private int tax;
+
+	private VATtax(int tax) {
+		this.tax = tax;
+	}
+}

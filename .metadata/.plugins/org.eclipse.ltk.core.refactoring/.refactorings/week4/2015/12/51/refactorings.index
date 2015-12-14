@@ -1,0 +1,22 @@
+1450021293504	Move compilation unit
+1450021298023	Move compilation unit
+1450021302263	Delete element
+1450027651078	Delete element
+1450033966878	Delete element
+1450033990236	Move compilation units
+1450034006422	Move compilation unit
+1450036938112	Move compilation unit
+1450036943020	Delete element
+1450036946228	Delete element
+1450040570408	Encapsulate field 'tax'
+1450040974994	Encapsulate field 'isDefault'
+1450041442538	Delete element
+1450041597786	Encapsulate field 'countryId'
+1450044732883	Encapsulate field 'currency'
+1450080855030	Move compilation unit
+1450080878693	Move compilation unit
+1450080908925	Move compilation unit
+1450083064740	Encapsulate field 'id'
+1450083841668	Rename type 'DataBaseCountry'
+1450084447614	Encapsulate field 'quantity'
+1450091362264	Encapsulate field 'netPrice'

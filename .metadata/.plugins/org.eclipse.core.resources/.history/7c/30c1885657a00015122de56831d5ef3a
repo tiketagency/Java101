@@ -1,0 +1,22 @@
+package friday.geometryfigure.polygon;
+
+import friday.geometryfigure.point.Point;
+
+public final class Triangle {
+	private Point lowerLeft;
+	private Point lowerRight;
+	private Point pik;
+
+	public Triangle(Point lowerLeft, Point lowerRight, Point pik) {
+		if (lowerLeft.equals(lowerRight)) {
+
+		}
+		this.lowerLeft = lowerLeft;
+		this.lowerRight = lowerRight;
+		this.pik = pik;
+	}
+
+	public Triangle(Triangle triangle) {
+		this(triangle.lowerLeft, triangle.lowerRight, triangle.pik);
+	}
+}
