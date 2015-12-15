@@ -1,0 +1,29 @@
+package friday.shopinventory.model;
+
+import java.util.List;
+
+import friday.shopinventory.database.Inventory;
+import friday.shopinventory.model.Order.ProductInfo;
+
+public class PayDesk {
+	private List<Order> order;
+	private Inventory inventory;
+
+	public PayDesk(List<Order> list) {
+		this.order = list;
+		inventory = new Inventory();
+	}
+
+	public double orderAudit() {
+		double sum = 0;
+		for (Order order2 : order) {
+			for (ProductInfo<Integer, Integer> productInfo : order2
+					.getProducts()) {
+				Product product = inventory.getAllProducts().get(
+						productInfo.getId());
+				sum += product.getTotalPrice();
+			}
+		}
+		return sum;
+	}
+}

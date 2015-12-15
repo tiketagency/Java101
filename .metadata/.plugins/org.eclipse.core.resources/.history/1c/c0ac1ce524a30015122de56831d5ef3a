@@ -14,10 +14,7 @@ public class Inventory extends Storage {
 	public double audit() {
 		double sum = 0;
 		for (Product product : getAllProducts()) {
-			if (product.getQuantity()>0) {
-				
-				sum += (product.getTotalPrice() * product.getQuantity());
-			}
+			sum += (product.getTotalPrice() * product.getQuantity());
 		}
 		return sum;
 	}
