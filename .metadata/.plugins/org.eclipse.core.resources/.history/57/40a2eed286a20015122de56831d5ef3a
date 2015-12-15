@@ -1,0 +1,7 @@
+package friday.vector;
+
+public interface VectorOperations {
+	public void add(Vector vector);
+
+	public void subtract(Vector vector);
+}

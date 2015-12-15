@@ -1,0 +1,28 @@
+package com.boyko.vat.database;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.boyko.vat.models.Country;
+import com.boyko.vat.models.CurrencyCourse;
+
+public class CountryDatabase {
+
+	private Map<Integer, Country> countries;
+
+	public CountryDatabase() {
+		countries = new HashMap<>();
+		countries.put(359, new Country(20, 359, true, CurrencyCourse.LV));
+		countries.put(0044, new Country(20, 0044, false, CurrencyCourse.UK));
+		countries.put(39, new Country(19, 39, false, CurrencyCourse.EURO));
+		countries.put(34, new Country(20, 34, false, CurrencyCourse.EURO));
+		countries.put(49, new Country(21, 49, false, CurrencyCourse.EURO));
+		countries.put(43, new Country(22, 43, false, CurrencyCourse.EURO));
+		countries.put(61, new Country(10, 61, false,
+				CurrencyCourse.AUSTRALIAN_DOLLAR));
+	}
+
+	public Country getCountry(int countryCode) {
+		return countries.get(countryCode);
+	}
+}

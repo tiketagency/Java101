@@ -1,0 +1,24 @@
+package friday.shopinventory.database;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import friday.shopinventory.model.Product;
+
+public class Storage {
+
+	private static List<Product> availableProducts;
+
+	public static List<Product> getAllProducts() {
+		return ProductDataBase.getInstance().getProducts();
+	}
+
+	public static getAvailableProducts() {
+		availableProducts = new ArrayList<>();
+		for (Product product : getAllProducts()) {
+			if (product.getQuantity() > 0) {
+				availableProducts.add(product);
+			}
+		}
+	}
+}

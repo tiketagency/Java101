@@ -29,48 +29,24 @@ public abstract class Polygon implements GeometryFigure {
 		return baseLeft;
 	}
 
-	public void setBaseLeft(Point baseLeft) {
-		this.baseLeft = baseLeft;
-	}
-
 	public Point getBaseRight() {
 		return baseRight;
-	}
-
-	public void setBaseRight(Point baseRight) {
-		this.baseRight = baseRight;
 	}
 
 	public Point getBaseLeftTop() {
 		return baseLeftTop;
 	}
 
-	public void setBaseLeftTop(Point baseLeftTop) {
-		this.baseLeftTop = baseLeftTop;
-	}
-
 	public Point getBaseRightTop() {
 		return baseRightTop;
-	}
-
-	public void setBaseRightTop(Point baseRightTop) {
-		this.baseRightTop = baseRightTop;
 	}
 
 	public LineSegment getLeft() {
 		return left;
 	}
 
-	public void setLeft(LineSegment left) {
-		this.left = left;
-	}
-
 	public LineSegment getRight() {
 		return right;
-	}
-
-	public void setRight(LineSegment right) {
-		this.right = right;
 	}
 
 	public LineSegment getBase() {

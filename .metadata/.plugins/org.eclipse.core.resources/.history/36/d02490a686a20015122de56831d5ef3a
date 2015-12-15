@@ -1,0 +1,5 @@
+package friday.vector;
+
+public interface VectorOperations {
+
+}

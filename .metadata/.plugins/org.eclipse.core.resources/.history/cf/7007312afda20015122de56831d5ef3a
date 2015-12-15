@@ -1,0 +1,17 @@
+import com.boyko.vat.database.CountryDatabase;
+
+public class VatCalculator {
+	private CountryDatabase db;
+
+	public VatCalculator(CountryDatabase db) {
+		this.db = db;
+	}
+
+	public double calculateTax(double price, int countryCode) {
+		return 0;
+	}
+
+	public double calculateTax(double price) {
+		return 0;
+	}
+}

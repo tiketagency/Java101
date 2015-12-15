@@ -1,0 +1,17 @@
+package friday.shopinventory.database;
+
+import java.util.List;
+
+import friday.shopinventory.model.Product;
+
+public abstract class Storage {
+	private static ProductDataBase db = ProductDataBase.getInstance();
+
+	public static List<Product> getAllProducts() {
+		return db.getProducts();
+	}
+
+	public List<Product> getAvailableProducts() {
+		return db.getAvailableProducts();
+	}
+}

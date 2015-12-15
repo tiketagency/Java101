@@ -1,0 +1,71 @@
+package friday.shopinventory.database;
+
+import java.util.List;
+
+import friday.shopinventory.exceptions.ProductNotFoundException;
+import friday.shopinventory.model.Order;
+import friday.shopinventory.model.Order.ProductInfo;
+import friday.shopinventory.model.Product;
+import friday.vattaxcalculator.calculator.CurrencyConverter;
+import friday.vattaxcalculator.database.CountryDatabase;
+import friday.vattaxcalculator.model.Country;
+
+public class Inventory {
+	private List<Product> availableProducts;
+	private ProductDataBase productsDB;
+	private CountryDatabase countriesDB;
+
+	public Inventory(List<Product> availableProducts) {
+		this.availableProducts = availableProducts;
+		db = new ProductDataBase();
+	}
+
+	public Inventory() {
+
+	}
+
+	public double audit() {
+		double sum = 0;
+		for (Product product : availableProducts) {
+			sum += product.getTotalPrice();
+		}
+		return sum;
+	}
+
+	public void showAllAvailableProducts() {
+		for (Product product : availableProducts) {
+			System.out.println(product);
+		}
+	}
+
+	// return sum converted to Bulgarian lev
+	public double requestOrder(Order order) throws ProductNotFoundException {
+		try {
+			double sum = 0;
+			for (ProductInfo<Integer, Integer> info : order.getInfo()) {
+				Product product = db.getProducts().get(
+						info.getId());
+				Country country = product.getSupportedIn();
+				double productTotalPrice = product.getTotalPrice();
+				if (!country.equals(Country.BULGARIA)) {
+					double totalPriceInLeva = CurrencyConverter.convert(
+							productTotalPrice, country);
+					sum += totalPriceInLeva;
+				} else {
+					sum += productTotalPrice;
+				}
+			}
+			return sum;
+		} catch (Exception e) {
+			throw new ProductNotFoundException();
+		}
+	}
+
+	// public static void main(String[] args) throws ProductNotFoundException {
+	// Inventory in = new Inventory(ProductDataBase.getInstance()
+	// .getAvailableProducts());
+	// Order order = new Order(2, 3);
+	// in.showAllAvailableProducts();
+	// System.out.println(in.requestOrder(order));
+	// }
+}

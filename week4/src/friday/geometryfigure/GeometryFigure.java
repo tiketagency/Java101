@@ -1,6 +1,5 @@
 package friday.geometryfigure;
 
-
 public interface GeometryFigure {
 	public float getPerimeter();
 

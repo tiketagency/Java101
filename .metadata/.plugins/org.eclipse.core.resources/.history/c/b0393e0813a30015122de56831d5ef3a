@@ -1,0 +1,42 @@
+package friday.shopinventory.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import friday.shopinventory.database.Inventory;
+import friday.shopinventory.exceptions.ProductNotFoundException;
+
+public class Customer {
+
+	private String name;
+	private int id;
+	private List<Order> orders;
+
+	public Customer(String name, int id) {
+		this.name = name;
+		this.id = id;
+		orders = new ArrayList<>();
+	}
+
+	public Order makeOrder(int... productsId) throws ProductNotFoundException {
+		Order order = new Order(productsId);
+		new Inventory().requestOrder(order);
+		orders.add(order);
+		return order;
+	}
+
+	public void showOrders() {
+		System.out.printf("%s make this orders:%n", name);
+		for (Order order : orders) {
+			System.out.println(order);
+		}
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public int getId() {
+		return id;
+	}
+}

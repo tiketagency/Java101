@@ -1,0 +1,5 @@
+package com.boyko.vat.database;
+
+public class CountryDatabase {
+
+}

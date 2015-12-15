@@ -1,8 +1,8 @@
 package friday.shopinventory.model;
 
-import friday.vattaxcalculator.VatTaxCalculator;
-import friday.vattaxcalculator.database.DataBaseCountrys;
-import friday.vattaxcalculator.enums.Country;
+import friday.vattaxcalculator.calculator.VatCalculator;
+import friday.vattaxcalculator.database.CountryDatabase;
+import friday.vattaxcalculator.model.Country;
 
 public class Product {
 	private String productName;
@@ -10,17 +10,24 @@ public class Product {
 	private double netPrice;
 	private double totalPrice;
 	private int quantity;
+	private int countryCode;
 	private Country supportedIn;
 
 	public Product(String productName, int productId, double netPrice,
-			int quantity, Country supportedIn) {
+			int quantity, int countryCode) {
+		CountryDatabase db = CountryDatabase.getInstance();
+		supportedIn = db.getCountry(countryCode);
 		this.productName = productName;
 		this.productId = productId;
 		this.netPrice = netPrice;
-		this.totalPrice = new VatTaxCalculator(new DataBaseCountrys())
-				.calculateTax(netPrice, supportedIn.getId());
+		if (supportedIn.isDefault()) {
+			this.totalPrice = new VatCalculator(db).calculateTax(netPrice);
+		} else {
+			this.totalPrice = new VatCalculator(db).calculateTax(netPrice,
+					countryCode);
+		}
 		this.setQuantity(quantity);
-		this.supportedIn = supportedIn;
+		this.countryCode = countryCode;
 	}
 
 	public int getQuantity() {
@@ -35,14 +42,6 @@ public class Product {
 		return totalPrice;
 	}
 
-	@Override
-	public String toString() {
-		return String
-				.format("Product[name: %s, id: %d, netPrice: %.1f, totalPrice: %.1f, quantity: %d, supportedIn: %s]",
-						productName, productId, getNetPrice(), totalPrice,
-						quantity, supportedIn);
-	}
-
 	public double getNetPrice() {
 		return netPrice;
 	}
@@ -55,4 +54,15 @@ public class Product {
 		return productName;
 	}
 
+	public int getCountryCode() {
+		return countryCode;
+	}
+
+	@Override
+	public String toString() {
+		return String
+				.format("Product[name: %s, id: %d, netPrice: %.1f, totalPrice: %.1f, quantity: %d, supportedIn: %s]",
+						productName, productId, getNetPrice(), totalPrice,
+						quantity, supportedIn.getCountryName());
+	}
 }

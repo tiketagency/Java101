@@ -1,0 +1,39 @@
+package com.boyko.vat.models;
+
+public final class Country {
+	private double vat;
+	private int code;
+	private boolean isDefault;
+	private CurrencyCourse currency;
+
+	public Country(double vat, int code, boolean isDefault,
+			CurrencyCourse currency) {
+		super();
+		this.vat = vat;
+		this.code = code;
+		this.isDefault = isDefault;
+		this.currency = currency;
+	}
+
+	public double getVat() {
+		return vat;
+	}
+
+	public int getCode() {
+		return code;
+	}
+
+	public boolean isDefault() {
+		return isDefault;
+	}
+
+	public CurrencyCourse getCurrency() {
+		return currency;
+	}
+
+	@Override
+	public String toString() {
+		return "Country [vat=" + vat + ", code=" + code + ", isDefault="
+				+ isDefault + ", currency=" + currency + "]";
+	}
+}

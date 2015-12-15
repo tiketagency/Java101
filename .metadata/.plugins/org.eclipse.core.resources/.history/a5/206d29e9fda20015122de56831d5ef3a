@@ -1,0 +1,5 @@
+package com.boyko.vat.test;
+
+public class VatCalculatorTest {
+
+}

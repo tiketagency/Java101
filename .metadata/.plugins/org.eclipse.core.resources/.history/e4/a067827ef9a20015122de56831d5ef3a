@@ -1,0 +1,8 @@
+package com.boyko.vat.models;
+
+public class Country {
+	private double vat;
+	private int code;
+	private boolean isDefault;
+	private Currency currency;
+}

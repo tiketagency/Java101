@@ -1,0 +1,13 @@
+package friday.vector;
+
+public class Vector {
+	private float[] coordinates;
+
+	public Vector(float... coordinates) {
+		this.coordinates = coordinates;
+	}
+
+	public Vector(Vector vector) {
+		this(vector.coordinates);
+	}
+}

@@ -1,0 +1,15 @@
+package com.boyko.vat.models;
+
+public enum CurrencyCourse {
+	POUND(2.7048), EURO(1.95), AUSTRALIAN_DOLLAR(1.28), LV(1);
+	private double course;
+
+	private CurrencyCourse(double course) {
+		this.course = course;
+	}
+
+	public double getCourse() {
+		return course;
+	}
+
+}
