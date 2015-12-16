@@ -1,0 +1,57 @@
+package com.boyko.filemanager;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class FileReader {
+
+	public static String[] readFile() throws FileNotFoundException {
+		Scanner inFile1 = new Scanner(new File("snimki"));
+		StringBuilder sb = new StringBuilder();
+		while (inFile1.hasNext()) {
+			sb.append(inFile1.nextLine());
+		}
+		return sb.toString().split(", ");
+	}
+
+	public static void main(String[] args) throws IOException {
+		walk("/home/boyko/Desktop/snimki");
+	}
+
+	public static void walk(String path) throws IOException {
+
+		File root = new File(path);
+		File[] list = root.listFiles();
+
+		if (list == null)
+			return;
+
+		for (File f : list) {
+			if (f.isDirectory()) {
+				walk(f.getAbsolutePath());
+				// System.out.println("Dir:" + f.getAbsoluteFile());
+			} else {
+				String[] nomera = readFile();
+				// List<String> l = Arrays.asList(nomera);
+				System.out.println(f.getName());
+				String name = f.getName().substring(f.getName().length() - 7,
+						f.getName().length() - 4);
+				String name2 = f.getName().substring(f.getName().length() - 8,
+						f.getName().length() - 4);
+
+				for (int i = 0; i < nomera.length; i++) {
+					if (f.getName().length() > 8 &&( name.equals(nomera[i])|| name2.equals(nomera[i]))) {
+						Files.copy(f.toPath(),
+								new File("pics/" + f.getName()).toPath());
+
+					}
+				}
+
+			}
+		}
+	}
+}

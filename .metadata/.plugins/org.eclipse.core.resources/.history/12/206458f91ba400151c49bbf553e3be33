@@ -1,0 +1,44 @@
+package friday.vattaxcalculator.model;
+
+public final class Country {
+	private final String mCountryName;
+	private final int mVatRate;
+	private final int mCountryCode;
+	private final boolean isDefault;
+	private final CurrencyCourse currency;
+
+	public Country(String countryName, int vat, int countryCode,
+			boolean isDefault, CurrencyCourse currency) {
+		this.mCountryName = countryName;
+		this.mVatRate = vat;
+		this.mCountryCode = countryCode;
+		this.isDefault = isDefault;
+		this.currency = currency;
+	}
+
+	public int getVat() {
+		return mVatRate;
+	}
+
+	public int getCountryCode() {
+		return mCountryCode;
+	}
+
+	public boolean isDefault() {
+		return isDefault;
+	}
+
+	public CurrencyCourse getCurrency() {
+		return currency;
+	}
+
+	public String getCountryName() {
+		return mCountryName;
+	}
+
+	@Override
+	public String toString() {
+		return mCountryName + " [vat=" + mVatRate + ", code=" + mCountryCode
+				+ ", isDefault=" + isDefault + ", currency=" + currency + "]";
+	}
+}

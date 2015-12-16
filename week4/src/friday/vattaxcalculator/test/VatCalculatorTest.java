@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 import friday.vattaxcalculator.calculator.CurrencyConverter;
 import friday.vattaxcalculator.calculator.VatCalculator;
-import friday.vattaxcalculator.database.CountryDatabase;
+import friday.vattaxcalculator.database.CountryManager;
+import friday.vattaxcalculator.exceptions.NotSupportedCountryException;
 import friday.vattaxcalculator.model.Country;
 
 public class VatCalculatorTest {
 	public static void main(String[] args) {
-		CountryDatabase db = new CountryDatabase();
+		CountryManager db = new CountryManager();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Press ENTER to check list countries codes");
 		String enter = sc.nextLine();
@@ -23,7 +24,7 @@ public class VatCalculatorTest {
 		double productPrice = sc.nextDouble();
 		int countryCode = sc.nextInt();
 
-		VatCalculator vatcalc = new VatCalculator(db);
+		VatCalculator vatcalc = new VatCalculator();
 		Country country = db.getCountry(countryCode);
 		System.out.println("You choose " + country.getCountryName());
 

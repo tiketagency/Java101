@@ -1,44 +1,46 @@
 package friday.vattaxcalculator.model;
 
+import friday.vattaxcalculator.exceptions.NotSupportedCountryException;
+
 public final class Country {
-	private String countryName;
-	private int vat;
-	private int countryCode;
-	private boolean isDefault;
-	private CurrencyCourse currency;
+	private final String mCountryName;
+	private final int mVatRate;
+	private final int mCountryCode;
+	private final boolean mIsDefault;
+	private final CurrencyCourse mCurrency;
 
 	public Country(String countryName, int vat, int countryCode,
 			boolean isDefault, CurrencyCourse currency) {
-		this.countryName = countryName;
-		this.vat = vat;
-		this.countryCode = countryCode;
-		this.isDefault = isDefault;
-		this.currency = currency;
+		this.mCountryName = countryName;
+		this.mVatRate = vat;
+		this.mCountryCode = countryCode;
+		this.mIsDefault = isDefault;
+		this.mCurrency = currency;
 	}
 
 	public int getVat() {
-		return vat;
+		return mVatRate;
 	}
 
 	public int getCountryCode() {
-		return countryCode;
+		return mCountryCode;
 	}
 
 	public boolean isDefault() {
-		return isDefault;
+		return mIsDefault;
 	}
 
 	public CurrencyCourse getCurrency() {
-		return currency;
+		return mCurrency;
 	}
 
-	public String getCountryName() {
-		return countryName;
+	public String getCountryName() throws NotSupportedCountryException{
+		return mCountryName;
 	}
 
 	@Override
 	public String toString() {
-		return countryName + " [vat=" + vat + ", code=" + countryCode
-				+ ", isDefault=" + isDefault + ", currency=" + currency + "]";
+		return mCountryName + " [vat=" + mVatRate + ", code=" + mCountryCode
+				+ ", isDefault=" + mIsDefault + ", currency=" + mCurrency + "]";
 	}
 }

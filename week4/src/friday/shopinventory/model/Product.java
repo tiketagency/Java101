@@ -1,7 +1,7 @@
 package friday.shopinventory.model;
 
 import friday.vattaxcalculator.calculator.VatCalculator;
-import friday.vattaxcalculator.database.CountryDatabase;
+import friday.vattaxcalculator.database.CountryManager;
 import friday.vattaxcalculator.model.Country;
 
 public class Product {
@@ -15,7 +15,7 @@ public class Product {
 
 	public Product(String productName, int productId, double netPrice,
 			int quantity, int countryCode) {
-		CountryDatabase db = CountryDatabase.getInstance();
+		CountryManager db = CountryManager.getInstance();
 		supportedIn = db.getCountry(countryCode);
 		this.productName = productName;
 		this.productId = productId;
