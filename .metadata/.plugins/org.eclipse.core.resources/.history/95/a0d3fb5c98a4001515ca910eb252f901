@@ -34,7 +34,7 @@ public final class Country {
 		return mCurrency;
 	}
 
-	public String getCountryName() {
+	public String getCountryName() throws NotSupportedCountryException{
 		return mCountryName;
 	}
 

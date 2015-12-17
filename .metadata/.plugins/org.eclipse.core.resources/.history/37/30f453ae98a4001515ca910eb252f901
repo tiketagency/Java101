@@ -36,7 +36,7 @@ public class CountryManager implements Iterable<Map.Entry<Integer, Country>> {
 
 	public Country getCountry(int countryCode) {
 		if (!countries.containsKey(countryCode)) {
-			throw new NotSupportedCountryException("Not supported country!");
+			throw new NotSupportedCountryException("Not supported country"!);
 		}
 		return countries.get(countryCode);
 	}

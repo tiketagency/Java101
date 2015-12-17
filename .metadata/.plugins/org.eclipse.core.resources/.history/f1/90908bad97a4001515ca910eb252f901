@@ -21,9 +21,10 @@ public class Product {
 		this.productId = productId;
 		this.netPrice = netPrice;
 		if (supportedIn.isDefault()) {
-			this.totalPrice = VatCalculator.calculateTax(netPrice);
+			this.totalPrice = new VatCalculator().calculateTax(netPrice);
 		} else {
-			this.totalPrice = VatCalculator.calculateTax(netPrice, countryCode);
+			this.totalPrice = new VatCalculator().calculateTax(netPrice,
+					countryCode);
 		}
 		this.setQuantity(quantity);
 		this.countryCode = countryCode;

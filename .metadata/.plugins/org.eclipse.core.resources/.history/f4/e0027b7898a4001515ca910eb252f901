@@ -23,25 +23,26 @@ public class VatCalculatorTest {
 				.println("Enter product net price and country code to calculate VAT and total price");
 		double productPrice = sc.nextDouble();
 		int countryCode = sc.nextInt();
+		Country coutry = null;
 		try {
-			Country country = countryManager.getCountry(countryCode);
-			System.out.println("You choose " + country.getCountryName());
-			System.out.printf("VAT in %s is %d%%%n", country.getCountryName(),
-					country.getVat());
-			double totalPrice = VatCalculator.calculateTax(productPrice,
-					countryCode);
-			System.out.printf("Total price of the product in %s is %.1f %s%n",
-					country.getCountryName(), totalPrice, country.getCurrency()
-							.name());
-			double totalPriceInLeva = CurrencyConverter.convert(totalPrice,
-					countryManager.getCountry(countryCode));
-			System.out.printf("%.1f %s converted in leva is %.2f %s",
-					totalPrice, country.getCurrency().name(), totalPriceInLeva,
-					countryManager.getDefaultCountry().getCurrency().name());
+			country = countryManager.getCountry(countryCode);
 
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 
+		System.out.println("You choose " + country.getCountryName());
+		System.out.printf("VAT in %s is %d%%%n", country.getCountryName(),
+				country.getVat());
+		double totalPrice = VatCalculator.calculateTax(productPrice,
+				countryCode);
+		System.out.printf("Total price of the product in %s is %.1f %s%n",
+				country.getCountryName(), totalPrice, country.getCurrency()
+						.name());
+		double totalPriceInLeva = CurrencyConverter.convert(totalPrice,
+				countryManager.getCountry(countryCode));
+		System.out.printf("%.1f %s converted in leva is %.2f %s", totalPrice,
+				country.getCurrency().name(), totalPriceInLeva, countryManager
+						.getDefaultCountry().getCurrency().name());
 	}
 }

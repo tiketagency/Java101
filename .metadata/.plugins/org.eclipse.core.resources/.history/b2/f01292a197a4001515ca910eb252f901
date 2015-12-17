@@ -13,7 +13,7 @@ public class VatCalculator {
 		return Math.round(netPrice * (1 + (vatRate / 100)));
 	}
 
-	public static double calculateTax(double price)
+	public double calculateTax(double price)
 			throws NotSupportedCountryException {
 		return calculateTax(price, CountryManager.getInstance()
 				.getDefaultCountry().getCountryCode());
