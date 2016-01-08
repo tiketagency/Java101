@@ -1,6 +1,0 @@
-package sortbygrade;
-
-public class Diary {
-	private Student student;
-	private List<Double> grades;
-}

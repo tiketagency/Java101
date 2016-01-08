@@ -1,0 +1,8 @@
+package week5.wednesday.binarytree;
+
+public class BinaryTree {
+	private class Node {
+		private int data;
+		private Node child;
+	}
+}

@@ -1,5 +1,0 @@
-package friday.geometryfigure.arealessshape;
-
-public interface AreaLessShape {
-
-}

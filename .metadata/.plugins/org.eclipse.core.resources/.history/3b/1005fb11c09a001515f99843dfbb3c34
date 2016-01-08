@@ -1,9 +1,0 @@
-package friday.todolist;
-
-public class StudyForAlgebraTask extends Task{
-
-	public StudyForAlgebraTask(int i) {
-		// TODO Auto-generated constructor stub
-	}
-
-}

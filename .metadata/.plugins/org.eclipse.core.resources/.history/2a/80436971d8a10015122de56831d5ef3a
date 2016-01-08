@@ -1,9 +1,0 @@
-package friday.vattaxcalculator;
-
-public enum VATtax {
-	BULGARIA(20),
-	private int tax;
-	private VATtax(int tax){
-		this.tax = tax;
-	}
-}

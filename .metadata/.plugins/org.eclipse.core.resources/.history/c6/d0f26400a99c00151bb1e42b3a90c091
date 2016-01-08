@@ -1,5 +1,0 @@
-package friday.todolist.factory;
-
-public enum Priority {
-
-}

@@ -1,7 +1,0 @@
-package friday.vector;
-
-public class Vector {
-	public Vector(float... points) {
-		// TODO Auto-generated constructor stub
-	}
-}

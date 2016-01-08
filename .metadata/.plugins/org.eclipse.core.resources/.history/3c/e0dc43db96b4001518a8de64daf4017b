@@ -1,0 +1,9 @@
+package week5.wednesday.funnyarraysorter;
+
+public class FunnyArraySorter {
+	private int pivot;
+
+	public FunnyArraySorter(int pivot) {
+		this.pivot = pivot;
+	}
+}

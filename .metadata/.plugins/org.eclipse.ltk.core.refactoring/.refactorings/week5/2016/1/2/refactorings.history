@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;week5.wednesday.binarytree.BinaryTree.Node.height&apos; in &apos;week5.wednesday.binarytree.BinaryTree.Node&apos;&#x0A;- Original project: &apos;week5&apos;&#x0A;- Original element: &apos;week5.wednesday.binarytree.BinaryTree.Node.height&apos;&#x0A;- Getter method name: &apos;getHeight&apos;&#x0A;- Setter method name: &apos;setHeight&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;height&apos;" flags="589830" getter="getHeight" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;week5.wednesday.binarytree{BinaryTree.java[BinaryTree[Node^height" insertion="0" setter="setHeight" stamp="1452105690489" version="1.0" visibility="1"/>
+</session>

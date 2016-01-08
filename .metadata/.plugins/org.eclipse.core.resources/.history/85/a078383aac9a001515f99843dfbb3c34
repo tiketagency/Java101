@@ -1,6 +1,0 @@
-package sortbygrade;
-
-public class Students {
-	private String firstName;
-	private String secondName;
-}

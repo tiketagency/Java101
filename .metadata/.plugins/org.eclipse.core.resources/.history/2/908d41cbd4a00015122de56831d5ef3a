@@ -1,7 +1,0 @@
-package friday.geometryfigure.point;
-
-public final class Circle {
-	public Circle(Circle circle) {
-		
-	}
-}

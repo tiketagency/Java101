@@ -1,0 +1,35 @@
+package week5.wednesday.funnyarraysorter;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class FunnyArraySorter {
+	private int pivot;
+
+	public FunnyArraySorter(int pivot) {
+		this.pivot = pivot;
+	}
+
+	public void reverseOrder(List<Integer> list) {
+		Collections.sort(list, new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				// TODO Auto-generated method stub
+				return o1 < o2 ? 1 : o1 == o2 ? 0 : -1;
+			}
+		});
+	}
+
+	public void pivotSubtractionSort(List<Integer> list) {
+
+	}
+
+	public void pivotDivisionSort(List<Integer> list) {
+
+	}
+
+	public int getPivot() {
+		return pivot;
+	}
+}

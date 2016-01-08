@@ -1,0 +1,75 @@
+package week5.wednesday.binarytree;
+
+public class BinaryTree {
+	private class Node {
+		private int depth;
+		private int height;
+		private int data;
+		private Node leftChild;
+		private Node rightChild;
+
+		public Node(int depth, int data, Node leftChild, Node rightChild) {
+			super();
+			this.depth = depth;
+			this.data = data;
+			this.leftChild = leftChild;
+			this.rightChild = rightChild;
+		}
+	}
+
+	private Node root;
+	private Node current;
+
+	public void add(int data) {
+		if (root == null) {
+			root = new Node(0, data, null, null);
+		} else {
+			System.out.println(data);
+			recursiveAdd(data, root);
+		}
+	}
+
+	private void recursiveAdd(int data, Node parent) {
+		if (parent.data > data && parent.leftChild == null) {
+			parent.leftChild = new Node(parent.depth + 1, data, null, null);
+			return;
+		}
+		if (parent.data < data && parent.rightChild == null) {
+			parent.rightChild = new Node(parent.depth + 1, data, null, null);
+			return;
+		}
+		if (parent.data < data) {
+
+			recursiveAdd(data, parent.rightChild);
+		}
+		recursiveAdd(data, parent.leftChild);
+	}
+
+	public int getDepth(int number) {
+		return getNumber(number);
+	}
+
+	public int getNumber(int number) {
+		return getNumber(number, root).data;
+	}
+
+	private Node getNumber(int number, Node node) {
+		if (node.data == number) {
+			return node;
+		}
+		if (node.data < number) {
+
+			getNumber(number, node.rightChild);
+		}
+		return getNumber(number, node.leftChild);
+	}
+
+	public static void main(String[] args) {
+		BinaryTree b = new BinaryTree();
+		b.add(2);
+		b.add(5);
+		b.add(1);
+		b.add(0);
+		System.out.println(b.getNumber(0));
+	}
+}

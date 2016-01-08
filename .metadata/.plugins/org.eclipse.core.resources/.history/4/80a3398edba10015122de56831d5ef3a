@@ -1,9 +1,0 @@
-package friday.vattaxcalculator;
-
-public class VatTaxCalculator {
-	private VATtax vat;
-
-	public VatTaxCalculator(VATtax vat) {
-		this.vat = vat;
-	}
-}

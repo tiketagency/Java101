@@ -1,0 +1,183 @@
+package week5.wednesday.binarytree;
+
+public class BinaryTree {
+	private class Node {
+		private int depth;
+		private int height;
+		private int data;
+		private Node leftChild;
+		private Node rightChild;
+
+		public Node(int height, int depth, int data, Node leftChild,
+				Node rightChild) {
+			this.height = height;
+			this.depth = depth;
+			this.data = data;
+			this.leftChild = leftChild;
+			this.rightChild = rightChild;
+		}
+	}
+
+	private Node root;
+
+	public BinaryTree() {
+		// TODO Auto-generated constructor stub
+	}
+
+	private BinaryTree(Node root) {
+		this.root = root;
+	}
+
+	public void add(int data) {
+		if (root == null) {
+			root = new Node(0, 0, data, null, null);
+		} else {
+			recursiveAdd(data, root);
+			if (root.leftChild != null && root.rightChild != null) {
+				root.height = root.leftChild.height >= root.rightChild.height ? root.leftChild.height + 1
+						: root.rightChild.height + 1;
+			}
+			if (root.leftChild == null) {
+				root.height = root.rightChild.height + 1;
+			} else if (root.rightChild == null) {
+				root.height = root.leftChild.height + 1;
+			}
+		}
+	}
+
+	private void recursiveAdd(int data, Node parent) {
+		if (parent.data > data && parent.leftChild == null) {
+			parent.leftChild = new Node(0, parent.depth + 1, data, null, null);
+			return;
+		}
+		if (parent.data < data && parent.rightChild == null) {
+			parent.rightChild = new Node(0, parent.depth + 1, data, null, null);
+			return;
+		}
+		Node node = parent.data < data ? parent.rightChild : parent.leftChild;
+		recursiveAdd(data, node);
+		if (node.leftChild != null && node.rightChild != null) {
+			node.height = node.leftChild.height >= node.rightChild.height ? node.leftChild.height + 1
+					: node.rightChild.height + 1;
+		}
+		if (node.leftChild == null) {
+			node.height = node.rightChild.height + 1;
+		} else if (node.rightChild == null) {
+			node.height = node.leftChild.height + 1;
+		}
+		// node.height += 1;
+	}
+
+	public int getDepth(int number) {
+		return getNodeByData(number, root).data;
+	}
+
+	public Node getNodeByData(int number) {
+		return getNodeByData(number, root);
+	}
+
+	private Node getNodeByData(int number, Node node) {
+		if (node != null && node != root && node.data == number) {
+			return node;
+		}
+		Node n = node != null && node.data < number ? node.rightChild
+				: node.leftChild;
+		return getNodeByData(number, n);
+	}
+
+	private BinaryTree getSubTree(Node n) {
+		return new BinaryTree(n);
+	}
+
+	public Node getRoot() {
+		return root;
+	}
+
+	private void mergeTrees(Node root1, Node root2) {
+		if (root2.leftChild == null) {
+			root2.leftChild = root1;
+			return;
+		}
+		mergeTrees(root1, root2.leftChild);
+	}
+
+	public void deleteElement(int data) {
+		if (root.data == data) {
+			BinaryTree subTree = getSubTree(root.leftChild);
+			root = root.rightChild;
+			mergeTrees(subTree.root, root);
+			return;
+		}
+		Node node = findChildData(data, root);
+		Node n = node.leftChild.data == data ? node.leftChild : node.rightChild;
+		if (n == node.leftChild) {
+			if (n.leftChild != null && n.rightChild != null) {
+				BinaryTree subTree = getSubTree(n.leftChild);
+				node.leftChild = n.rightChild;
+				mergeTrees(subTree.root, node.leftChild);
+				return;
+			}
+			node.leftChild = null;
+		} else if (n == node.rightChild) {
+			if (n.leftChild != null && n.rightChild != null) {
+				BinaryTree subTree = getSubTree(n.leftChild);
+				node.rightChild = n.rightChild;
+				mergeTrees(subTree.root, node.rightChild);
+			} else if (n.leftChild == null && n.rightChild == null) {
+				node.rightChild = null;
+			}
+		}
+	}
+
+	private Node findChildData(int data, Node node) {
+		if (node != null && (node.leftChild != null || node.rightChild != null
+				&& node.leftChild.data == data || node.rightChild.data == data)) {
+			return node;
+		}
+		Node n = node != null && node.data < data ? node.rightChild
+				: node.leftChild;
+		return findChildData(data, n);
+	}
+
+	private String recursivePrint(Node node) {
+		if (node == null) {
+			return "";
+		}
+		return recursivePrint(node.leftChild) + " " + node.data + ","
+				+ recursivePrint(node.rightChild);
+	}
+
+	public String print() {
+		String bst = "[" + recursivePrint(root).trim();
+		return bst.substring(0, bst.length() - 1) + "]";
+	}
+
+	public static void main(String[] args) {
+		BinaryTree b = new BinaryTree();
+		b.add(5);
+		b.add(3);
+		b.add(7);
+		b.add(1);
+		b.add(4);
+		b.add(0);
+		b.add(6);
+		b.add(8);
+		b.add(10);
+		b.add(9);
+		b.add(5);
+		b.add(50);
+		b.add(-1);
+		b.deleteElement(3);
+		b.deleteElement(7);
+		b.deleteElement(5);
+		b.deleteElement(5);
+		// System.out.println(b.getRoot().rightChild.leftChild.data);
+		System.out.printf("Root height is: %d%nRoot depth is: %d%n",
+				b.getRoot().data, b.getRoot().depth);
+		System.out
+				.printf("Searched element height is: %d%nSearched element depth is: %d%n",
+						b.getNodeByData(6).height, b.getNodeByData(6).depth);
+		System.out.println(b.print());
+		System.out.println(b.getNodeByData(6).leftChild.data);
+	}
+}

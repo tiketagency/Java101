@@ -1,5 +1,0 @@
-package friday.geometryfigure.polygon;
-
-public interface Polygon {
-
-}

@@ -1,9 +1,0 @@
-package friday.vector;
-
-public interface VectorOperations {
-	public float[] add(Vector vector);
-
-	public float subtract(Vector vector);
-
-	public float dotProduct(Vector vector);
-}

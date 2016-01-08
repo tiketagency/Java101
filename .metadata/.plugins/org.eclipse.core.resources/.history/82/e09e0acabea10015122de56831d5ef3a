@@ -1,7 +1,0 @@
-package friday.geometryfigure;
-
-import friday.geometryfigure.polygon.Rectangle;
-
-public abstract class BoundingBox extends Rectangle {
-
-}

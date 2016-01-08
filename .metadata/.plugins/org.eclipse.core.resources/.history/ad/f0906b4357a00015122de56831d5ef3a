@@ -1,7 +1,0 @@
-package friday.geometryfigure.polygon;
-
-import friday.geometryfigure.Vizualizible;
-
-public interface Polygon extends Vizualizible {
-
-}

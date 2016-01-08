@@ -1,5 +1,0 @@
-package friday.todolist;
-
-public abstract class Task {
-	protected float timeNeeded = 2;
-}

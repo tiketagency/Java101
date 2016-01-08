@@ -1,9 +1,0 @@
-package friday.shopinventory.exceptions;
-
-import friday.shopinventory.model.Product;
-
-public class ProductOutOfStockException extends Exception {
-	public ProductOutOfStockException(Product product) {
-		super(product.getProductName() + " is out of stock");
-	}
-}
