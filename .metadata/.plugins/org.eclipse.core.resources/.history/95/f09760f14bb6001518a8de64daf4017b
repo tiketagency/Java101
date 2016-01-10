@@ -1,0 +1,8 @@
+package week5.friday.bankaccount.interfaces;
+
+import week5.friday.bankaccount.BankAccount;
+
+public interface Transfer {
+	public boolean transfer(BankAccount account1, BankAccount account2,
+			double money);
+}

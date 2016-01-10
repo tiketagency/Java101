@@ -1,0 +1,12 @@
+package week5.friday.bank.database;
+
+import java.util.List;
+
+import week5.friday.bank.account.BankAccount;
+
+public class Storage {
+
+	public static void saveFile(List<BankAccount>accounts){
+		
+	}
+}

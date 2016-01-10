@@ -1,0 +1,69 @@
+package week5.friday.bankaccount.main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import week5.friday.bankaccount.BankAccount;
+import week5.friday.bankaccount.OperationsHistory;
+import week5.friday.bankaccount.interfaces.BankOperation;
+
+public class Bank implements BankOperation {
+
+	private List<BankAccount> accounts;
+
+	public Bank() {
+		accounts = new ArrayList<>();
+	}
+
+	public boolean isAccountExist(BankAccount account) {
+		return accounts.contains(account);
+	}
+
+	@Override
+	public void add(BankAccount account, double money) {
+		if (isAccountExist(account)) {
+			OperationsHistory history = account.getOperationHistory();
+			account.setMoney(money);
+			accounts.add(account);
+			history.addOperation(OperationType.ADD);
+		} else {
+			throw new IllegalArgumentException("Account does not exist "
+					+ account);
+		}
+
+	}
+
+	@Override
+	public double withdraw(BankAccount account, double money) {
+		OperationsHistory history = account.getOperationHistory();
+		history.addOperation(OperationType.WITHDRAW);
+		return account.getMoney(money);
+	}
+
+	@Override
+	public boolean transfer(BankAccount account1, BankAccount account2,
+			double money) {
+		double moneyFromAccount1 = account1.getMoney(money);
+		double moneyFromAccount2 = account2.getBalance() - money;
+		account2.setMoney(moneyFromAccount1);
+		OperationsHistory history = account1.getOperationHistory();
+		history.addOperation(OperationType.TRANSFER);
+		return moneyFromAccount2 == account2.getBalance();
+	}
+
+	@Override
+	public List<OperationType> getLastOperations(BankAccount account) {
+		OperationsHistory history = account.getOperationHistory();
+		history.addOperation(OperationType.HISTORY);
+		return account.getOperationHistory().getAccountOperations();
+	}
+
+	public List<BankAccount> getAllAccounts() {
+		return accounts;
+	}
+
+	@Override
+	public boolean creatAccount(BankAccount account) {
+		return accounts.add(account);
+	}
+}

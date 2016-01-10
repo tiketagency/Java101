@@ -1,0 +1,70 @@
+package week5.friday.bank.account;
+
+public class BankAccount {
+	
+
+	private long id;
+	private Person person;
+	private String password;
+	private Interest interest;
+	private AccountHistory accountHistory;
+	private double money;
+
+	public BankAccount(long id, Person person, String password,
+			AccountHistory accountHistory) {
+		super();
+		this.password = password;
+		this.interest = interest;
+		this.accountHistory = accountHistory;
+		setMoney(0.0);
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Interest getInterest() {
+		return interest;
+	}
+
+	public void setInterest(Interest interest) {
+		this.interest = interest;
+	}
+
+	public AccountHistory getAccountHistory() {
+		return accountHistory;
+	}
+
+	public void setAccountHistory(AccountHistory accountHistory) {
+		this.accountHistory = accountHistory;
+	}
+
+	public double getMoney() {
+		return money;
+	}
+
+	public void setMoney(double money) {
+		this.money = money;
+	}
+
+}

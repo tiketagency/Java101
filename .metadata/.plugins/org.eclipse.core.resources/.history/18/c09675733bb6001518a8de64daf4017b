@@ -1,0 +1,12 @@
+package week5.friday.bankaccount.main;
+
+import week5.friday.bankaccount.BankAccount;
+import week5.friday.bankaccount.Interest;
+import week5.friday.bankaccount.Interest.InterestType;
+
+public class BankDesk {
+	public static void main(String[] args) {
+		BankAccount boykoAccount = new BankAccount(1, "Boyko", "Lalov", 32,
+				new Interest(InterestType.SIMPLE, 0.5));
+	}
+}

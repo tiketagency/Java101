@@ -1,0 +1,7 @@
+package week5.friday.bankaccount.interfaces;
+
+import week5.friday.bankaccount.BankAccount;
+
+public interface Withdraw {
+	public double withdraw(BankAccount account, double money);
+}

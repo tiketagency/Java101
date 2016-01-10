@@ -1,0 +1,23 @@
+package week5.friday.bankaccount;
+
+import javax.security.auth.login.LoginException;
+
+public class Login {
+	private BankAccount account;
+
+	public Login(BankAccount account) {
+		this.account = account;
+	}
+
+	private boolean isAccountExist(BankAccount account) {
+		return AccountManager.accounts.contains(account);
+	}
+
+	public BankAccount login() throws LoginException {
+		if (!isAccountExist(account)) {
+			throw new LoginException("Account does not exist!");
+		}
+		return account;
+
+	}
+}

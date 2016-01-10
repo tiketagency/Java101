@@ -1,0 +1,21 @@
+package week5.friday.bankaccount;
+
+public class Interest {
+	public enum InterestType {
+		COMPLEX, SIMPLE;
+	}
+
+	private InterestType type;
+	private double size;
+
+	public Interest(InterestType type, double size) {
+		this.type = type;
+		this.size = size;
+	}
+
+	@Override
+	public String toString() {
+		return "Interest [type=" + type + ", size=" + size + "]";
+	}
+	
+}

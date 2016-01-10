@@ -1,0 +1,55 @@
+package week5.friday.bankaccount.bank;
+
+import java.util.Scanner;
+
+import javax.security.auth.login.LoginException;
+
+import week5.friday.bankaccount.AccountManager;
+import week5.friday.bankaccount.BankAccount;
+import week5.friday.bankaccount.Login;
+
+public class BankDesk {
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) throws LoginException, IllegalAccessException {
+
+		Bank bank = new Bank();
+		BankAccount account = null;
+		System.out.println("Press 1 to create account\nPress 2 to LogIn");
+		while (true) {
+			try {
+				switch (sc.nextInt()) {
+				case 1:
+					account = AccountManager.createAccount();
+					break;
+				case 2:
+					new Login(sc.nextLong());
+					break;
+				default:
+					break;
+				}
+				System.out
+						.println("To add money press 1\nTo withdraw press 2\nTo transfer press 3\nTo view History press 4");
+				switch (sc.nextInt()) {
+				case 1:
+					bank.add(account, sc.nextDouble());
+					break;
+				case 2:
+					bank.withdraw(account, sc.nextDouble());
+					break;
+				case 3:
+					bank.transfer(account, account, sc.nextDouble());
+					break;
+				case 4:
+					bank.getLastOperations(account);
+					break;
+				default:
+					break;
+				}
+			} catch (Exception e) {
+				throw new IllegalAccessException();
+			}
+
+		}
+	}
+}

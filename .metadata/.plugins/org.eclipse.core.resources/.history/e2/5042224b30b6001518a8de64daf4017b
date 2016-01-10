@@ -1,0 +1,16 @@
+package week5.friday.bankaccount;
+
+import java.util.List;
+
+public class AccountHistory {
+	private List<BankAccount> account;
+
+	public AccountHistory(List<BankAccount> account) {
+		super();
+		this.account = account;
+	}
+
+	public void storeAccount(Operation op) {
+
+	}
+}

@@ -1,0 +1,70 @@
+package week5.friday.bank;
+
+import java.io.FileNotFoundException;
+
+import week5.friday.bank.Bank.OperationType;
+import week5.friday.bank.Login.AccountAccessCommands;
+import week5.friday.bank.account.BankAccount;
+import week5.friday.bank.database.Storage;
+import week5.friday.bank.exception.ExceededInterestException;
+import week5.friday.bank.exception.InsufficientAvailabilityException;
+
+public class OnlineBanking {
+	private static ScannerClass sc = new ScannerClass();
+
+	public static void main(String[] args) throws NumberFormatException,
+			ExceededInterestException, InsufficientAvailabilityException,
+			FileNotFoundException {
+		Bank bank = new Bank();
+
+		System.out.println("To create Bank account press 1\nTo login press 2");
+		int commandNumber = sc.getInt();
+		AccountAccessCommands command = AccountAccessCommands.values()[commandNumber - 1];
+		BankAccount account = null;
+		switch (command) {
+		case CREATE_ACCOUNT:
+			bank.createBankAccount();
+		case LOGIN:
+			account = bank.login();
+			break;
+		default:
+			break;
+		}
+		System.out.println("Hello " + account.getPerson().getFirstName() + " "
+				+ account.getPerson().getLastName());
+		boolean quit = true;
+		while (quit) {
+			System.out
+					.println("Press 1 to add Money\nPress 2 to withdrawn Money\nPress 3 to transfer\nPress 4 to view history\nPress 5 to logout");
+			int number = sc.getInt();
+			OperationType type = OperationType.values()[number - 1];
+			switch (type) {
+			case ADD:
+				System.out.println("Add money");
+				double money = sc.getDouble();
+				boolean success = bank.add(account, money);
+				if (success) {
+					System.out.println("You succesfully added " + money);
+					System.out.println("Your balance is: "
+							+ account.getBalance());
+				}
+				break;
+			case WITHDRAW:
+				System.out.println("Your balance is: " + account.getBalance());
+				bank.withdraw(account, sc.getDouble());
+				break;
+			case TRANSFER:
+				System.out.println("Please enter the amount to transfer");
+				bank.transfer(account, sc.getDouble());
+				break;
+			case SHOW_HISTORY:
+				account.showHistory();
+				break;
+			default:
+				quit = false;
+				break;
+			}
+		}
+		Storage.saveAccounts();
+	}
+}

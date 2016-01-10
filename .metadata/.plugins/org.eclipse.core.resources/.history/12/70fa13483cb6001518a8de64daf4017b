@@ -1,0 +1,25 @@
+package week5.friday.bankaccount.main;
+
+import week5.friday.bankaccount.BankAccount;
+import week5.friday.bankaccount.Interest;
+import week5.friday.bankaccount.Interest.InterestType;
+import week5.friday.bankaccount.interfaces.BankOperation.OperationType;
+
+public class BankDesk {
+	public static void main(String[] args) {
+		BankAccount boykoAccount = new BankAccount(1, "Boyko", "Lalov", 32,
+				new Interest(InterestType.SIMPLE, 0.5));
+
+		BankAccount ivaAccount = new BankAccount(1, "Iva", "Krusteva", 32,
+				new Interest(InterestType.SIMPLE, 0.5));
+
+		Bank bank = new Bank();
+		bank.add(boykoAccount, 100);
+		bank.add(ivaAccount, 200);
+		bank.transfer(ivaAccount, boykoAccount, 100);
+		System.out.println(boykoAccount.getAllMoney());
+		for (OperationType ot : boykoAccount.getOperationHistory().getAccountOperations()) {
+			System.out.println(ot);
+		}
+	}
+}

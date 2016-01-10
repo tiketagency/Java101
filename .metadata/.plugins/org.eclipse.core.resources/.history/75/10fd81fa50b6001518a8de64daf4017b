@@ -1,0 +1,49 @@
+package week5.friday.bankaccount.bank;
+
+import java.util.Scanner;
+
+import week5.friday.bankaccount.BankAccount;
+import week5.friday.bankaccount.Interest;
+import week5.friday.bankaccount.Interest.InterestType;
+
+public class BankDesk {
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		Bank bank = new Bank();
+		while (true) {
+			switch (sc.nextInt()) {
+			case 1:
+				System.out.println("Enter first name");
+				String firstName = sc.nextLine();
+
+				System.out.println("Enter second name");
+				String secondName = sc.nextLine();
+
+				System.out.println("Enter age");
+				int age = sc.nextInt();
+
+				System.out
+						.println("Choose Interest Type: /n1 for SAMPLE/n2 for COMPLEX");
+				InterestType interestType = null;
+				switch (sc.nextInt()) {
+				case 1:
+					interestType = InterestType.SIMPLE;
+					break;
+				case 2:
+					interestType = InterestType.COMPLEX;
+					break;
+				default:
+					break;
+				}
+//				bank.creatAccount(new BankAccount(firstName, secondName, age,
+//						new Interest(interestType)));
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+}

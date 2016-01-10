@@ -1,0 +1,9 @@
+package week5.friday.bankaccount;
+
+public class BankAccount {
+	private long uniqueNumber;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private Interest interest;
+}

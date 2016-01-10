@@ -1,0 +1,7 @@
+package week5.friday.bank.account;
+
+public class Interest {
+	protected enum InterestType {
+		SIMPLE, COMPLEX;
+	}
+}

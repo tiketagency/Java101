@@ -1,0 +1,22 @@
+package week5.friday.bankaccount;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import week5.friday.bankaccount.interfaces.Operation;
+
+public class OperationsHistory {
+	public enum OperationType {
+		ADD, WITHDRAW, TRANSFER, HISTORY;
+	}
+
+	private List<Operation> accountOperations;
+
+	public OperationsHistory() {
+		this.accountOperations = new ArrayList<>();
+	}
+
+	public void storeAccountOperation(Operation op) {
+		accountOperations.add(op);
+	}
+}

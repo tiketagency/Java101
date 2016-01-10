@@ -1,0 +1,9 @@
+package week5.friday.bankaccount.interfaces;
+
+import java.util.List;
+
+import week5.friday.bankaccount.OperationHistory;
+
+public interface History {
+	public List<OperationHistory> getLastOperations();
+}

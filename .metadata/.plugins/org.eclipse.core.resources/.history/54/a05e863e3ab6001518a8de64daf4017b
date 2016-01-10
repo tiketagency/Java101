@@ -1,0 +1,40 @@
+package week5.friday.bankaccount.main;
+
+import java.util.List;
+
+import week5.friday.bankaccount.BankAccount;
+import week5.friday.bankaccount.OperationsHistory;
+import week5.friday.bankaccount.interfaces.BankOperation;
+
+public class Bank implements BankOperation {
+
+	@Override
+	public void add(BankAccount account, double money) {
+		OperationsHistory history = account.getOperationHistory();
+		account.setMoney(money);
+		history.addOperation(OperationType.ADD);
+
+	}
+
+	@Override
+	public double withdraw(BankAccount account, double money) {
+		OperationsHistory history = account.getOperationHistory();
+		history.addOperation(OperationType.WITHDRAW);
+		return account.getMoney(money);
+	}
+
+	@Override
+	public boolean transfer(BankAccount account1, BankAccount account2,
+			double money) {
+		double moneyFromAccount1 = account1.getMoney(money);
+		double moneyFromAccount2 = account2.getAllMoney() - money;
+		 account2.setMoney(moneyFromAccount1);
+		return moneyFromAccount2 == account2.getAllMoney();
+	}
+
+	@Override
+	public List<OperationsHistory> getLastOperations(BankAccount account) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

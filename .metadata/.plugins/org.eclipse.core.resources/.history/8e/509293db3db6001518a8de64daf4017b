@@ -1,0 +1,30 @@
+package week5.friday.bankaccount;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import week5.friday.bankaccount.interfaces.BankOperation;
+import week5.friday.bankaccount.interfaces.BankOperation.OperationType;
+
+public class OperationsHistory {
+
+	private List<OperationType> accountOperations;
+	private int operationsCount;
+
+	public OperationsHistory() {
+		this.accountOperations = new ArrayList<>();
+		operationCout = 0;
+	}
+
+	public List<OperationType> getAccountOperations() {
+		return accountOperations;
+	}
+
+	public void setAccountOperations(List<OperationType> accountOperations) {
+		this.accountOperations = accountOperations;
+	}
+
+	public void addOperation(OperationType op) {
+		accountOperations.add(op);
+	}
+}

@@ -1,0 +1,10 @@
+package week5.friday.bankaccount.exception;
+
+public class InsufficientFundsException extends IllegalStateException {
+	private static final String MSG = "hjsgjfhf";
+
+	public InsufficientFundsException() {
+		super(msg);
+	}
+
+}

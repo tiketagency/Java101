@@ -1,0 +1,24 @@
+package week5.friday.bankaccount;
+
+import java.util.Scanner;
+
+import week5.friday.bankaccount.interfaces.BankOperation;
+
+public class AccountOperation {
+
+	private AccountOperation accountOperations = null;
+	private BankOperation operation;
+	private Scanner sc = null;
+
+	private AccountOperation() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public AccountOperation getInstance() {
+		if (accountOperations == null) {
+			accountOperations = new AccountOperation();
+			sc = new Scanner(System.in);
+		}
+		return this;
+	}
+}

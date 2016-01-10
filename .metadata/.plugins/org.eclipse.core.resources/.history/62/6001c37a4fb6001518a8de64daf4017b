@@ -1,0 +1,7 @@
+package week5.friday.bankaccount;
+
+public class AccountManager {
+	public boolean createAccount(BankAccount account) {
+
+	}
+}

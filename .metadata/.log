@@ -1276,3 +1276,6 @@ java.io.FileNotFoundException: /icons/full/obj16/jcu_obj.png
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2016-01-08 20:07:04.407
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.

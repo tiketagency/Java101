@@ -1,0 +1,9 @@
+package week5.friday.bankaccount.exception;
+
+public class InsufficientFundsException extends IllegalStateException {
+
+	public InsufficientFundsException() {
+		super();
+	}
+
+}

@@ -1,0 +1,7 @@
+package week5.friday.bank.exception;
+
+public class NonExistingBankAccountException extends IllegalArgumentException {
+	public NonExistingBankAccountException() {
+		super();
+	}
+}

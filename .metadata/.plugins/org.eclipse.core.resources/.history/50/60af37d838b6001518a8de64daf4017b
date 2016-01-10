@@ -1,0 +1,7 @@
+package week5.friday.bankaccount.interfaces;
+
+public interface Operation extends Add, Withdraw, Transfer, History {
+	public enum OperationType {
+		ADD, WITHDRAW, TRANSFER, HISTORY;
+	}
+}

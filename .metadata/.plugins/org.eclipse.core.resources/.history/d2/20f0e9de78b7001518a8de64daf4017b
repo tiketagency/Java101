@@ -1,0 +1,146 @@
+package week5.friday.bank;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.Serializable;
+import java.util.Scanner;
+
+import week5.friday.bank.Interest.InterestType;
+import week5.friday.bank.account.BankAccount;
+import week5.friday.bank.account.BankAccount.History;
+import week5.friday.bank.account.Person;
+import week5.friday.bank.database.Storage;
+import week5.friday.bank.exception.ExceededInterestException;
+import week5.friday.bank.exception.InsufficientAvailabilityException;
+import week5.friday.bank.interfaces.BankOperations;
+
+public class Bank implements BankOperations, Serializable {
+	public enum OperationType {
+		ADD, WITHDRAW, TRANSFER, SHOW_HISTORY, LOGOUT
+	}
+
+	private static final long serialVersionUID = 1L;
+	private static ScannerClass sc;
+	private BankAccount account;
+
+	public Bank() throws FileNotFoundException {
+		sc = new ScannerClass();
+		loadAccounts();
+		Storage.lastAccountID = loadLastAccountID();
+	}
+
+	public Bank(BankAccount account) {
+		loadAccounts();
+		this.account = account;
+	}
+
+	private void loadAccounts() throws FileNotFoundException {
+		if (new File("bankAccounts.ser").exists()) {
+			Storage.loadFiles();
+		}
+	}
+
+	private Long loadLastAccountID() {
+		if (new File("lastAccountId.ser").exists()) {
+			return Storage.getLastAccountID();
+		}
+		return 0L;
+	}
+
+	@Override
+	public boolean createBankAccount() {
+		Person person = new Person();
+
+		System.out.println("Please enter your first name");
+		person.setFirstName(sc.nextLine());
+
+		System.out.println("Please enter your second name");
+		person.setLastName(sc.nextLine());
+
+		System.out.println("Please enter your age");
+		person.setAge(Integer.parseInt(sc.nextLine()));
+
+		BankAccount account = new BankAccount(person);
+		account.setID(Storage.lastAccountID + 1);
+		Storage.lastAccountID++;
+		System.out.println("PLease enter your password");
+		account.setPassword(sc.nextLine());
+		System.out
+				.println("Choose Interest type: for SIMPLE press 1\nFor COMPLEX press 2");
+		InterestType type = null;
+		switch (sc.getInt()) {
+		case 1:
+			type = InterestType.SIMPLE;
+			break;
+		default:
+			type = InterestType.COMPLEX;
+			break;
+		}
+		System.out.println("Choose size of the Interest");
+		Interest interest = new Interest(account, type, sc.getDouble());
+		account.setInterest(interest);
+		Storage.accounts.put(account.getID(), account);
+		Storage.saveAccounts();
+		Storage.saveLastAccountId();
+		return Storage.accounts.get(account.getID()) != null;
+	}
+
+	@Override
+	public boolean add(BankAccount account, double money) {
+		double total = account.getMoney() + money;
+		account.setMoney(OperationType.ADD, money);
+		History history = account.new History(OperationType.ADD, money);
+		account.addToHistory(history);
+		return account.getMoney() == total;
+	}
+
+	@Override
+	public double withdraw(BankAccount account)
+			throws ExceededInterestException, InsufficientAvailabilityException {
+
+		System.out.println("Your balance is: " + account.getBalance());
+		double money = sc.getDouble();
+
+		if (account.getInterest().getInterestValue() > 1) {
+			throw new ExceededInterestException(
+					"Interest is bigger than 1 percent");
+		}
+		if (account.getMoney() < money) {
+			throw new InsufficientAvailabilityException();
+		}
+		History history = account.new History(OperationType.WITHDRAW, money);
+		account.addToHistory(history);
+		account.setMoney(OperationType.WITHDRAW, money);
+		System.out.println("After operation your balance is: "
+				+ account.getBalance());
+		return money;
+	}
+
+	@Override
+	public boolean transfer(BankAccount account1)
+			throws ExceededInterestException, InsufficientAvailabilityException {
+		System.out.println("Please enter the amount to transfer");
+		double money = sc.getDouble();
+		System.out.println("Please give user ID to make the transfer");
+		Long id = sc.getLong();
+		BankAccount account2 = null;
+		try {
+			account2 = Storage.accounts.get(id);
+		} catch (Exception e) {
+			System.err.println("Wrong Id...Please try to give correct id");
+			transfer(account1);
+		}
+		if (money > account1.getBalance()) {
+			throw new InsufficientAvailabilityException("Not enough money");
+		}
+		account1.setMoney(OperationType.WITHDRAW, money);
+		History history = account1.new History(OperationType.TRANSFER, money);
+		account1.addToHistory(history);
+		return add(account2, money);
+	}
+
+	@Override
+	public BankAccount login() {
+		return new Login().login();
+	}
+}

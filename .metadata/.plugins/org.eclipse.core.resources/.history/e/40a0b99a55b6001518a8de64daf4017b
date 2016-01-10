@@ -1,0 +1,31 @@
+package week5.friday.bankaccount.bank;
+
+import java.util.Scanner;
+
+import javax.security.auth.login.LoginException;
+
+import week5.friday.bankaccount.AccountManager;
+import week5.friday.bankaccount.Login;
+
+public class BankDesk {
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) throws LoginException {
+
+		Bank bank = new Bank();
+		System.out.println("Press 1 to create account/n Press 2 to LogIn");
+		while (true) {
+			switch (sc.nextInt()) {
+			case 1:
+				AccountManager.createAccount();
+				break;
+			case 2:
+				new Login(sc.nextLong());
+				break;
+			default:
+				break;
+			}
+			new AccountManager();
+		}
+	}
+}

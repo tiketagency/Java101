@@ -1,0 +1,71 @@
+package week5.friday.bankaccount;
+
+public class BankAccount {
+	private long uniqueNumber;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private Interest interest;
+	private OperationsHistory operationHistory;
+	private double money;
+
+	public BankAccount(long uniqueNumber, String firstName, String lastName,
+			int age, Interest interest) {
+		super();
+		this.uniqueNumber = uniqueNumber;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.interest = interest;
+		operationHistory = new OperationsHistory();
+	}
+
+	public long getUniqueNumber() {
+		return uniqueNumber;
+	}
+
+	public void setUniqueNumber(long uniqueNumber) {
+		this.uniqueNumber = uniqueNumber;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Interest getInterest() {
+		return interest;
+	}
+
+	public void setInterest(Interest interest) {
+		this.interest = interest;
+	}
+
+	public OperationsHistory getOperationHistory() {
+		return operationHistory;
+	}
+
+	public void setOperationHistory(OperationsHistory operationHistory) {
+		this.operationHistory = operationHistory;
+	}
+
+}

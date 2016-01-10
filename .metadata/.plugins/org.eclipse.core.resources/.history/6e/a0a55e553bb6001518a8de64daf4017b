@@ -1,0 +1,9 @@
+package week5.friday.bankaccount.main;
+
+import week5.friday.bankaccount.BankAccount;
+
+public class BankDesk {
+	public static void main(String[] args) {
+BankAccount boykoAccount = new BankAccount(1, "Boyko", "Lalov", 32, 0,5);
+	}
+}

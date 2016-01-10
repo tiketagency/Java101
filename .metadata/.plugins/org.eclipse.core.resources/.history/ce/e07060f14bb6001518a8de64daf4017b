@@ -1,0 +1,16 @@
+package week5.friday.bankaccount.interfaces;
+
+import java.util.List;
+
+import week5.friday.bankaccount.BankAccount;
+import week5.friday.bankaccount.interfaces.BankOperation.OperationType;
+
+public interface Withdraw {
+	public double withdraw(BankAccount account, double money);
+	public boolean transfer(BankAccount account1, BankAccount account2,
+			double money);
+	public List<OperationType> getLastOperations(BankAccount account);
+
+	public boolean creatAccount(BankAccount account);
+	public void add(BankAccount account, double money);
+}

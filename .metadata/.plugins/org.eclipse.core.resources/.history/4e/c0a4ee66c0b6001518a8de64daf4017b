@@ -1,0 +1,98 @@
+package week5.friday.bank.account;
+
+public class BankAccount {
+	public class Person {
+		private String firstName;
+		private String lastName;
+		private int age;
+
+		public Person(String firstName, String lastName, int age) {
+			super();
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.age = age;
+		}
+
+		public String getFirstName() {
+			return firstName;
+		}
+
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+
+		public String getLastName() {
+			return lastName;
+		}
+
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
+		}
+
+		public int getAge() {
+			return age;
+		}
+
+		public void setAge(int age) {
+			this.age = age;
+		}
+
+	}
+
+	private long id;
+	private Person person;
+	private String password;
+	private Interest interest;
+	private AccountHistory accountHistory;
+	private double money;
+
+	public BankAccount(long id, Person person, String password,
+			Interest interest, AccountHistory accountHistory) {
+		super();
+		this.password = password;
+		this.interest = interest;
+		this.accountHistory = accountHistory;
+		money = 0.0;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Interest getInterest() {
+		return interest;
+	}
+
+	public void setInterest(Interest interest) {
+		this.interest = interest;
+	}
+
+	public AccountHistory getAccountHistory() {
+		return accountHistory;
+	}
+
+	public void setAccountHistory(AccountHistory accountHistory) {
+		this.accountHistory = accountHistory;
+	}
+
+}

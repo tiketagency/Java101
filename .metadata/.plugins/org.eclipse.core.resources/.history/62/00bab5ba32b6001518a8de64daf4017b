@@ -1,0 +1,5 @@
+package week5.friday.bankaccount.interfaces;
+
+public interface Withdraw {
+
+}

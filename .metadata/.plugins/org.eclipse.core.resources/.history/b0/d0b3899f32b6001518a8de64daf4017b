@@ -1,0 +1,13 @@
+package week5.friday.bankaccount;
+
+import java.util.List;
+
+public interface Operation {
+	public void add(double money);
+
+	public double withdraw(double money);
+
+	public double transfer(double money);
+
+	public List<AccountHistory> getLastOperations();
+}
