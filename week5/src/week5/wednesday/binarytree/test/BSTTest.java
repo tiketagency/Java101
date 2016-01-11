@@ -57,9 +57,9 @@ public class BSTTest {
 		// System.out.println(b.contains(10));
 		// System.out.println(b.getElementHeight(10));
 		// System.out.println(b.getParentData(100));
-		System.out
-				.printf("Searched element height is: %d%nSearched element depth is: %d%n",
-						b.getElementHeight(8), b.getElementDepth(28));
+//		System.out
+//				.printf("Searched element height is: %d%nSearched element depth is: %d%n",
+//						b.getElementHeight(8), b.getElementDepth(28));
 		System.out.println(b);
 		System.out.println(b.printNodeData());
 		// System.out.println(b.printNodeData());
