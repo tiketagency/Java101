@@ -1,107 +1,132 @@
 package week5.wednesday.binarytree;
 
-public class BinaryTree {
-	private class Node {
-		private int depth;
-		private int height;
-		private int data;
-		private Node left;
-		private Node right;
-		private Node parent;
+import java.util.NoSuchElementException;
 
-		public Node(int height, int depth, int data, Node leftChild,
-				Node rightChild, Node parent) {
-			this.height = height;
+public class BinaryTree {
+	class Node {
+		protected int depth;
+		protected int height;
+		protected int data;
+		protected Node left;
+		protected Node right;
+		protected Node parent;
+
+		public Node(int depth, int data, Node parent) {
 			this.depth = depth;
 			this.data = data;
-			this.left = leftChild;
-			this.right = rightChild;
 			this.parent = parent;
 		}
 
 		public Node(int data) {
 			this.data = data;
-			height = 0;
-			depth = 0;
-
 		}
-
 	}
 
 	private Node root;
+	private NodeCalculator nodeCalculator;
+	private NodeChecker nodeChecker;
 
 	public BinaryTree() {
-		// TODO Auto-generated constructor stub
+		nodeCalculator = new NodeCalculator();
+		nodeChecker = new NodeChecker();
 	}
 
 	public void add(int data) throws Exception {
 		if (root == null) {
 			root = new Node(data);
 		} else {
-			recursiveAdd(data, root);
-			if (root.left != null && root.right != null) {
-				root.height = root.left.height >= root.right.height ? root.left.height + 1
-						: root.right.height + 1;
-			}
-			if (root.left == null) {
-				root.height = root.right.height + 1;
-			} else if (root.right == null) {
-				root.height = root.left.height + 1;
-			}
+			add(root, data);
 		}
 	}
 
-	private void recursiveAdd(int data, Node parent) throws Exception {
-		if (parent == null) {
+	private void add(Node node, int data) throws Exception {
+		if (node == null) {
 			return;
 		}
-		if (data == parent.data) {
+		if (data == node.data) {
 			throw new Exception("BST not awoled duplicates");
 		}
-		if (parent.data > data && parent.left == null) {
-			parent.left = new Node(0, parent.depth + 1, data, null, null,
-					parent);
+		if (data > node.data && !nodeChecker.hasRightNode(node)) {
+			node.right = new Node(node.depth + 1, data, node);
+			nodeCalculator.calculateHeight(node.right);
+			return;
+
+		}
+		if (data < node.data && !nodeChecker.hasLeftNode(node)) {
+			node.left = new Node(node.depth + 1, data, node);
+			nodeCalculator.calculateHeight(node.left);
 			return;
 		}
-		if (parent.data < data && parent.right == null) {
-			parent.right = new Node(0, parent.depth + 1, data, null, null,
-					parent);
+
+		Node nextNode = node.data < data ? node.right : node.left;
+		add(nextNode, data);
+	}
+
+	public void addAfterDeleting(Node node, int data) throws Exception {
+		if (node == null) {
 			return;
 		}
-		Node node = parent.data < data ? parent.right : parent.left;
-		recursiveAdd(data, node);
-		// set height-/*
-		int leftHeight = 0;
-		int rightHeight = 0;
-		if (node.left != null && node.right != null) {
-			leftHeight = node.left.height;
-			rightHeight = node.right.height;
-			node.height = leftHeight >= rightHeight ? leftHeight + 1
-					: rightHeight + 1;
+		if (data > node.data && !nodeChecker.hasRightNode(node)) {
+			node.right = new Node(node.depth + 1, data, node);
+			nodeCalculator.recalculateHeight(node.right);
+			return;
+
 		}
-		if (node.left == null) {
-			rightHeight = node.right.height;
-			node.height = rightHeight + 1;
-		} else if (node.right == null) {
-			leftHeight = node.left.height;
-			node.height = leftHeight + 1;
+		if (data < node.data && !nodeChecker.hasLeftNode(node)) {
+			node.left = new Node(node.depth + 1, data, node);
+			nodeCalculator.recalculateHeight(node.left);
+			return;
+		}
+
+		Node nextNode = node.data < data ? node.right : node.left;
+		add(nextNode, data);
+	}
+
+	public void delete(int data) throws Exception {
+		delete(root, data);
+	}
+
+	private void delete(Node node, int data) throws Exception {
+		if (node == null) {
+			return;
+		}
+		if (node.data > data) {
+			delete(node.left, data);
+		} else if (node.data < data) {
+			delete(node.right, data);
+		} else {
+			if (nodeChecker.isLeaf(node)) {
+				node.parent.height = 0;
+				deleteLeaf(node);
+				nodeCalculator.recalculateHeight(node.parent);
+			} else {
+				if (nodeChecker.hasRightNode(node)) {
+					if (nodeChecker.isLeaf(node.right)) {
+						if (node == node.parent.left) {
+							nodeCalculator.recalculateDepth(node.left);
+							node.parent.left = node.left;
+							node.left.depth = node.depth;
+							addAfterDeleting(node.left, node.right.data);
+							return;
+						}
+					}
+					Node smallest = findSmallest(node.right);
+					node.data = smallest.data;
+					delete(smallest, smallest.data);
+				} else {
+					node.parent.left = node.left;
+				}
+				nodeCalculator.recalculateHeight(node);
+			}
 		}
 	}
 
-	public int getElementHeight(int element) {
-		return getNodeByData(element).height;
-	}
-
-	public int getElementDepth(int number) {
-		return getNodeByData(number, root).depth;
-	}
-
-	private Node getNodeByData(int number) {
-		return getNodeByData(number, root);
-	}
-
-	public boolean contains(int element) {
-		return getNodeByData(element) != null;
+	private void deleteLeaf(Node leaf) {
+		if (leaf == leaf.parent.right) {
+			leaf.parent.right = null;
+		} else {
+			leaf.parent.left = null;
+		}
 	}
 
 	private Node getNodeByData(int data, Node node) {
@@ -119,93 +144,51 @@ public class BinaryTree {
 		return node;
 	}
 
-	public int getParentData(int data) {
-		return getNodeByData(data).parent.data;
+	public int getSmallest() {
+		return findSmallest(root).data;
+	}
+
+	private Node findSmallest(Node node) {
+		if (node.left == null) {
+			return node;
+		}
+		return findSmallest(node.left);
+	}
+
+	public int getElementHeight(int element) {
+		return getNodeByData(element).height;
+	}
+
+	public int getElementDepth(int number) {
+		return getNodeByData(number, root).depth;
+	}
+
+	private Node getNodeByData(int number) throws NoSuchElementException {
+		Node searchedNode = getNodeByData(number, root);
+		if (searchedNode == null) {
+			throw new NoSuchElementException("Element does not exist!");
+		}
+		return searchedNode;
+	}
+
+	public boolean contains(int element) {
+		return getNodeByData(element) != null;
 	}
 
 	public int getRootData() {
-		return root.data;
-	}
-
-	public void delete(int data) {
-		delete(root, data);
-	}
-
-	private Node delete(Node node, int data) {
-		if (node == null) {
-			return null;
-		}
-		if (data > node.data) {
-			node.right = delete(node.right, data);
-		} else if (data < node.data) {
-			node.left = delete(node.left, data);
-		} else {
-			if (node.left == null) {
-				recalculateDepth(node.right);
-				if (node.parent.left.height < node.height) {
-					node.height -= 1;
-				}
-				return node.right;
-			} else if (node.right == null) {
-				recalculateDepth(node.left);
-				if (node.parent.right.height < node.height) {
-					node.height -= 1;
-				}
-				return node.left;
-			}
-			node.data = getSmallestFromTheRightSubTree(node.right);
-			node.right = delete(node.right, node.data);
-		}
-		return node;
-	}
-
-	private void recalculateDepth(Node node) {
-		if (node == null) {
-			return;
-		}
-		recalculateDepth(node.right);
-		recalculateDepth(node.left);
-		node.depth--;
-	}
-
-	private int getSmallestFromTheRightSubTree(Node node) {
-		if (node.left == null) {
-			return node.data;
-		}
-		return getSmallestFromTheRightSubTree(node.left);
-	}
-
-	private String recursivePrint(Node node) {
-		if (node == null) {
-			return "";
-		}
-		return recursivePrint(node.left) + " " + node.data + ","
-				+ recursivePrint(node.right);
-	}
-
-	private String recursivePrintNodeData(Node node) {
-		if (node == null) {
-			return "";
-		}
-		return recursivePrintNodeData(node.left) + " " + node.data + "( H:"
-				+ node.height + " D:" + node.depth + ")" + ","
-				+ recursivePrintNodeData(node.right);
-	}
-
-	public String recursivePrintNodeData() {
 		if (root == null) {
-			return "[]";
+			throw new NoSuchElementException(
+					"Tree is empty!Root does not exsit!");
 		}
-		String bst = "[" + recursivePrintNodeData(root).trim();
-		return bst.substring(0, bst.length() - 1) + "]";
+		return root.data;
 	}
 
 	@Override
 	public String toString() {
-		if (root == null) {
-			return "[]";
-		}
-		String bst = "[" + recursivePrint(root).trim();
-		return bst.substring(0, bst.length() - 1) + "]";
+		return new TreePrinter(root).toString();
+	}
+
+	public String printNodeData() {
+		return new TreePrinter(root).recursivePrintNodeData();
 	}
 }

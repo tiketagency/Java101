@@ -1,0 +1,9 @@
+package week5.wednesday.binarytree;
+
+public class NodeCalculator {
+	private BinaryTree tree;
+
+	public NodeCalculator(BinaryTree tree) {
+		this.tree = tree;
+	}
+}
