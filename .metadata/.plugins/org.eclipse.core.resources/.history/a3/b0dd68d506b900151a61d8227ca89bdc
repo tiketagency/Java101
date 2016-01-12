@@ -12,13 +12,29 @@ import java.util.Map;
 
 public class PropertyParser {
 
+	private static class Pair {
+		private String key;
+		private String value;
+
+		public Pair(String key, String value) {
+			this.key = key;
+			this.value = value;
+		}
+
+		@Override
+		public String toString() {
+			return "Pair [key=" + key + ", value=" + value + "]";
+		}
+
+	}
+
 	public static Map<String, String> propertyParser(File file) throws FileNotFoundException, IOException {
 		Map<String, String> refactoredPropertyFile = new HashMap<>();
 		List<String> lines = getLines(file);
 		for (String line : lines) {
 			if (!Character.isWhitespace(line.charAt(0)) && line.trim().charAt(0) != '#') {
-				String[] keyAndValue = line.split("\\=", 2);
-				refactoredPropertyFile.put(keyAndValue[0], keyAndValue[1]);
+				Pair keyAndVAlue = extractKyeAndValue(line);
+				refactoredPropertyFile.put(keyAndVAlue.key, keyAndVAlue.value);
 			}
 		}
 		return refactoredPropertyFile;
@@ -36,5 +52,15 @@ public class PropertyParser {
 			}
 		}
 		return lines;
+	}
+
+	private static Pair extractKyeAndValue(String line) {
+		String[] splited = line.split("\\=", 2);
+		return new Pair(splited[0], splited[1]);
+	}
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		Map<String, String> refactoredPropertyFile = PropertyParser.propertyParser(new File("prop.properties"));
+		System.out.println(refactoredPropertyFile);
 	}
 }
