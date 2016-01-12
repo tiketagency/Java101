@@ -9,7 +9,7 @@ import week5.friday.bank.enums.AccountAccessCommands;
 import week5.friday.bank.exception.AgeException;
 import week5.friday.bank.interfaces.AccountSetupOperations;
 import week5.friday.bank.storage.Bank;
-import week5.friday.bank.util.MessageUtil;
+import week5.friday.bank.util.MessageConstants;
 
 public class AccountAccessManager implements AccountSetupOperations {
 	private ScannerClass sc;
@@ -36,7 +36,7 @@ public class AccountAccessManager implements AccountSetupOperations {
 
 	public BankAccount createAccountOrLogin() throws InvalidNameException,
 			AgeException, IllegalAccessException {
-		System.out.println(MessageUtil.START_PAGE_NAVIGATION);
+		System.out.println(MessageConstants.START_PAGE_NAVIGATION);
 		int commandNumber = sc.getInt();
 
 		AccountAccessCommands command = AccountAccessCommands.values()[commandNumber - 1];

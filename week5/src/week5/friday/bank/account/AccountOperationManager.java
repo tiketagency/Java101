@@ -5,7 +5,7 @@ import week5.friday.bank.enums.OperationType;
 import week5.friday.bank.exception.ExceededInterestException;
 import week5.friday.bank.exception.InsufficientAvailabilityException;
 import week5.friday.bank.storage.Bank;
-import week5.friday.bank.util.MessageUtil;
+import week5.friday.bank.util.MessageConstants;
 
 public class AccountOperationManager {
 	private ScannerClass sc = new ScannerClass();
@@ -16,7 +16,7 @@ public class AccountOperationManager {
 	}
 
 	public boolean menageOperations() {
-		System.out.println(MessageUtil.ACCOUNT_PAGE_NAVIGATION);
+		System.out.println(MessageConstants.ACCOUNT_PAGE_NAVIGATION);
 		int number = sc.getInt();
 		OperationType type = OperationType.values()[number - 1];
 		try {

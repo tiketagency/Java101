@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.naming.InvalidNameException;
 
 import week5.friday.bank.exception.AgeException;
-import week5.friday.bank.util.MessageUtil;
+import week5.friday.bank.util.MessageConstants;
 
 public class Person implements Serializable {
 	private static final long serialVersionUID = 3735072141726972112L;
@@ -35,12 +35,12 @@ public class Person implements Serializable {
 			return true;
 		} else {
 			if (name.length() < 3 || name.length() > 15) {
-				throw new InvalidNameException(MessageUtil.INVALID_NAME_LENGHT);
+				throw new InvalidNameException(MessageConstants.INVALID_NAME_LENGHT);
 			}
 			if (name.matches(".*\\d+.*")) {
 				throw new InvalidNameException();
 			}
-			throw new InvalidNameException(MessageUtil.INVALID_NAME + name);
+			throw new InvalidNameException(MessageConstants.INVALID_NAME + name);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class Person implements Serializable {
 		if (validateName(lastName)) {
 			this.lastName = lastName;
 		} else {
-			throw new IllegalArgumentException(MessageUtil.INVALID_NAME
+			throw new IllegalArgumentException(MessageConstants.INVALID_NAME
 					+ lastName);
 		}
 	}
@@ -63,7 +63,7 @@ public class Person implements Serializable {
 
 	public void setAge(int age) throws AgeException {
 		if (age < 18) {
-			throw new AgeException(MessageUtil.INVALID_AGE);
+			throw new AgeException(MessageConstants.INVALID_AGE);
 		} else {
 			this.age = age;
 		}

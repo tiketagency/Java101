@@ -113,9 +113,11 @@ public class BinaryTree {
 					Node smallest = findSmallest(node.right);
 					node.data = smallest.data;
 					delete(smallest, smallest.data);
+					//nodeCalculator.recalculateDepth(node);
 				} else {
 					node.parent.left = node.left;
 				}
+				nodeCalculator.recalculateDepth(node);
 				nodeCalculator.recalculateHeight(node);
 			}
 		}
@@ -177,8 +179,7 @@ public class BinaryTree {
 
 	public int getRootData() {
 		if (root == null) {
-			throw new NoSuchElementException(
-					"Tree is empty!Root does not exsit!");
+			throw new NoSuchElementException("Tree is empty!Root does not exsit!");
 		}
 		return root.data;
 	}

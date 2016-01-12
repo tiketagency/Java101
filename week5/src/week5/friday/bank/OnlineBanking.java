@@ -27,11 +27,9 @@ public class OnlineBanking {
 		}
 
 		AccountSession accountSession = new AccountSession(account);
-		AccountOperationManager operationManager = new AccountOperationManager(
-				accountSession);
+		AccountOperationManager operationManager = new AccountOperationManager(accountSession);
 
-		System.out.println("Hello " + account.getPerson().getFirstName() + " "
-				+ account.getPerson().getLastName());
+		System.out.println("Hello " + account.getPerson().getFirstName() + " " + account.getPerson().getLastName());
 
 		while (operationManager.menageOperations()) {
 		}

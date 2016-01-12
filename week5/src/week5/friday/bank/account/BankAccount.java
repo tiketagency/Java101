@@ -7,7 +7,7 @@ import java.util.List;
 import week5.friday.bank.Interest;
 import week5.friday.bank.enums.OperationType;
 import week5.friday.bank.exception.InsufficientAvailabilityException;
-import week5.friday.bank.util.MessageUtil;
+import week5.friday.bank.util.MessageConstants;
 
 public class BankAccount implements Serializable {
 
@@ -138,7 +138,7 @@ public class BankAccount implements Serializable {
 
 	public Double getBalance() throws InsufficientAvailabilityException {
 		if (money > 0) {
-			System.out.println(MessageUtil.BALANCE_MESSAGE + money);
+			System.out.println(MessageConstants.BALANCE_MESSAGE + money);
 			return money;
 		}
 		throw new InsufficientAvailabilityException("Zero balance" + money);

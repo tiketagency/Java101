@@ -1,0 +1,297 @@
+2016-01-12 01:41:11,195 [Worker-163] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Week6:Week6:0.0.1-SNAPSHOT @ /media/boyko/886459336459256A/101workspace/Week6/pom.xml.
+2016-01-12 01:41:12,555 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:41:12,562 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:41:12,564 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:41:12,569 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:41:12,614 [Worker-163] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Week6/src
+2016-01-12 01:41:12,615 [Worker-163] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /Week6/src/test/java because it overlaps with /Week6/src
+2016-01-12 01:41:13,016 [Worker-163] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-01-12 01:41:13,687 [Worker-163] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Week6:Week6:0.0.1-SNAPSHOT @ /media/boyko/886459336459256A/101workspace/Week6/pom.xml.
+2016-01-12 01:41:14,326 [Worker-163] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Week6/src
+2016-01-12 01:41:14,328 [Worker-163] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /Week6/src/test/java because it overlaps with /Week6/src
+2016-01-12 01:41:14,430 [Worker-163] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2016-01-12 01:41:14,610 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:41:14,611 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:41:14,613 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:41:14,613 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:42:06,339 [Worker-167] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Week6:Week6:0.0.1-SNAPSHOT @ /media/boyko/886459336459256A/101workspace/Week6/pom.xml.
+2016-01-12 01:42:06,914 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-encoding/1.1/apache-any23-encoding-1.1.pom
+2016-01-12 01:42:06,997 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-encoding/1.1/apache-any23-encoding-1.1.pom
+2016-01-12 01:42:07,091 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23/1.1/apache-any23-1.1.pom
+2016-01-12 01:42:07,144 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23/1.1/apache-any23-1.1.pom
+2016-01-12 01:42:07,194 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-api/1.1/apache-any23-api-1.1.pom
+2016-01-12 01:42:07,240 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-api/1.1/apache-any23-api-1.1.pom
+2016-01-12 01:42:07,351 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-model/2.7.10/sesame-model-2.7.10.pom
+2016-01-12 01:42:07,396 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-model/2.7.10/sesame-model-2.7.10.pom
+2016-01-12 01:42:07,442 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-core/2.7.10/sesame-core-2.7.10.pom
+2016-01-12 01:42:07,488 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-core/2.7.10/sesame-core-2.7.10.pom
+2016-01-12 01:42:07,542 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame/2.7.10/sesame-2.7.10.pom
+2016-01-12 01:42:07,595 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame/2.7.10/sesame-2.7.10.pom
+2016-01-12 01:42:07,649 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-util/2.7.10/sesame-util-2.7.10.pom
+2016-01-12 01:42:07,704 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-util/2.7.10/sesame-util-2.7.10.pom
+2016-01-12 01:42:07,814 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-rio-api/2.7.10/sesame-rio-api-2.7.10.pom
+2016-01-12 01:42:07,865 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-rio-api/2.7.10/sesame-rio-api-2.7.10.pom
+2016-01-12 01:42:07,917 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-rio/2.7.10/sesame-rio-2.7.10.pom
+2016-01-12 01:42:07,969 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-rio/2.7.10/sesame-rio-2.7.10.pom
+2016-01-12 01:42:08,025 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tika/tika-parsers/1.4/tika-parsers-1.4.pom
+2016-01-12 01:42:08,077 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tika/tika-parsers/1.4/tika-parsers-1.4.pom
+2016-01-12 01:42:08,131 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tika/tika-parent/1.4/tika-parent-1.4.pom
+2016-01-12 01:42:08,184 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tika/tika-parent/1.4/tika-parent-1.4.pom
+2016-01-12 01:42:08,241 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tika/tika-core/1.4/tika-core-1.4.pom
+2016-01-12 01:42:08,294 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tika/tika-core/1.4/tika-core-1.4.pom
+2016-01-12 01:42:08,347 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-tika/0.1/vorbis-java-tika-0.1.pom
+2016-01-12 01:42:08,398 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-tika/0.1/vorbis-java-tika-0.1.pom
+2016-01-12 01:42:08,450 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-parent/0.1/vorbis-java-parent-0.1.pom
+2016-01-12 01:42:08,501 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-parent/0.1/vorbis-java-parent-0.1.pom
+2016-01-12 01:42:08,555 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-core/0.1/vorbis-java-core-0.1.pom
+2016-01-12 01:42:08,607 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-core/0.1/vorbis-java-core-0.1.pom
+2016-01-12 01:42:08,659 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tika/tika-core/1.0/tika-core-1.0.pom
+2016-01-12 01:42:08,711 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tika/tika-core/1.0/tika-core-1.0.pom
+2016-01-12 01:42:08,765 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tika/tika-parent/1.0/tika-parent-1.0.pom
+2016-01-12 01:42:08,815 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tika/tika-parent/1.0/tika-parent-1.0.pom
+2016-01-12 01:42:08,867 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/edu/ucar/netcdf/4.2-min/netcdf-4.2-min.pom
+2016-01-12 01:42:08,919 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/edu/ucar/netcdf/4.2-min/netcdf-4.2-min.pom
+2016-01-12 01:42:08,971 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.pom
+2016-01-12 01:42:09,022 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.pom
+2016-01-12 01:42:09,073 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-project/0.7.2/apache-mime4j-project-0.7.2.pom
+2016-01-12 01:42:09,132 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-project/0.7.2/apache-mime4j-project-0.7.2.pom
+2016-01-12 01:42:09,187 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/james/james-project/1.8/james-project-1.8.pom
+2016-01-12 01:42:09,294 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/james/james-project/1.8/james-project-1.8.pom
+2016-01-12 01:42:09,348 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-dom/0.7.2/apache-mime4j-dom-0.7.2.pom
+2016-01-12 01:42:09,393 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-dom/0.7.2/apache-mime4j-dom-0.7.2.pom
+2016-01-12 01:42:09,477 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.pom
+2016-01-12 01:42:09,523 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.pom
+2016-01-12 01:42:09,569 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/20/commons-parent-20.pom
+2016-01-12 01:42:09,617 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/20/commons-parent-20.pom
+2016-01-12 01:42:09,696 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox/1.8.1/pdfbox-1.8.1.pom
+2016-01-12 01:42:09,742 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox/1.8.1/pdfbox-1.8.1.pom
+2016-01-12 01:42:09,789 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox-parent/1.8.1/pdfbox-parent-1.8.1.pom
+2016-01-12 01:42:09,835 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox-parent/1.8.1/pdfbox-parent-1.8.1.pom
+2016-01-12 01:42:09,882 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/fontbox/1.8.1/fontbox-1.8.1.pom
+2016-01-12 01:42:09,928 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/pdfbox/fontbox/1.8.1/fontbox-1.8.1.pom
+2016-01-12 01:42:10,024 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/jempbox/1.8.1/jempbox-1.8.1.pom
+2016-01-12 01:42:10,069 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/pdfbox/jempbox/1.8.1/jempbox-1.8.1.pom
+2016-01-12 01:42:10,118 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/bouncycastle/bcmail-jdk15/1.45/bcmail-jdk15-1.45.pom
+2016-01-12 01:42:10,163 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/bouncycastle/bcmail-jdk15/1.45/bcmail-jdk15-1.45.pom
+2016-01-12 01:42:10,209 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15/1.45/bcprov-jdk15-1.45.pom
+2016-01-12 01:42:10,255 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15/1.45/bcprov-jdk15-1.45.pom
+2016-01-12 01:42:10,302 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.9/poi-3.9.pom
+2016-01-12 01:42:10,347 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.9/poi-3.9.pom
+2016-01-12 01:42:10,394 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi-scratchpad/3.9/poi-scratchpad-3.9.pom
+2016-01-12 01:42:10,440 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi-scratchpad/3.9/poi-scratchpad-3.9.pom
+2016-01-12 01:42:10,490 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.pom
+2016-01-12 01:42:10,534 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.pom
+2016-01-12 01:42:10,584 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.pom
+2016-01-12 01:42:10,628 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.pom
+2016-01-12 01:42:10,674 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.pom
+2016-01-12 01:42:10,718 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.pom
+2016-01-12 01:42:10,769 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.pom
+2016-01-12 01:42:10,814 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.pom
+2016-01-12 01:42:10,860 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/specs/1.3/specs-1.3.pom
+2016-01-12 01:42:10,907 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/specs/1.3/specs-1.3.pom
+2016-01-12 01:42:10,956 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/config/project-config/1.1/project-config-1.1.pom
+2016-01-12 01:42:11,002 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/config/project-config/1.1/project-config-1.1.pom
+2016-01-12 01:42:11,048 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/config/config/1.1/config-1.1.pom
+2016-01-12 01:42:11,093 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/config/config/1.1/config-1.1.pom
+2016-01-12 01:42:11,140 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/1.1/genesis-1.1.pom
+2016-01-12 01:42:11,185 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/1.1/genesis-1.1.pom
+2016-01-12 01:42:11,235 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.pom
+2016-01-12 01:42:11,342 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.pom
+2016-01-12 01:42:11,389 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/4.1/asm-debug-all-4.1.pom
+2016-01-12 01:42:11,434 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/4.1/asm-debug-all-4.1.pom
+2016-01-12 01:42:11,482 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom
+2016-01-12 01:42:11,527 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom
+2016-01-12 01:42:11,575 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/ow2/1.3/ow2-1.3.pom
+2016-01-12 01:42:11,621 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/ow2/1.3/ow2-1.3.pom
+2016-01-12 01:42:11,669 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/googlecode/mp4parser/isoparser/1.0-RC-1/isoparser-1.0-RC-1.pom
+2016-01-12 01:42:11,717 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/googlecode/mp4parser/isoparser/1.0-RC-1/isoparser-1.0-RC-1.pom
+2016-01-12 01:42:12,181 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.6.11/aspectjrt-1.6.11.pom
+2016-01-12 01:42:12,227 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.6.11/aspectjrt-1.6.11.pom
+2016-01-12 01:42:12,274 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.pom
+2016-01-12 01:42:12,319 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.pom
+2016-01-12 01:42:12,368 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.pom
+2016-01-12 01:42:12,413 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.pom
+2016-01-12 01:42:12,460 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom
+2016-01-12 01:42:12,506 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom
+2016-01-12 01:42:12,552 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+2016-01-12 01:42:12,597 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+2016-01-12 01:42:12,646 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom
+2016-01-12 01:42:12,691 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom
+2016-01-12 01:42:12,743 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.pom
+2016-01-12 01:42:12,788 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.pom
+2016-01-12 01:42:12,839 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/rome/rome/0.9/rome-0.9.pom
+2016-01-12 01:42:12,888 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/rome/rome/0.9/rome-0.9.pom
+2016-01-12 01:42:13,000 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom
+2016-01-12 01:42:13,047 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom
+2016-01-12 01:42:13,107 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-encoding/1.1/apache-any23-encoding-1.1.jar
+2016-01-12 01:42:13,153 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-encoding/1.1/apache-any23-encoding-1.1.jar
+2016-01-12 01:42:13,200 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-api/1.1/apache-any23-api-1.1.jar
+2016-01-12 01:42:13,298 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/any23/apache-any23-api/1.1/apache-any23-api-1.1.jar
+2016-01-12 01:42:13,351 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-model/2.7.10/sesame-model-2.7.10.jar
+2016-01-12 01:42:13,503 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-model/2.7.10/sesame-model-2.7.10.jar
+2016-01-12 01:42:13,554 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-util/2.7.10/sesame-util-2.7.10.jar
+2016-01-12 01:42:13,644 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-util/2.7.10/sesame-util-2.7.10.jar
+2016-01-12 01:42:13,693 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-rio-api/2.7.10/sesame-rio-api-2.7.10.jar
+2016-01-12 01:42:13,741 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-rio-api/2.7.10/sesame-rio-api-2.7.10.jar
+2016-01-12 01:42:13,793 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tika/tika-parsers/1.4/tika-parsers-1.4.jar
+2016-01-12 01:42:14,244 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tika/tika-parsers/1.4/tika-parsers-1.4.jar
+2016-01-12 01:42:14,288 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tika/tika-core/1.4/tika-core-1.4.jar
+2016-01-12 01:42:14,755 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tika/tika-core/1.4/tika-core-1.4.jar
+2016-01-12 01:42:14,804 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-tika/0.1/vorbis-java-tika-0.1.jar
+2016-01-12 01:42:14,856 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-tika/0.1/vorbis-java-tika-0.1.jar
+2016-01-12 01:42:14,906 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-core/0.1/vorbis-java-core-0.1-tests.jar
+2016-01-12 01:42:14,959 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-core/0.1/vorbis-java-core-0.1-tests.jar
+2016-01-12 01:42:15,021 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/edu/ucar/netcdf/4.2-min/netcdf-4.2-min.jar
+2016-01-12 01:42:18,256 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/edu/ucar/netcdf/4.2-min/netcdf-4.2-min.jar
+2016-01-12 01:42:18,305 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.jar
+2016-01-12 01:42:18,740 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.jar
+2016-01-12 01:42:18,785 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-dom/0.7.2/apache-mime4j-dom-0.7.2.jar
+2016-01-12 01:42:19,088 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/james/apache-mime4j-dom/0.7.2/apache-mime4j-dom-0.7.2.jar
+2016-01-12 01:42:19,134 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.jar
+2016-01-12 01:42:19,274 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.jar
+2016-01-12 01:42:19,336 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox/1.8.1/pdfbox-1.8.1.jar
+2016-01-12 01:42:22,414 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox/1.8.1/pdfbox-1.8.1.jar
+2016-01-12 01:42:22,465 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/fontbox/1.8.1/fontbox-1.8.1.jar
+2016-01-12 01:42:22,652 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/pdfbox/fontbox/1.8.1/fontbox-1.8.1.jar
+2016-01-12 01:42:22,696 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/jempbox/1.8.1/jempbox-1.8.1.jar
+2016-01-12 01:42:22,784 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/pdfbox/jempbox/1.8.1/jempbox-1.8.1.jar
+2016-01-12 01:42:22,830 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/bouncycastle/bcmail-jdk15/1.45/bcmail-jdk15-1.45.jar
+2016-01-12 01:42:23,050 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/bouncycastle/bcmail-jdk15/1.45/bcmail-jdk15-1.45.jar
+2016-01-12 01:42:23,094 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15/1.45/bcprov-jdk15-1.45.jar
+2016-01-12 01:42:24,306 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15/1.45/bcprov-jdk15-1.45.jar
+2016-01-12 01:42:24,349 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.9/poi-3.9.jar
+2016-01-12 01:42:25,918 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.9/poi-3.9.jar
+2016-01-12 01:42:25,962 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi-scratchpad/3.9/poi-scratchpad-3.9.jar
+2016-01-12 01:42:26,876 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi-scratchpad/3.9/poi-scratchpad-3.9.jar
+2016-01-12 01:42:26,920 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar
+2016-01-12 01:42:27,740 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar
+2016-01-12 01:42:27,816 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar
+2016-01-12 01:42:31,120 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar
+2016-01-12 01:42:31,176 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar
+2016-01-12 01:42:33,400 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar
+2016-01-12 01:42:33,444 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar
+2016-01-12 01:42:33,495 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar
+2016-01-12 01:42:33,540 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar
+2016-01-12 01:42:33,640 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar
+2016-01-12 01:42:33,684 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/4.1/asm-debug-all-4.1.jar
+2016-01-12 01:42:33,963 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/4.1/asm-debug-all-4.1.jar
+2016-01-12 01:42:34,006 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/googlecode/mp4parser/isoparser/1.0-RC-1/isoparser-1.0-RC-1.jar
+2016-01-12 01:42:34,498 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/googlecode/mp4parser/isoparser/1.0-RC-1/isoparser-1.0-RC-1.jar
+2016-01-12 01:42:34,541 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.6.11/aspectjrt-1.6.11.jar
+2016-01-12 01:42:34,681 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.6.11/aspectjrt-1.6.11.jar
+2016-01-12 01:42:34,725 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.jar
+2016-01-12 01:42:34,915 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.jar
+2016-01-12 01:42:34,959 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar
+2016-01-12 01:42:35,105 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar
+2016-01-12 01:42:35,151 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar
+2016-01-12 01:42:36,230 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar
+2016-01-12 01:42:36,288 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar
+2016-01-12 01:42:36,496 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar
+2016-01-12 01:42:36,551 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.jar
+2016-01-12 01:42:36,647 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.jar
+2016-01-12 01:42:36,690 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/rome/rome/0.9/rome-0.9.jar
+2016-01-12 01:42:36,882 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/rome/rome/0.9/rome-0.9.jar
+2016-01-12 01:42:36,925 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-core/0.1/vorbis-java-core-0.1.jar
+2016-01-12 01:42:36,976 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/gagravarr/vorbis-java-core/0.1/vorbis-java-core-0.1.jar
+2016-01-12 01:42:37,021 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar
+2016-01-12 01:42:37,250 [Worker-167] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar
+2016-01-12 01:42:43,993 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:42:43,994 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:42:43,995 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:42:43,996 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:42:57,649 [Worker-159] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:42:57,650 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:42:57,653 [Worker-159] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:42:57,654 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:43:01,365 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:43:01,374 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:43:01,377 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:43:01,378 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:45:10,225 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:10,227 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:45:10,229 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:10,230 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:45:18,552 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:18,554 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:45:18,557 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:18,558 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:45:47,229 [Worker-168] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:47,234 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:45:47,236 [Worker-168] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:47,237 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:45:52,798 [Worker-168] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:52,798 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:45:52,799 [Worker-168] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:45:52,800 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:47:14,869 [Worker-165] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:14,869 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:47:14,872 [Worker-165] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:14,873 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:47:20,524 [Worker-165] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:20,525 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:47:20,527 [Worker-165] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:20,528 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:47:31,068 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:31,069 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:47:31,070 [Worker-164] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:31,070 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:47:59,420 [Worker-163] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:59,421 [Worker-163] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:47:59,423 [Worker-163] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:47:59,424 [Worker-163] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:48:23,072 [Worker-166] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:48:23,073 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:48:23,076 [Worker-166] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:48:23,077 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:48:30,479 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:48:30,480 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:48:30,488 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:48:30,488 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:48:42,992 [Worker-152] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:48:42,993 [Worker-152] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:48:42,995 [Worker-152] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:48:42,995 [Worker-152] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:49:36,548 [Worker-159] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:49:36,549 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:49:36,550 [Worker-159] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:49:36,551 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:54:09,626 [Worker-152] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:54:09,626 [Worker-152] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:54:09,637 [Worker-152] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:54:09,638 [Worker-152] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:57:37,172 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:57:37,173 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:57:37,174 [Worker-167] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:57:37,175 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:58:43,736 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:58:43,738 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:58:43,739 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:58:43,740 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 01:59:00,899 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:59:00,900 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 01:59:00,901 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 01:59:00,901 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 02:00:13,354 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:00:13,355 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 02:00:13,356 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:00:13,358 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 02:00:35,465 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:00:35,466 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 02:00:35,467 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:00:35,468 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 02:01:27,909 [Worker-173] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:01:27,910 [Worker-173] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 02:01:27,911 [Worker-173] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:01:27,913 [Worker-173] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 02:01:41,628 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:01:41,629 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 02:01:41,630 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:01:41,632 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 02:01:47,223 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:01:47,224 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 02:01:47,225 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 02:01:47,226 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-12 10:26:49,041 [Worker-176] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 10:26:49,043 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
+2016-01-12 10:26:49,044 [Worker-176] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-12 10:26:49,045 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources

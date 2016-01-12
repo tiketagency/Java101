@@ -1,0 +1,11 @@
+package monday.subtitlefixer;
+
+import java.io.File;
+
+public class SubtitleFixer {
+	private File file;
+
+	public SubtitleFixer(File file) {
+		this.file = file;
+	}
+}

@@ -7,7 +7,7 @@ import week5.friday.bank.ScannerClass;
 import week5.friday.bank.enums.InterestType;
 import week5.friday.bank.exception.AgeException;
 import week5.friday.bank.storage.Bank;
-import week5.friday.bank.util.MessageUtil;
+import week5.friday.bank.util.MessageConstants;
 
 public class AccountCreater {
 	private ScannerClass sc;
@@ -61,7 +61,7 @@ public class AccountCreater {
 	}
 
 	private InterestType chooseInterestType() {
-		System.out.println(MessageUtil.INTEREST_NAVIGATION);
+		System.out.println(MessageConstants.INTEREST_NAVIGATION);
 		switch (sc.getInt()) {
 		case 1:
 			return InterestType.SIMPLE;

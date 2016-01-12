@@ -1,0 +1,49 @@
+package monday.subtitlefixer;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class SubtitleFixer {
+	private File file;
+
+	public SubtitleFixer(File file) throws IOException {
+		this.file = file;
+		fixEncoding();
+	}
+
+	private void fixEncoding() throws IOException {
+		rewriteFile(file.getName(), "encoded", true);
+		rewriteFile("encoded", file.getName(), false);
+	}
+
+	private void rewriteFile(String src, String dest, boolean withCharSet) throws IOException {
+	//	BufferedReader br = null;
+//		if (withCharSet) {
+//			br = Files.newBufferedReader(Paths.get(src), Charset.forName("windows-1251"));
+//		} else {
+//			br = new BufferedReader(new FileReader(new File(src)));
+//		}
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File(dest), false));
+			BufferedReader br = withCharSet == true ? 	Files.newBufferedReader(Paths.get(src), Charset.forName("windows-1251")):new BufferedReader(new FileReader(new File(src)))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				System.out.println(line);
+				writer.write(line + System.lineSeparator());
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		File f = new File("lost.s04e11.hdtv.xvid-2hd.srt");
+		new SubtitleFixer(f);
+	}
+}

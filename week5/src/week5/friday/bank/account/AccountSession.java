@@ -9,7 +9,7 @@ import week5.friday.bank.exception.ExceededInterestException;
 import week5.friday.bank.exception.InsufficientAvailabilityException;
 import week5.friday.bank.interfaces.BankOperations;
 import week5.friday.bank.storage.Bank;
-import week5.friday.bank.util.MessageUtil;
+import week5.friday.bank.util.MessageConstants;
 
 public class AccountSession implements BankOperations, Serializable {
 
@@ -36,7 +36,7 @@ public class AccountSession implements BankOperations, Serializable {
 		boolean success = getAccount().getMoney() == total;
 		if (success) {
 			System.out.println("You succesfully added " + money);
-			System.out.println(MessageUtil.BALANCE_MESSAGE
+			System.out.println(MessageConstants.BALANCE_MESSAGE
 					+ getAccount().getBalance());
 		}
 	}
@@ -49,19 +49,19 @@ public class AccountSession implements BankOperations, Serializable {
 		double money = sc.getDouble();
 
 		if (getAccount().getInterest().getInterestValue() > 1) {
-			throw new ExceededInterestException(MessageUtil.CANT_WITHDRAW
-					+ MessageUtil.BALANCE_MESSAGE);
+			throw new ExceededInterestException(MessageConstants.CANT_WITHDRAW
+					+ MessageConstants.BALANCE_MESSAGE);
 		}
 		if (getAccount().getMoney() < money) {
 			throw new InsufficientAvailabilityException(
-					MessageUtil.NOT_ENOUGH_MONEY + MessageUtil.BALANCE_MESSAGE
+					MessageConstants.NOT_ENOUGH_MONEY + MessageConstants.BALANCE_MESSAGE
 							+ getAccount().getBalance());
 		}
 		History history = getAccount().new History(OperationType.WITHDRAW,
 				money);
 		getAccount().addToHistory(history);
 		getAccount().setMoney(OperationType.WITHDRAW, money);
-		System.out.println(MessageUtil.BALANCE_MESSAGE
+		System.out.println(MessageConstants.BALANCE_MESSAGE
 				+ getAccount().getBalance());
 		return money;
 	}
@@ -94,7 +94,7 @@ public class AccountSession implements BankOperations, Serializable {
 		}
 		if (money > getAccount().getBalance()) {
 			throw new InsufficientAvailabilityException(
-					MessageUtil.NOT_ENOUGH_MONEY);
+					MessageConstants.NOT_ENOUGH_MONEY);
 		}
 		account2.setMoney(OperationType.ADD, money);
 		return true;
