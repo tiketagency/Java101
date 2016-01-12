@@ -2635,3 +2635,12 @@
 2016-01-13 00:20:18,449 [Worker-356] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/main/resources
 2016-01-13 00:20:18,450 [Worker-356] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-01-13 00:20:18,450 [Worker-356] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/Week6/src/test/resources
+2016-01-13 00:23:56,202 [Worker-360] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Week6:Week6:0.0.1-SNAPSHOT @ /media/boyko/886459336459256A/101workspace/week6/pom.xml.
+2016-01-13 00:23:58,049 [Worker-360] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-13 00:23:58,050 [Worker-360] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/main/resources
+2016-01-13 00:23:58,051 [Worker-360] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-13 00:23:58,052 [Worker-360] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/test/resources
+2016-01-13 00:23:59,318 [Worker-359] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-13 00:23:59,319 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/main/resources
+2016-01-13 00:23:59,320 [Worker-359] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-13 00:23:59,321 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/test/resources
