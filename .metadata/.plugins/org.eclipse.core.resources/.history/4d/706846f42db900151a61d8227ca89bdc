@@ -1,0 +1,65 @@
+package monday.filedatacompression;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.TreeMap;
+
+public class FileDataCompression {
+	public static final File COMPRESSED_DATA = new File("compressedFile.properties");
+
+	public static void compress(Path path) throws IOException {
+		Properties prop = new Properties();
+		int wordId = -1;
+		Map<String, Integer> mappedWords = new TreeMap<>();
+		List<String> content = Files.readAllLines(path);
+		List<String> compressedData = new ArrayList<>();
+		for (String words : content) {
+			words = words.replaceAll(" ", "~");
+			String[] splited = words.trim().split("~");
+			for (String word : splited) {
+				word = word.replaceAll("\\p{Punct}", "");
+				if (!mappedWords.containsKey(word)) {
+					mappedWords.put(word, ++wordId);
+					prop.put(wordId + "", word);
+				}
+				words = words.replaceAll(word, mappedWords.get(word) + "");
+			}
+			compressedData.add(words + System.lineSeparator());
+		}
+		prop.put("-1", compressedData.toString());
+		prop.store(new FileWriter(COMPRESSED_DATA), "props");
+	}
+
+	public static void decompress(Path path) throws ClassNotFoundException, IOException {
+		Properties prop = new Properties();
+		prop.load(new FileReader(path.toFile()));
+		String[] compressedText = prop.get("-1").toString().split(",");
+		StringBuilder stringBuilder = new StringBuilder();
+		for (String line : compressedText) {
+			String[] splited = line.trim().split("~");
+			for (String wordCode : splited) {
+				wordCode = wordCode.trim().replaceAll("\\p{Punct}", "");
+				String word = prop.getProperty(wordCode.trim());
+				line = line.replaceAll(wordCode, word);
+			}
+			stringBuilder.append(line.trim());
+			stringBuilder.append(System.lineSeparator());
+		}
+		saveToFile(stringBuilder.toString().substring(1, stringBuilder.length() - 2));
+	}
+
+	private static void saveToFile(String content) throws IOException {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("decompressedFile.txt")))) {
+			writer.write(content);
+		}
+	}
+}

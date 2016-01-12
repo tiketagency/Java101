@@ -1,0 +1,13 @@
+package monday.filedatacompression;
+
+import java.nio.file.Path;
+
+public class FileDataCompression {
+	public static void compress(Path path) {
+
+	}
+
+	public static void decompress(Path path) {
+
+	}
+}

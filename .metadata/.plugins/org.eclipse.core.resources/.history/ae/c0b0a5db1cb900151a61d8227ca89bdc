@@ -1,0 +1,42 @@
+package monday.filedatacompression;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class FileDataCompression {
+	public static void compress(Path path) throws IOException {
+		int wordId = 0;
+		Map<String, Integer> mappedWords = new HashMap<>();
+		List<String> content = Files.readAllLines(path);
+		for (String words : content) {
+			words = words.replaceAll(" ", "~");
+			String[] splited = words.trim().split("~");
+			for (String word : splited) {
+				Matcher m = Pattern.compile("^\\p{Punct}").matcher(word);
+				if (!m.find()) {
+					String gr = m.group();
+					System.out.println(gr);
+					if (gr.equals(" ")) {
+						
+						word = word.substring(0, word.length()-1);
+					}
+				}
+				if (!mappedWords.containsKey(word)) {
+					mappedWords.put(word, wordId++);
+				}
+				words = words.replaceAll(word, mappedWords.get(word) + "");
+			}
+			System.out.println(mappedWords);
+		}
+	}
+
+	public static void decompress(Path path) {
+
+	}
+}

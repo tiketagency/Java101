@@ -1,0 +1,23 @@
+package monday.filedatacompression;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class FileDataCompression {
+	public static void compress(Path path) throws IOException {
+		int wordId = 0;
+		Map<String, Integer> mappedWords = new HashMap<>();
+		List<String> content = Files.readAllLines(path);
+		for (String word : content) {
+			mappedWords.put(word, wordId);
+		}
+	}
+
+	public static void decompress(Path path) {
+
+	}
+}

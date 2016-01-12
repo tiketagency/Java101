@@ -1,0 +1,33 @@
+package monday.filedatacompression;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class FileDataCompression {
+	public static void compress(Path path) throws IOException {
+		int wordId = 0;
+		Map<String, Integer> mappedWords = new HashMap<>();
+		List<String> content = Files.readAllLines(path);
+		for (String words : content) {
+			words = words.replaceAll(" ", "~");
+			String[] splited = words.trim().split("~");
+			for (String word : splited) {
+				if (!mappedWords.containsKey(word)) {
+					mappedWords.put(word, wordId++);
+				}
+				//if (!word.equals("~")) {
+					words = words.replaceAll(word, wordId + "");
+				//}
+			}
+		}
+		System.out.println(mappedWords);
+	}
+
+	public static void decompress(Path path) {
+
+	}
+}
