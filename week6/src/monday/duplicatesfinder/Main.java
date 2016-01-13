@@ -10,8 +10,7 @@ public class Main {
 			NoSuchAlgorithmException {
 		DuplicatesFinder d = new DuplicatesFinder();
 		try {
-			d.findDuplicate(Paths
-					.get("testData"));
+			d.findDuplicate(Paths.get("testData"));
 		} catch (Exception e) {
 			if (e.getMessage() == null) {
 				System.err.println("File Not exist!");

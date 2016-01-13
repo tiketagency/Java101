@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 public class FileManager {
 	private static final File DECOMPRESSED = new File("decompressedFile.txt");
@@ -14,12 +15,14 @@ public class FileManager {
 		String openFile = "notepad " + file.getPath();
 		// using terminal commands
 		Process process = Runtime.getRuntime().exec(openFile);
-		try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));) {
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+				process.getInputStream(), Charset.forName("ISO-8859-1")));) {
 		}
 	}
 
 	public static File saveToFile(String content) throws IOException {
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(DECOMPRESSED))) {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(
+				DECOMPRESSED))) {
 			writer.write(content);
 		}
 		return DECOMPRESSED;
