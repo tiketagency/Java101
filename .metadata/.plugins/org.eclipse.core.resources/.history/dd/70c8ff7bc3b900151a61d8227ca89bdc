@@ -1,0 +1,8 @@
+package monday.duplicatesfinder;
+
+import java.io.File;
+import java.util.List;
+
+public class DuplicatesFinder {
+	private List<File> files;
+}

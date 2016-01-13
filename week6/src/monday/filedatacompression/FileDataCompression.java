@@ -31,8 +31,8 @@ public class FileDataCompression {
 				line = line.replaceFirst(word, mappedWords.get(word) + "");
 			}
 			String oldValue = (String) properties.get("-1");
-			String data = oldValue != null ? oldValue + "\n" + line : line;
-			properties.put("-1", data);
+			String appendedData = oldValue != null ? oldValue + "\n" + line : line;
+			properties.setProperty("-1", appendedData);
 		}
 		properties.store(new FileWriter(COMPRESSED_DATA), "compression");
 		FileManager.openFileWithNotePad(COMPRESSED_DATA);
