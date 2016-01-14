@@ -35,9 +35,11 @@ public class Mp3Organizer {
 		} else {
 			if (!destination.toFile().exists()) {
 				FileManager.createDir(destination, file, metaData);
-			}
+			}else {
+				
 			FileManager.copyFileToDir(destination, file,
 					StandardCopyOption.REPLACE_EXISTING);
+			}
 
 		}
 		deleteIfExist(destination, file);
