@@ -18,7 +18,7 @@ import java.util.Map.Entry;
 
 public class DuplicatesFinder {
 
-	private class Key {
+	public class Key {
 		private byte[] md5Hash;
 
 		public Key(byte[] md5Hash) {

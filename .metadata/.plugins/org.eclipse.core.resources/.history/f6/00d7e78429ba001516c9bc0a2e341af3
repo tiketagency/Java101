@@ -1,0 +1,8 @@
+package monday.mp3organizer;
+
+public class Mp3Metadata {
+	private String title;
+	private String artist;
+	private String album;
+
+}

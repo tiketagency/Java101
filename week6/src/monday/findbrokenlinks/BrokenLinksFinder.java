@@ -8,17 +8,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class BrokenLinksFinder {
+
 	public static void brokenListFinder(Path path) throws IOException {
 		File filePath = path.toFile();
 		try {
-			// File[] f = filePath.listFiles();
 			for (File file : filePath.listFiles()) {
 				Path fileToPath = file.toPath();
 				if (file.isDirectory()) {
 					brokenListFinder(fileToPath);
 				} else {
 					if (Files.isSymbolicLink(fileToPath)) {
-						if (Files.readSymbolicLink(fileToPath) == null) {
+						if (!file.exists()) {
 							System.out.println(fileToPath);
 						}
 					}
@@ -30,6 +30,7 @@ public class BrokenLinksFinder {
 	}
 
 	public static void main(String[] args) throws IOException {
-		BrokenLinksFinder.brokenListFinder(Paths.get("testData"));
+		BrokenLinksFinder.brokenListFinder(Paths
+				.get("/home/boyko/Desktop/music"));
 	}
 }

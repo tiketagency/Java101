@@ -5,8 +5,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,16 +13,15 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import monday.filedatacompression.FileManager;
-
 import org.apache.any23.encoding.TikaEncodingDetector;
 
 /*
- * Program convert text in the file from windows-1251 to UTF-8
+ * Program decode file from windows-1251 to UTF-8
  * 
  */
 public class SubtitleFixer {
 	private File file;
+	private static final File DECODED = new File("decoded");
 
 	public SubtitleFixer(File file) throws IOException {
 		this.file = file;
@@ -32,17 +29,16 @@ public class SubtitleFixer {
 	}
 
 	private void fixEncoding() throws IOException {
-		File encoded = new File("encoded");
 		// Using apache-any23-encoding library
 		Charset ch = checkCharset(new BufferedInputStream(new FileInputStream(
 				file)));
 		// Check whether content is already UTF-8
 		if (!ch.name().equals("UTF-8")) {
 			// decode file into another file
-			rewriteFile(file, encoded, true);
+			rewriteFile(file, DECODED, true);
 			// rewrite old file with decoded content
-			rewriteFile(encoded, file, false);
-			encoded.delete();
+			rewriteFile(DECODED, file, false);
+			DECODED.delete();
 		} else {
 			System.out.println("This file does not need to be decoded");
 		}
@@ -62,7 +58,6 @@ public class SubtitleFixer {
 						.newBufferedReader(Paths.get(src.getName()),
 								Charset.forName("windows-1251"))
 						: new BufferedReader(new FileReader(src))) {
-			StringBuilder sb = new StringBuilder();
 			String line;
 			while ((line = br.readLine()) != null) {
 				writer.write(line + System.lineSeparator());
