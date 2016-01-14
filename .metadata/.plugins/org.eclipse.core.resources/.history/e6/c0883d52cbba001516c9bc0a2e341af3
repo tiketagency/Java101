@@ -27,6 +27,7 @@ public class Mp3Organizer {
 
 	public void createArtistFolder(Mp3Metadata metaData, File file)
 			throws IOException {
+		metaData.checkForUnknownStatus();
 		String artist = metaData.getArtist().toLowerCase();
 		String parentDirectory = file.getParent();
 		String albumName = metaData.getAlbum().toLowerCase();

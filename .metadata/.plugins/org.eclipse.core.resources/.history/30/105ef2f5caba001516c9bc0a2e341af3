@@ -17,7 +17,6 @@ public class Id3TagExtractor {
 
 	public Id3TagExtractor(File mp3) throws IOException {
 		this.mp3 = mp3;
-		readID3Tag();
 	}
 
 	@SuppressWarnings("resource")

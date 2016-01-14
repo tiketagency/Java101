@@ -9,10 +9,6 @@ import java.nio.ByteBuffer;
 public class Id3TagExtractor {
 	private static final int ID3_TAG_SIZE = 128;
 	private File mp3;
-	private final byte[] tag = new byte[3];
-	private final byte[] title = new byte[30];
-	private final byte[] artist = new byte[30];
-	private final byte[] album = new byte[30];
 	private ByteBuffer last128Bytes;
 
 	public Id3TagExtractor(File mp3) throws IOException {
@@ -30,12 +26,16 @@ public class Id3TagExtractor {
 		last128Bytes = ByteBuffer.allocate(ID3_TAG_SIZE);
 		last128Bytes.put(tagData);
 		last128Bytes.rewind();
-		// send bytes to corresponding array
-		last128Bytes.get(tag).get(title).get(artist).get(album);
 	}
 
 	public Mp3Metadata getMetaData() throws IllegalArgumentException,
 			UnsupportedEncodingException {
+		 byte[] tag = new byte[3];
+		 byte[] title = new byte[30];
+		 byte[] artist = new byte[30];
+		 byte[] album = new byte[30];
+		// send bytes to corresponding array
+		last128Bytes.get(tag).get(title).get(artist).get(album);
 		return new Mp3Metadata(new String(title), new String(artist),
 				new String(album));
 	}

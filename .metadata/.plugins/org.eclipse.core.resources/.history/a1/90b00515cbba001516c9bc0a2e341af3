@@ -27,6 +27,7 @@ public class Mp3Organizer {
 
 	public void createArtistFolder(Mp3Metadata metaData, File file)
 			throws IOException {
+		metaData.checkForUnknownStatus();
 		String artist = metaData.getArtist().toLowerCase();
 		String parentDirectory = file.getParent();
 		String albumName = metaData.getAlbum().toLowerCase();
@@ -35,12 +36,12 @@ public class Mp3Organizer {
 		if (!Files.exists(Paths.get(parentDirectory + "/" + artist))) {
 			FileManager.createDir(destination, file, metaData);
 		} else {
-			if (!destination.toFile().exists()) {
+			if (destination.toFile().exists()) {
+				FileManager.copyFileToDir(destination, file,
+						StandardCopyOption.REPLACE_EXISTING);
+			} else {
 				FileManager.createDir(destination, file, metaData);
 			}
-			FileManager.copyFileToDir(destination, file,
-					StandardCopyOption.REPLACE_EXISTING);
-
 		}
 		deleteIfExist(destination, file);
 	}

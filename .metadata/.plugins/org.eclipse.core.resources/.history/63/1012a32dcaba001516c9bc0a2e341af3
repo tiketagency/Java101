@@ -17,7 +17,6 @@ public class Id3TagExtractor {
 
 	public Id3TagExtractor(File mp3) throws IOException {
 		this.mp3 = mp3;
-		readID3Tag();
 	}
 
 	@SuppressWarnings("resource")
@@ -28,8 +27,6 @@ public class Id3TagExtractor {
 		// put last 128 bytes in tagData array
 		randomAccessFile.read(tagData);
 		last128Bytes = ByteBuffer.allocate(ID3_TAG_SIZE);
-		last128Bytes.put(tagData);
-		last128Bytes.rewind();
 		// send bytes to corresponding array
 		last128Bytes.get(tag).get(title).get(artist).get(album);
 	}

@@ -17,7 +17,6 @@ public class Mp3Metadata {
 		this.title = title;
 		this.artist = artist;
 		this.album = album;
-		checkForUnknownStatus();
 	}
 
 	// replace with single whitespace and remove punctuation
@@ -39,7 +38,7 @@ public class Mp3Metadata {
 		album = decodeTag(album);
 	}
 
-	private void checkForUnknownStatus() {
+	public void checkForUnknownStatus() {
 		decodeTags();
 		// if not put default names
 		if (hasArtistName()) {
@@ -71,6 +70,7 @@ public class Mp3Metadata {
 	public boolean hasSongName() {
 		return checkTag(title);
 	}
+
 
 	public String getTitle() {
 		return title;
