@@ -6703,3 +6703,11 @@ java.io.InvalidClassException: org.eclipse.m2e.core.internal.project.registry.Ba
 2016-01-15 00:02:55,204 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/main/resources
 2016-01-15 00:02:55,205 [Worker-114] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-01-15 00:02:55,205 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/test/resources
+2016-01-15 00:17:10,484 [Worker-121] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-15 00:17:10,485 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/main/resources
+2016-01-15 00:17:10,486 [Worker-121] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-15 00:17:10,486 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/test/resources
+2016-01-15 00:18:15,623 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-15 00:18:15,623 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/main/resources
+2016-01-15 00:18:15,624 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-01-15 00:18:15,624 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /media/boyko/886459336459256A/101workspace/week6/src/test/resources
