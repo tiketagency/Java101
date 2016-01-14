@@ -22,12 +22,13 @@ public class Mp3Metadata {
 
 	// replace with single whitespace and remove punctuation
 	private void normalizeString() {
-		this.title = title.trim().replaceAll("\\p{P}", "")
-				.replaceAll("\\W+", " ");
-		this.artist = artist.trim().replaceAll("\\p{P}", "")
-				.replaceAll("\\W+", " ");
-		this.album = album.trim().replaceAll("\\p{P}", "")
-				.replaceAll("\\W+", " ");
+		title = normalizeTag(title);
+		artist = normalizeTag(artist);
+		album = normalizeTag(album);
+	}
+
+	private String normalizeTag(String tag) {
+		return tag.trim().replaceAll("\\p{P}", "").replaceAll("\\W+", " ");
 	}
 
 	private String decodeTag(String tag) {

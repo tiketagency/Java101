@@ -9,13 +9,11 @@ import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-import org.farng.mp3.TagException;
-
 public class Mp3Organizer {
 	private static PathMatcher matcher = FileSystems.getDefault()
 			.getPathMatcher("glob:*.{mp3}");
 
-	public void organizeSongs(Path path) throws IOException, TagException {
+	public void organizeSongs(Path path) throws IOException {
 		for (File file : path.toFile().listFiles()) {
 			Path filePath = file.toPath();
 			if (matcher.matches(filePath.getFileName())) {
