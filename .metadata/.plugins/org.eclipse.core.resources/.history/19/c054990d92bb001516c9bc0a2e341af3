@@ -17,12 +17,13 @@ public class Id3TagExtractor {
 	private final static byte[] ALBUM = new byte[30];
 	private ByteBuffer last128Bytes;
 
-	public Id3TagExtractor() {
+	public Id3TagExtractor() throws IOException {
+		this.setMp3(mp3);
 	}
 
 	@SuppressWarnings("resource")
 	public void readID3Tag() throws IOException {
-		RandomAccessFile randomAccessFile = new RandomAccessFile(mp3, "r");
+		RandomAccessFile randomAccessFile = new RandomAccessFile(getMp3(), "r");
 		byte[] tagData = new byte[ID3_TAG_SIZE];
 		randomAccessFile.seek(randomAccessFile.length() - ID3_TAG_SIZE);
 		// put last 128 bytes in tagData array

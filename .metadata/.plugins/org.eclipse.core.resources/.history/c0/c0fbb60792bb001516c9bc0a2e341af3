@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import monday.mp3organizer.metadata.Mp3Metadata;
 
 public class Id3TagExtractor {
-	private static final int ID3_TAG_SIZE = 128;
+	private static final int ID3_TAG_SIZE =128;
 	private File mp3;
 	private final static byte[] TAG = new byte[3];
 	private final static byte[] TITLE = new byte[30];
@@ -17,12 +17,14 @@ public class Id3TagExtractor {
 	private final static byte[] ALBUM = new byte[30];
 	private ByteBuffer last128Bytes;
 
-	public Id3TagExtractor() {
+	public Id3TagExtractor(File mp3) throws IOException {
+		this.setMp3(mp3);
+		readID3Tag();
 	}
 
 	@SuppressWarnings("resource")
 	public void readID3Tag() throws IOException {
-		RandomAccessFile randomAccessFile = new RandomAccessFile(mp3, "r");
+		RandomAccessFile randomAccessFile = new RandomAccessFile(getMp3(), "r");
 		byte[] tagData = new byte[ID3_TAG_SIZE];
 		randomAccessFile.seek(randomAccessFile.length() - ID3_TAG_SIZE);
 		// put last 128 bytes in tagData array
@@ -40,8 +42,11 @@ public class Id3TagExtractor {
 				new String(ALBUM));
 	}
 
-	public void setMp3(File mp3) throws IOException {
+	public File getMp3() {
+		return mp3;
+	}
+
+	public void setMp3(File mp3) {
 		this.mp3 = mp3;
-		readID3Tag();
 	}
 }

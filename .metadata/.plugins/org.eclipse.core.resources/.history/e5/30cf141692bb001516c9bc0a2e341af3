@@ -17,7 +17,8 @@ public class Id3TagExtractor {
 	private final static byte[] ALBUM = new byte[30];
 	private ByteBuffer last128Bytes;
 
-	public Id3TagExtractor() {
+	public Id3TagExtractor() throws IOException {
+		this.setMp3(mp3);
 	}
 
 	@SuppressWarnings("resource")

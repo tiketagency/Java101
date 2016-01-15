@@ -10,16 +10,13 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.NoSuchAlgorithmException;
 
+import monday.duplicatesfinder.DuplicatesFinder;
 import monday.mp3organizer.metadata.Mp3Metadata;
 
 public class Mp3Organizer {
-	private static PathMatcher matcher;
-	private Id3TagExtractor extractor;
-
-	public Mp3Organizer() {
-		matcher = FileSystems.getDefault().getPathMatcher("glob:*.{mp3}");
-		extractor = new Id3TagExtractor();
-	}
+	private static PathMatcher matcher = FileSystems.getDefault()
+			.getPathMatcher("glob:*.{mp3}");
+	private Id3TagExtractor extractor = new Id3TagExtractor();
 
 	public void organizeSongs(Path path) throws IOException,
 			NoSuchAlgorithmException, IllegalArgumentException {

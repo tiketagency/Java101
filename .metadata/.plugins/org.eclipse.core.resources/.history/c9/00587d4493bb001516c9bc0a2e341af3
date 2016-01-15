@@ -18,7 +18,7 @@ public class Mp3MetaDataChecker {
 	}
 
 	public boolean checkTag(String tag) {
-		return tag == UNKNOWN_STATUS || tag.isEmpty()
+		return tag.equals(UNKNOWN_STATUS) || tag.isEmpty()
 				|| checkForBadEncoding(tag);
 	}
 
