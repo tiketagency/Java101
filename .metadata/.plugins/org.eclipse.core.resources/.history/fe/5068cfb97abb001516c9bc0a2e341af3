@@ -1,0 +1,5 @@
+package monday.duplicatesfinder;
+
+public enum Option {
+	DELETE, PRINT
+}

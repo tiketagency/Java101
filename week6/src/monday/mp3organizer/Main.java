@@ -1,12 +1,21 @@
 package monday.mp3organizer;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
-import org.farng.mp3.TagException;
+import java.nio.file.Path;
+import java.security.NoSuchAlgorithmException;
+
+import monday.duplicatesfinder.DuplicatesFinder;
+import monday.duplicatesfinder.Options;
+import monday.mp3organizer.organizer.Mp3Organizer;
 
 public class Main {
-	public static void main(String[] args) throws IOException, TagException {
-		new Mp3Organizer().organizeSongs(Paths
-				.get("/home/boyko/Downloads/music/"));
+	private static final Path PATH = new File("/home/boyko/Downloads/music/")
+			.toPath();
+
+	public static void main(String[] args) throws IOException,
+			NoSuchAlgorithmException, IllegalArgumentException {
+		new Mp3Organizer().organizeSongs(PATH);
+		new DuplicatesFinder().findDuplicate(PATH, Options.DELETE);
 	}
 }

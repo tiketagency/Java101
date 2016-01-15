@@ -16,8 +16,7 @@ public class PropertyParser {
 		List<String> lines = Files.readAllLines(file.toPath());
 		for (String line : lines) {
 			line = line.trim().replaceAll("\\s+", "");
-			if (!Character.isWhitespace(line.charAt(0))
-					&& line.charAt(0) != '#') {
+			if (line.charAt(0) != '#') {
 				String[] keyAndValue = line.split("\\=", 2);
 				refactoredPropertyFile.put(keyAndValue[0], keyAndValue[1]);
 			}

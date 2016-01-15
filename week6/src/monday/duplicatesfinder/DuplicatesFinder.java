@@ -1,24 +1,17 @@
 package monday.duplicatesfinder;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 public class DuplicatesFinder {
-
-	public class Key {
+	protected final class Key {
+		/*
+		 * Guarantee same hashCode for files which have same content
+		 */
 		private byte[] md5Hash;
 
 		public Key(byte[] md5Hash) {
@@ -56,77 +49,41 @@ public class DuplicatesFinder {
 		private DuplicatesFinder getOuterType() {
 			return DuplicatesFinder.this;
 		}
-
 	}
 
-	public Map<Key, List<Path>> storage;
-	private static final int CHUNK_SIZE = 8192;
+	private DuplicatesStorage storage;
 
 	public DuplicatesFinder() {
-		storage = new HashMap<>();
+		storage = new DuplicatesStorage();
 	}
 
-	public void storeFiles(Key hash, Path path) {
-		if (!storage.containsKey(hash)) {
-			List<Path> p = new ArrayList<Path>();
-			p.add(path);
-			storage.put(hash, p);
-		} else {
-			storage.get(hash).add(path);
-		}
-	}
-
-	public void printDuplicates() {
-		boolean hasDuplicates = false;
-		for (Entry<Key, List<Path>> paths : storage.entrySet()) {
-			if (paths.getValue().size() > 1) {
-				System.out.println(paths.getValue());
-				hasDuplicates = true;
-			}
-		}
-		if (!hasDuplicates) {
-			System.out.println("No duplicates find!");
-		}
-	}
-
-	public void findDuplicate(Path path) throws IOException,
+	public void findDuplicate(Path path, Options option) throws IOException,
 			NoSuchAlgorithmException {
 		File file = path.toFile();
 		File[] files = file.listFiles();
 		for (File file2 : files) {
 			Path filePath = file2.toPath();
-			BasicFileAttributes attribute = Files.readAttributes(filePath,
-					BasicFileAttributes.class);
-			if (attribute.isDirectory()) {
-				findDuplicate(filePath);
+			if (file2.isDirectory()) {
+				findDuplicate(filePath, option);
 			} else {
-				if (checkSize(filePath) && attribute.isRegularFile()) {
-					if (attribute.isSymbolicLink()) {
+				if (checkSize(filePath) && Files.isRegularFile(filePath)) {
+					if (Files.isSymbolicLink(filePath)) {
 						System.out.println("SYMBOLIC LINK ==> " + filePath);
 						filePath = Files.readSymbolicLink(filePath);
 					}
-					byte[] md5Hash = generateMd5Hash(filePath);
-					storeFiles(new Key(md5Hash), filePath);
+					byte[] hashedFile = MD5Hash.generateMd5(filePath);
+					storage.storeFiles(new Key(hashedFile), filePath, option);
 				}
 			}
 		}
 	}
 
-	private byte[] generateMd5Hash(Path filePath) throws IOException,
-			NoSuchAlgorithmException {
-		try (BufferedInputStream is = new BufferedInputStream(
-				new FileInputStream(filePath.toFile()))) {
-			MessageDigest md5 = MessageDigest.getInstance("MD5");
-			byte[] buffer = new byte[CHUNK_SIZE];
-			int len;
-			while ((len = is.read(buffer)) != -1) {
-				md5.update(buffer, 0, len);
-			}
-			return md5.digest();
-		}
-	}
-
 	private boolean checkSize(Path filePath) {
 		return (filePath.toFile().length() / 1024) / 1024 < 512;
+	}
+
+	@Override
+	public String toString() {
+		return storage.toString();
 	}
 }
