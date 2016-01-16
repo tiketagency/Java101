@@ -1,0 +1,7 @@
+package monday.filedatacompression;
+
+public class NotCompressedFileException extends Exception {
+	public NotCompressedFileException(String message) {
+		super(message);
+	}
+}

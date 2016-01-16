@@ -1,5 +1,0 @@
-package week5.friday.bankaccount.interfaces;
-
-public interface Withdraw {
-	public double withdraw(double money);
-}

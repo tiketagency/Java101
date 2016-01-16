@@ -1,8 +1,0 @@
-package week5.friday.bankaccount.interfaces;
-
-import week5.friday.bankaccount.BankAccount;
-
-public interface CreateAccount {
-	public boolean creatAccount(BankAccount account);
-	public void add(BankAccount account, double money);
-}

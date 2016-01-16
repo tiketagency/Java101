@@ -1,7 +1,0 @@
-package week5.wednesday.userinputchecker;
-
-public class UserInputChecker {
-	private interface Validator {
-		public boolean validate(String input);
-	}
-}

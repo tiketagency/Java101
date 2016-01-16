@@ -1,5 +1,0 @@
-package week5.friday.bankaccount.interfaces;
-
-public interface Transfer {
-	public double transfer(double money);
-}

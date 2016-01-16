@@ -24,15 +24,19 @@ public class Mp3Organizer {
 	public void organizeSongs(Path path) throws IOException,
 			NoSuchAlgorithmException, IllegalArgumentException {
 		for (File file : path.toFile().listFiles()) {
-			Path filePath = file.toPath();
-			if (matcher.matches(filePath.getFileName())) {
+			if (isMp3(file)) {
 				extractor.setMp3(file);
 				createArtistFolder(extractor.getMetaData(), file);
 			}
 		}
 	}
 
-	public void createArtistFolder(Mp3Metadata metaData, File file)
+	private boolean isMp3(File file) {
+		Path filePath = file.toPath();
+		return matcher.matches(filePath.getFileName());
+	}
+
+	private void createArtistFolder(Mp3Metadata metaData, File file)
 			throws IOException, NoSuchAlgorithmException {
 		String artist = metaData.getArtist().toLowerCase();
 		String parentDirectory = file.getParent();

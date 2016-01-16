@@ -25,7 +25,6 @@ public class FileUtils {
 		StringBuilder builder = new StringBuilder();
 		try (BufferedReader in = new BufferedReader(new FileReader(file))) {
 			String line;
-			int c;
 			while ((line = in.readLine()) != null) {
 				builder.append(line);
 				builder.append(System.lineSeparator());

@@ -1,7 +1,6 @@
 package monday.mp3organizer.metadata;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 
 public class Mp3Metadata {
 	private String title;
