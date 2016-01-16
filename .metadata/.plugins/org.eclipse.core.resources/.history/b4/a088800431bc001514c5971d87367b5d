@@ -22,7 +22,7 @@ public class WordsContainer {
 		mappedWords = new HashMap<>();
 	}
 
-	public void appendCompressedText(String line) {
+	public void appendText(String line) {
 		String oldValue = (String) properties.get("-1");
 		String appendedData = oldValue != null ? oldValue + "\n" + line : line;
 		properties.setProperty("-1", appendedData);
@@ -58,5 +58,30 @@ public class WordsContainer {
 
 	public String getWord(String code) {
 		return properties.getProperty(code);
+	}
+
+	public class TextManager {
+		private static final String DELIMITER = "~";
+		private StringBuilder stringBuilder;
+
+		public TextManager() {
+			stringBuilder = new StringBuilder();
+		}
+
+		public void decompressDelimiter(String line) {
+			stringBuilder.append(line.replaceAll(DELIMITER, " ") + "\n");
+		}
+
+		public String getDecompressedContent() {
+			return stringBuilder.toString();
+		}
+
+		public String[] splitLine(String line) {
+			return line.split(DELIMITER);
+		}
+
+		public String removePunctuations(String word) {
+			return word.replaceAll("\\p{Punct}", "");
+		}
 	}
 }

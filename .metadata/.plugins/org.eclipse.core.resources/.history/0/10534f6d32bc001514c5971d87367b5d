@@ -22,7 +22,7 @@ public class WordsContainer {
 		mappedWords = new HashMap<>();
 	}
 
-	public void appendCompressedText(String line) {
+	public void appendText(String line) {
 		String oldValue = (String) properties.get("-1");
 		String appendedData = oldValue != null ? oldValue + "\n" + line : line;
 		properties.setProperty("-1", appendedData);

@@ -27,7 +27,7 @@ public class FileDataCompression {
 				line = line
 						.replaceFirst(word, container.getFromContainer(word));
 			}
-			container.appendCompressedText(line);
+			container.appendText(line);
 		}
 		return container.save();
 	}

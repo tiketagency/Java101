@@ -5,19 +5,21 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
+import monday.filedatacompression.WordsContainer.TextManager;
+
 public class FileDataCompression {
 	private WordsContainer container;
 	private TextManager manager;
 
 	public FileDataCompression() {
 		container = new WordsContainer();
-		manager = new TextManager();
+		manager = container.new TextManager();
 	}
 
 	public File compress(Path path) throws IOException {
 		List<String> content = FileManager.loadFile(path);
 		for (String line : content) {
-			line = manager.compressDelimiter(line);
+			line = line.replaceAll("\\s+", "~");
 			String[] words = manager.splitLine(line);
 			for (String word : words) {
 				word = manager.removePunctuations(word);
@@ -27,7 +29,7 @@ public class FileDataCompression {
 				line = line
 						.replaceFirst(word, container.getFromContainer(word));
 			}
-			container.appendCompressedText(line);
+			container.appendText(line);
 		}
 		return container.save();
 	}

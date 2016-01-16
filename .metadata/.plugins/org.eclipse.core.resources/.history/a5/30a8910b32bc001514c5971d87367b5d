@@ -23,7 +23,7 @@ public class FileDataDecompression {
 				String word = container.getWord(code);
 				line = line.replaceAll(code, word);
 			}
-			manager.buildText(line);
+			manager.decompressDelimiter(line);
 		}
 		return FileManager.saveToFile(manager.getDecompressedContent());
 	}
